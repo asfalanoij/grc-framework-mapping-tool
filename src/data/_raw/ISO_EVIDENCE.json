@@ -1,0 +1,709 @@
+{
+  "4.1": [
+    "Context analysis document (SWOT or PESTLE)",
+    "Annual management review minutes addressing internal/external issues",
+    "Regulatory horizon-scanning log",
+    "Risk register linked to context factors"
+  ],
+  "4.2": [
+    "Interested Parties Register with security requirements per stakeholder",
+    "Legal and regulatory compliance obligation register",
+    "Customer contractual security requirements log",
+    "Stakeholder security expectations mapping"
+  ],
+  "4.3": [
+    "ISMS Scope Statement document signed by management",
+    "Scope boundary diagram (network/physical)",
+    "Statement of Applicability (SoA) referencing scope",
+    "Exclusions register with justification"
+  ],
+  "4.4": [
+    "ISMS framework/procedure document",
+    "PDCA cycle documentation and evidence of application",
+    "ISMS process map and interaction diagram",
+    "Management sign-off of ISMS establishment"
+  ],
+  "5.1": [
+    "Board or executive meeting minutes with security agenda items",
+    "Security budget allocation and approval records",
+    "Information Security Policy signed by top management",
+    "CISO/security officer appointment records"
+  ],
+  "5.2": [
+    "Information Security Policy document with management approval",
+    "Policy version history and review records",
+    "Policy communication records (email, intranet publishing)",
+    "Staff acknowledgment of policy receipt"
+  ],
+  "5.3": [
+    "RACI matrix for information security roles",
+    "Job descriptions containing security responsibilities",
+    "Security officer/CISO formal appointment letter",
+    "Delegation of security authority records"
+  ],
+  "6.1.1": [
+    "Information security risk management framework document",
+    "Risk management procedure approved by management",
+    "Risk appetite statement endorsed by senior leadership",
+    "Risk management integration into business planning records"
+  ],
+  "6.1.2": [
+    "Information Security Risk Assessment Report",
+    "Risk register with likelihood/impact ratings",
+    "Asset inventory linked to risk assessment",
+    "Risk assessment methodology document"
+  ],
+  "6.1.3": [
+    "Risk Treatment Plan with control selection justification",
+    "Statement of Applicability (SoA) with inclusion/exclusion rationale",
+    "Control implementation roadmap and owner assignments",
+    "Residual risk acceptance sign-off records"
+  ],
+  "6.1.3(d)": [
+    "Statement of Applicability (SoA) listing excluded controls with documented justification",
+    "Risk acceptance records for excluded control areas",
+    "Management sign-off on SoA"
+  ],
+  "6.2": [
+    "Information security objectives document aligned to policy",
+    "KPI/metric tracking reports against objectives",
+    "Security objectives communicated to relevant staff",
+    "Objectives review records from management review"
+  ],
+  "7.1": [
+    "Security headcount and staffing records",
+    "Security budget allocation and spend records",
+    "Tool and technology inventory for security operations",
+    "Resource plan for ISMS activities"
+  ],
+  "7.2": [
+    "Security training completion records per staff member",
+    "Professional certifications held by security personnel",
+    "Competency assessment records",
+    "Skills gap analysis and training plan"
+  ],
+  "7.3": [
+    "Security awareness training completion logs",
+    "Phishing simulation campaign results and remediation",
+    "Awareness programme calendar and materials",
+    "Security awareness assessment/quiz scores"
+  ],
+  "7.4": [
+    "ISMS communication plan",
+    "Security meeting minutes and distribution lists",
+    "Policy and update announcement records",
+    "Stakeholder communication log for ISMS matters"
+  ],
+  "7.5": [
+    "Document Control Procedure",
+    "ISMS document register/inventory",
+    "Document version history and approval records",
+    "Controlled document access log"
+  ],
+  "8.1": [
+    "Operational security procedures and work instructions",
+    "Security activity plan vs actuals tracking",
+    "Change management records for operational security",
+    "Operational risk treatment evidence"
+  ],
+  "8.2": [
+    "Periodic risk assessment report (e.g., annual review)",
+    "Risk reassessment trigger log (e.g., post-incident, new system)",
+    "Risk review meeting minutes",
+    "Updated risk register following reassessment"
+  ],
+  "8.3": [
+    "Evidence of controls implemented per Risk Treatment Plan",
+    "Control effectiveness measurement records",
+    "Residual risk acceptance sign-off",
+    "Risk treatment progress tracker"
+  ],
+  "9.1": [
+    "Security metrics/KPI dashboard or reports",
+    "Vulnerability scan reports and trend tracking",
+    "SIEM/log monitoring reports",
+    "Compliance monitoring results and corrective actions"
+  ],
+  "9.2": [
+    "Internal audit programme/schedule",
+    "Internal audit reports with findings",
+    "Non-conformity records raised from audits",
+    "Corrective action log and closure evidence"
+  ],
+  "9.3": [
+    "Management review meeting minutes",
+    "Management review inputs package (audit results, metrics, incidents)",
+    "Management review outputs and decisions",
+    "Action tracker from management review"
+  ],
+  "10.1": [
+    "Continual improvement register/log",
+    "Improvement project records and outcomes",
+    "Lessons learned records driving ISMS improvement",
+    "Process change records linked to improvement initiatives"
+  ],
+  "10.2": [
+    "Non-conformity and corrective action register",
+    "Root cause analysis (RCA) documents",
+    "Corrective action implementation evidence",
+    "Non-conformity closure verification records"
+  ],
+  "A.5.1": [
+    "Information Security Policy document",
+    "Policy approval records (management sign-off)",
+    "Policy review records (at least annual)",
+    "Policy acknowledgment records from staff"
+  ],
+  "A.5.2": [
+    "RACI chart for information security functions",
+    "Security roles and responsibilities document",
+    "Security officer/CISO appointment records",
+    "Segregation of duties matrix"
+  ],
+  "A.5.3": [
+    "Access rights matrix demonstrating segregation of duties",
+    "System-level SoD control configuration screenshots",
+    "User access review report confirming SoD compliance",
+    "Compensating control records where SoD not feasible"
+  ],
+  "A.5.4": [
+    "Manager security briefing/training records",
+    "Performance review criteria including security responsibilities",
+    "Incident escalation records from line managers",
+    "Security responsibility clause in manager job descriptions"
+  ],
+  "A.5.5": [
+    "List of regulatory and authority contacts",
+    "Incident notification procedure with authority contact details",
+    "Records of communications with regulatory authorities",
+    "Data breach notification log"
+  ],
+  "A.5.6": [
+    "Membership records in security groups or ISACs",
+    "Threat intelligence sharing platform subscriptions",
+    "Conference or forum participation records",
+    "Intelligence-sharing agreements"
+  ],
+  "A.5.7": [
+    "Threat intelligence feed subscriptions and sources",
+    "Threat assessment reports reviewed by security team",
+    "Records of control changes driven by threat intelligence",
+    "Threat intelligence distribution records"
+  ],
+  "A.5.8": [
+    "Project management methodology with security gate checklist",
+    "Security sign-off records for projects and change requests",
+    "Project-level security risk assessments",
+    "Security requirements in project initiation documentation"
+  ],
+  "A.5.9": [
+    "Asset inventory/register with ownership and classification",
+    "Asset discovery scan results",
+    "Asset lifecycle records (acquisition to disposal)",
+    "Asset inventory review frequency records"
+  ],
+  "A.5.10": [
+    "Acceptable Use Policy (AUP) document",
+    "Staff AUP acknowledgment/sign-off records",
+    "HR records of AUP violations and outcomes",
+    "Monitoring evidence of AUP compliance"
+  ],
+  "A.5.11": [
+    "Offboarding checklist with asset return confirmation",
+    "Asset return receipts",
+    "Equipment handover records",
+    "Offboarding process audit records"
+  ],
+  "A.5.12": [
+    "Information Classification Policy",
+    "Classification scheme and label guide",
+    "Examples of assets classified per scheme",
+    "Classification training records"
+  ],
+  "A.5.13": [
+    "Data labelling procedure",
+    "Examples of labelled assets and documents",
+    "System configurations enforcing labels (e.g., DLP rules)",
+    "Label compliance audit records"
+  ],
+  "A.5.14": [
+    "Data transfer policy",
+    "Secure file transfer tool inventory",
+    "Records of approved transfer mechanisms (e.g., encrypted email, SFTP)",
+    "Data sharing agreements and NDAs"
+  ],
+  "A.5.15": [
+    "Access Control Policy",
+    "Access provisioning and de-provisioning records",
+    "Periodic user access review (UAR) reports",
+    "Role-based access control (RBAC) documentation"
+  ],
+  "A.5.16": [
+    "Identity management procedure",
+    "User account lifecycle records (creation to deletion)",
+    "Identity governance reports",
+    "Orphaned account detection scan results"
+  ],
+  "A.5.17": [
+    "Authentication policy (password/MFA requirements)",
+    "MFA enrollment records and coverage report",
+    "Authentication system configuration screenshots",
+    "Password manager deployment evidence"
+  ],
+  "A.5.18": [
+    "Access provisioning request and approval records",
+    "User access review report",
+    "Privileged access review records",
+    "Least-privilege enforcement evidence"
+  ],
+  "A.5.19": [
+    "Third-party information security policy",
+    "Supplier risk assessment questionnaires and results",
+    "Vendor security register",
+    "Due diligence records for new suppliers"
+  ],
+  "A.5.20": [
+    "Supplier contracts with security clauses",
+    "NDA/confidentiality agreement records",
+    "Contract review checklist including security requirements",
+    "Supplier contract register"
+  ],
+  "A.5.21": [
+    "ICT supply chain risk assessment",
+    "Software Bill of Materials (SBOM) for critical systems",
+    "Vendor vetting and approval records",
+    "Component integrity verification records"
+  ],
+  "A.5.22": [
+    "Supplier review meeting minutes",
+    "Supplier security audit or assessment reports",
+    "Service level performance reports",
+    "Supplier incident notifications and responses"
+  ],
+  "A.5.23": [
+    "Cloud service usage policy",
+    "Cloud service security assessment records",
+    "Shared responsibility matrix per cloud service",
+    "Cloud configuration compliance scan results"
+  ],
+  "A.5.24": [
+    "Incident Response Plan (IRP)",
+    "IR team roles and responsibilities document",
+    "IR plan testing and exercise records",
+    "IR communication plan"
+  ],
+  "A.5.25": [
+    "Incident categorisation/classification criteria",
+    "Incident log with severity ratings",
+    "SIEM alert triage records",
+    "Incident assessment checklist"
+  ],
+  "A.5.26": [
+    "Incident response records and timelines",
+    "Incident post-mortem/lessons learned reports",
+    "IR playbooks for key incident types",
+    "Evidence preservation records"
+  ],
+  "A.5.27": [
+    "Post-incident review reports",
+    "Lessons learned register",
+    "Control improvement actions raised from incidents",
+    "Incident trend analysis reports"
+  ],
+  "A.5.28": [
+    "Evidence collection procedure (digital forensics)",
+    "Chain of custody records",
+    "Forensic investigation logs",
+    "Forensic tool inventory and training records"
+  ],
+  "A.5.29": [
+    "Business Continuity Plan (BCP) with security incident provisions",
+    "Crisis management plan",
+    "BCP test and exercise records",
+    "Crisis communication plan"
+  ],
+  "A.5.30": [
+    "ICT Continuity/Disaster Recovery Plan",
+    "Recovery Time Objective (RTO) and Recovery Point Objective (RPO) definitions",
+    "DR test records and results",
+    "ICT continuity risk assessment"
+  ],
+  "A.5.31": [
+    "Legal and regulatory compliance register",
+    "Compliance monitoring and assessment records",
+    "Legal advice or counsel records on security requirements",
+    "Regulatory audit/inspection records"
+  ],
+  "A.5.32": [
+    "Intellectual property rights register",
+    "Software licence inventory and compliance records",
+    "IP usage policy",
+    "Software licence audit results"
+  ],
+  "A.5.33": [
+    "Records retention policy and schedule",
+    "Records archival and destruction logs",
+    "Records protection controls documentation",
+    "Legal hold procedure"
+  ],
+  "A.5.34": [
+    "Privacy Impact Assessments (PIA/DPIA)",
+    "Privacy notice/policy",
+    "Records of Processing Activities (RoPA)",
+    "Data subject rights request log"
+  ],
+  "A.5.35": [
+    "Independent ISMS review procedure",
+    "Internal audit reports covering ISMS effectiveness",
+    "Management review outputs assessing ISMS",
+    "External audit or certification reports"
+  ],
+  "A.5.36": [
+    "Compliance monitoring framework",
+    "Compliance assessment results per applicable law/standard",
+    "Compliance reporting to management",
+    "Non-compliance and corrective action records"
+  ],
+  "A.5.37": [
+    "Operational procedure documents (SOPs/runbooks)",
+    "Procedure review and approval records",
+    "Procedure ownership assignments",
+    "IT operational runbooks for key security tasks"
+  ],
+  "A.6.1": [
+    "Background check/screening policy",
+    "Background check completion records per employee",
+    "Pre-employment screening provider contracts",
+    "Screening exception and waiver records"
+  ],
+  "A.6.2": [
+    "Employment contracts with security obligations clause",
+    "New joiner security briefing/induction records",
+    "Policy acknowledgment sign-off at onboarding",
+    "Security responsibilities in job descriptions"
+  ],
+  "A.6.3": [
+    "Security awareness training programme materials",
+    "Training completion records per staff member",
+    "Phishing simulation results and remediation evidence",
+    "Security awareness assessment scores"
+  ],
+  "A.6.4": [
+    "HR disciplinary policy with security violation provisions",
+    "Records of disciplinary actions taken for security breaches",
+    "Disciplinary procedure communicated to staff",
+    "Manager briefing on security disciplinary process"
+  ],
+  "A.6.5": [
+    "Offboarding checklist",
+    "Account deactivation/deletion records on departure",
+    "Asset return confirmation records",
+    "Exit interview security debriefing records"
+  ],
+  "A.6.6": [
+    "NDA/confidentiality agreement templates",
+    "Signed NDA records for staff and third parties",
+    "Confidentiality clauses in employment contracts",
+    "NDA tracking register"
+  ],
+  "A.6.7": [
+    "Remote working/telework policy",
+    "Remote access security configuration (VPN, MFA) evidence",
+    "Remote worker security assessment records",
+    "Laptop encryption compliance report"
+  ],
+  "A.6.8": [
+    "Security incident/event reporting procedure",
+    "Incident report logs submitted by staff",
+    "Near-miss and security concern reporting records",
+    "Reporting channel awareness records"
+  ],
+  "A.7.1": [
+    "Physical security perimeter documentation and map",
+    "Physical access control system (badge/biometric) records",
+    "Perimeter security review or inspection records",
+    "Security guard or reception logs"
+  ],
+  "A.7.2": [
+    "Physical access control system logs",
+    "Visitor sign-in and escort records",
+    "Access badge provisioning and revocation records",
+    "Tailgating/piggybacking control evidence"
+  ],
+  "A.7.3": [
+    "Secure area designation and approval records",
+    "Lock and alarm system testing records",
+    "Office and room security assessment",
+    "Secure area access list"
+  ],
+  "A.7.4": [
+    "CCTV/physical monitoring system operational records",
+    "Physical security monitoring review reports",
+    "Intruder detection system testing and maintenance records",
+    "Physical security incident logs"
+  ],
+  "A.7.5": [
+    "Physical threat risk assessment (flood, fire, power)",
+    "Environmental controls maintenance records (HVAC, fire suppression)",
+    "Physical threat mitigation measures documentation",
+    "Business impact assessment for physical threats"
+  ],
+  "A.7.6": [
+    "Secure area access policy",
+    "Clean desk policy",
+    "Access logs for restricted/secure areas",
+    "Secure area visitor records"
+  ],
+  "A.7.7": [
+    "Clean desk and clear screen policy",
+    "Clean desk audit/spot-check records",
+    "Unattended equipment check results",
+    "Awareness records for clean desk policy"
+  ],
+  "A.7.8": [
+    "Equipment placement and siting policy",
+    "Equipment location records/asset register",
+    "Environmental monitoring records (temperature, humidity)",
+    "Equipment siting review records"
+  ],
+  "A.7.9": [
+    "Asset removal authorisation procedure",
+    "Off-site asset tracking records",
+    "Mobile device policy",
+    "Asset collection records on return"
+  ],
+  "A.7.10": [
+    "Storage media policy",
+    "Media register and classification",
+    "Secure media destruction/disposal certificates",
+    "Media handling training records"
+  ],
+  "A.7.11": [
+    "UPS and generator maintenance and testing records",
+    "Utility failure testing and recovery records",
+    "Environmental monitoring system records",
+    "Utility supplier SLA agreements"
+  ],
+  "A.7.12": [
+    "Network cabling documentation and layout diagrams",
+    "Cable labelling and identification records",
+    "Cable inspection and testing records",
+    "Protected cabling route documentation"
+  ],
+  "A.7.13": [
+    "Equipment maintenance schedule and logs",
+    "Maintenance contractor authorisation records",
+    "Post-maintenance security check records",
+    "Warranty and service contract records"
+  ],
+  "A.7.14": [
+    "Equipment disposal policy",
+    "Data sanitisation/wiping certificates",
+    "Disposal contractor engagement and audit records",
+    "Equipment disposal register"
+  ],
+  "A.8.1": [
+    "Endpoint security policy",
+    "MDM/UEM device enrolment and compliance reports",
+    "Endpoint security scan results",
+    "Endpoint encryption compliance report"
+  ],
+  "A.8.2": [
+    "Privileged Access Management (PAM) tool configuration evidence",
+    "Privileged account inventory",
+    "Privileged access review records",
+    "Just-in-time access provisioning logs"
+  ],
+  "A.8.3": [
+    "Access control configuration evidence (system screenshots)",
+    "Role-based access control (RBAC) design documentation",
+    "Access rights review reports",
+    "Least-privilege enforcement evidence"
+  ],
+  "A.8.4": [
+    "Source code repository access control records",
+    "Code review process documentation",
+    "Developer access audit logs",
+    "Source code access approval records"
+  ],
+  "A.8.5": [
+    "Authentication policy and MFA requirements",
+    "MFA deployment and coverage report",
+    "Authentication configuration screenshots",
+    "Session management configuration evidence"
+  ],
+  "A.8.6": [
+    "Capacity monitoring dashboards/reports",
+    "Performance metrics against defined thresholds",
+    "Capacity planning documentation",
+    "Cloud auto-scaling configuration evidence"
+  ],
+  "A.8.7": [
+    "Anti-malware solution deployment evidence",
+    "Anti-malware scan reports and findings",
+    "Malware definition/signature update records",
+    "Endpoint detection and response (EDR) alert logs"
+  ],
+  "A.8.8": [
+    "Vulnerability scan reports (internal and external)",
+    "CVE remediation tracking and closure records",
+    "Vulnerability management policy and SLA",
+    "Penetration test report and remediation evidence"
+  ],
+  "A.8.9": [
+    "Configuration baseline documents (CIS Benchmarks, vendor hardening guides)",
+    "Configuration compliance scan results",
+    "Change management records for configuration changes",
+    "Configuration drift detection reports"
+  ],
+  "A.8.10": [
+    "Data deletion/disposal procedure",
+    "Deletion verification records or certificates",
+    "Data retention schedule linked to deletion rules",
+    "Automated deletion job logs"
+  ],
+  "A.8.11": [
+    "Data masking policy",
+    "Data masking implementation evidence in test environments",
+    "Data classification driving masking requirements",
+    "Masking tool configuration records"
+  ],
+  "A.8.12": [
+    "DLP solution deployment and configuration evidence",
+    "DLP policy rules and scope documentation",
+    "DLP incident/alert reports",
+    "Data exfiltration monitoring reports"
+  ],
+  "A.8.13": [
+    "Backup policy",
+    "Backup job completion logs",
+    "Backup restoration test records",
+    "Offsite/cloud backup configuration evidence"
+  ],
+  "A.8.14": [
+    "Redundancy and high-availability design documentation",
+    "Failover test records and results",
+    "HA configuration evidence (load balancer, clustering)",
+    "SLA for redundant systems"
+  ],
+  "A.8.15": [
+    "Logging policy",
+    "Log collection and aggregation configuration evidence",
+    "Log retention and archival records",
+    "Audit log inventory"
+  ],
+  "A.8.16": [
+    "SIEM deployment and configuration evidence",
+    "Security alert rules and tuning records",
+    "Security monitoring reports/dashboards",
+    "Analyst alert review and response records"
+  ],
+  "A.8.17": [
+    "NTP configuration evidence on servers and network devices",
+    "Clock synchronisation audit records",
+    "Log timestamp consistency check results",
+    "NTP server inventory"
+  ],
+  "A.8.18": [
+    "Privileged utility inventory",
+    "Access controls and restrictions for privileged utilities",
+    "Privileged utility usage audit logs",
+    "Privileged utility justification and approval records"
+  ],
+  "A.8.19": [
+    "Software installation policy",
+    "Approved software list (whitelist)",
+    "Software installation audit records",
+    "Unauthorised software detection scan results"
+  ],
+  "A.8.20": [
+    "Network security policy",
+    "Firewall and IDS/IPS configuration documentation",
+    "Network topology/security zone diagram",
+    "Firewall rule review records"
+  ],
+  "A.8.21": [
+    "Network service agreements and SLAs",
+    "Network service security assessment records",
+    "Network service monitoring reports",
+    "Network service provider audit or certification records"
+  ],
+  "A.8.22": [
+    "Network segmentation design documentation",
+    "VLAN and firewall zone configuration evidence",
+    "Network segmentation testing records",
+    "Microsegmentation policy evidence"
+  ],
+  "A.8.23": [
+    "Web filtering policy",
+    "Web filtering solution configuration screenshots",
+    "Web access/category block reports",
+    "Web filtering incident logs"
+  ],
+  "A.8.24": [
+    "Cryptography and key management policy",
+    "Certificate inventory and expiry tracking",
+    "Key management procedure",
+    "Encryption implementation evidence (TLS config, disk encryption)"
+  ],
+  "A.8.25": [
+    "Secure SDLC policy",
+    "Security requirements in development user stories",
+    "Developer secure coding training records",
+    "Security gate sign-off records in SDLC"
+  ],
+  "A.8.26": [
+    "Application security testing results (SAST/DAST)",
+    "Security requirements specification documents",
+    "Application security review/sign-off records",
+    "Bug bounty or responsible disclosure records"
+  ],
+  "A.8.27": [
+    "Secure architecture principles document",
+    "Architecture review board records",
+    "Threat modelling reports",
+    "Security design review records"
+  ],
+  "A.8.28": [
+    "Secure coding standards document",
+    "Code review records (peer review, automated)",
+    "Static analysis tool reports",
+    "Code quality gate enforcement evidence"
+  ],
+  "A.8.29": [
+    "Penetration test reports (annual/per release)",
+    "Security test results and findings",
+    "Vulnerability remediation tracking records",
+    "Security testing schedule and sign-off"
+  ],
+  "A.8.30": [
+    "Outsourced development security policy",
+    "Third-party developer security assessment/questionnaire",
+    "Code review records for outsourced code",
+    "Outsourced developer NDA and contract records"
+  ],
+  "A.8.31": [
+    "Environment separation policy",
+    "Access control records showing dev/test/prod separation",
+    "Deployment pipeline configuration evidence",
+    "Data flow diagram showing environment boundaries"
+  ],
+  "A.8.32": [
+    "Change management policy and procedure",
+    "Change request/ticket records with security impact assessment",
+    "Change approval and authorisation records",
+    "Emergency change records and post-implementation review"
+  ],
+  "A.8.33": [
+    "Test data policy",
+    "Test data masking and anonymisation records",
+    "Test environment access control records",
+    "Production data access restriction evidence for testing"
+  ],
+  "A.8.34": [
+    "Audit log integrity controls configuration (WORM, immutable storage)",
+    "Audit log access restriction records",
+    "Audit tool access control evidence",
+    "Audit log tamper-detection alert records"
+  ]
+}

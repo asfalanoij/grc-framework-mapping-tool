@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "name": "NIS 2 Directive",
+    "version": "(EU) 2022/2555, Art.21",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022L2555",
+    "color": "#3B82F6"
+  },
+  "about": {
+    "title": "NIS 2 Directive — Article 21 Security Measures",
+    "blurb": "The Network and Information Security Directive 2 (NIS 2) requires essential and important entities to implement appropriate technical, operational, and organisational measures to manage cybersecurity risks. Article 21(2) specifies ten minimum measures. Member States were required to transpose NIS 2 by 17 October 2024.",
+    "sections": [
+      {
+        "h": "Scope",
+        "p": [
+          "NIS 2 applies to 'essential' entities (large organisations in critical sectors such as energy, transport, health, finance, water, digital infrastructure) and 'important' entities (medium-sized organisations in additional sectors). The Directive establishes a proportionality requirement — measures must be appropriate to the risk and the size of the entity."
+        ]
+      },
+      {
+        "h": "Article 21 Obligations",
+        "p": [
+          "Article 21(2) lists ten specific cybersecurity measures that entities must implement as a minimum. These are supplemented by implementing acts specifying technical and methodological requirements for certain sectors."
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "Art.21(a)",
+      "name": "Policies on risk analysis and information system security",
+      "desc": "Article 21(2)(a) requires entities to have policies on risk analysis and information system security. Entities must establish, document, implement, and maintain policies that address risk identification, assessment, treatment, and the security of networks and information systems used in the provision of their services.",
+      "achieved": [
+        "An information security risk assessment methodology is documented, approved, and applied.",
+        "Risk assessments are conducted at least annually and following significant changes.",
+        "An information security policy suite is in place covering all major security domains.",
+        "Risk treatment plans document the controls selected to address identified risks.",
+        "Risk assessments and policy reviews are evidenced and retained for supervisory review."
+      ],
+      "evidence": [
+        "Risk assessment methodology document and completed risk assessments",
+        "Information security policy suite with management approval and review dates",
+        "Risk register and risk treatment plan",
+        "Evidence of annual policy review cycle"
+      ]
+    },
+    {
+      "id": "Art.21(b)",
+      "name": "Incident handling",
+      "desc": "Article 21(2)(b) requires entities to have incident handling procedures. This encompasses detection, analysis, containment, notification, and recovery from security incidents affecting networks and information systems.",
+      "achieved": [
+        "An incident response plan is documented, tested, and updated at least annually.",
+        "Incident detection capabilities (SIEM, monitoring) are in place and operational.",
+        "Incident classification and severity levels are defined.",
+        "Notification procedures to competent authorities and customers are defined and practised.",
+        "Post-incident reviews are conducted and drive measurable improvements."
+      ],
+      "evidence": [
+        "Incident response plan with approval date and version history",
+        "SIEM or monitoring tool deployment and alert configuration evidence",
+        "Incident log showing classification, timelines, and notifications",
+        "Post-incident review reports from significant incidents"
+      ]
+    },
+    {
+      "id": "Art.21(c)",
+      "name": "Business continuity, such as backup management and disaster recovery, and crisis management",
+      "desc": "Article 21(2)(c) requires entities to have business continuity measures including backup management, disaster recovery, and crisis management arrangements to ensure the continued provision of services and rapid recovery from disruption.",
+      "achieved": [
+        "Business continuity and disaster recovery plans are documented and tested at least annually.",
+        "Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) are defined and met.",
+        "Backups are performed, encrypted, tested, and stored with at least one offline or immutable copy.",
+        "Crisis management procedures address communication and decision-making during severe disruption.",
+        "Business Impact Analysis (BIA) underpins continuity prioritisation."
+      ],
+      "evidence": [
+        "Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) with test records",
+        "BIA document defining RTO/RPO per service",
+        "Backup configuration, completion logs, and restore test records",
+        "Crisis management plan and tabletop exercise reports"
+      ]
+    },
+    {
+      "id": "Art.21(d)",
+      "name": "Supply chain security, including security-related aspects concerning the relationships between each entity and its direct suppliers or service providers",
+      "desc": "Article 21(2)(d) requires entities to address supply chain security, including the cybersecurity practices of direct suppliers and service providers and the contractual security requirements governing those relationships.",
+      "achieved": [
+        "A supply chain risk management policy is in place covering supplier selection, assessment, and monitoring.",
+        "Suppliers are risk-tiered based on data access, criticality, and integration depth.",
+        "Security requirements are contractually mandated for all relevant suppliers.",
+        "Suppliers are assessed before engagement and reviewed at least annually.",
+        "Third-party incidents affecting the entity are detected and responded to promptly."
+      ],
+      "evidence": [
+        "Supply chain risk management policy",
+        "Supplier risk register with tier classifications",
+        "Contract security clauses or data processing agreements",
+        "Supplier assessment records (questionnaires, SOC 2/ISO 27001 certificates)"
+      ]
+    },
+    {
+      "id": "Art.21(e)",
+      "name": "Security in network and information systems acquisition, development and maintenance, including vulnerability handling and disclosure",
+      "desc": "Article 21(2)(e) requires security to be embedded throughout the acquisition, development, and maintenance lifecycle of networks and information systems, including processes for vulnerability handling and responsible disclosure.",
+      "achieved": [
+        "Security requirements are included in all system and software acquisition processes.",
+        "A secure development lifecycle (SDL) integrates security at all phases.",
+        "Vulnerability management processes ensure timely identification and remediation.",
+        "A vulnerability disclosure policy is published enabling responsible reporting.",
+        "Security testing (SAST, DAST, penetration testing) is conducted before production deployment."
+      ],
+      "evidence": [
+        "Security requirements in procurement and development documentation",
+        "SDL process document with security checkpoints",
+        "Vulnerability management policy and remediation SLA evidence",
+        "Vulnerability disclosure policy (published)",
+        "Penetration test and security testing reports"
+      ]
+    },
+    {
+      "id": "Art.21(f)",
+      "name": "Policies and procedures to assess the effectiveness of cybersecurity risk-management measures",
+      "desc": "Article 21(2)(f) requires entities to have policies and procedures to assess the effectiveness of their cybersecurity risk management measures. This includes monitoring, measurement, review, and audit activities to verify that controls are working as intended.",
+      "achieved": [
+        "A cybersecurity performance measurement framework is defined with KPIs and metrics.",
+        "Internal audits of cybersecurity controls are conducted at least annually.",
+        "Management receives regular reports on cybersecurity performance and control effectiveness.",
+        "Findings from audits and assessments are tracked to remediation.",
+        "The effectiveness assessment process is documented and reviewed."
+      ],
+      "evidence": [
+        "Cybersecurity KPI/metrics framework and periodic reports",
+        "Internal audit plan and completed audit reports",
+        "Management review meeting minutes covering cybersecurity performance",
+        "Corrective action register with closure evidence"
+      ]
+    },
+    {
+      "id": "Art.21(g)",
+      "name": "Basic cyber hygiene practices and cybersecurity training",
+      "desc": "Article 21(2)(g) requires entities to implement basic cyber hygiene practices and cybersecurity training for their personnel. Cyber hygiene covers fundamental practices including patching, access control, MFA, and secure configuration.",
+      "achieved": [
+        "Mandatory security awareness training is completed by all personnel at least annually.",
+        "Basic cyber hygiene controls are implemented: patching, MFA, access control, secure configuration, and backup.",
+        "Role-specific cybersecurity training is provided to personnel with elevated security responsibilities.",
+        "Training effectiveness is measured and results are used to improve the programme.",
+        "New starters complete security training before being granted system access."
+      ],
+      "evidence": [
+        "Security awareness training programme documentation and completion records",
+        "Basic hygiene control evidence: patch compliance, MFA coverage, configuration baselines",
+        "Role-based training records for privileged users and incident responders",
+        "Training effectiveness metrics (phishing simulation results, quiz scores)"
+      ]
+    },
+    {
+      "id": "Art.21(h)",
+      "name": "Policies and procedures regarding the use of cryptography and, where appropriate, encryption",
+      "desc": "Article 21(2)(h) requires entities to have policies and procedures governing the use of cryptography and encryption. This includes the selection of algorithms, key management, and the protection of data at rest and in transit.",
+      "achieved": [
+        "A cryptographic policy specifies approved algorithms, minimum key lengths, and use cases.",
+        "Data at rest is encrypted using approved algorithms (AES-256 or equivalent) on all sensitive systems.",
+        "Data in transit is protected using TLS 1.2 or higher for all communications.",
+        "Cryptographic keys are managed through a formal key management process with defined lifecycle.",
+        "Cryptographic controls are reviewed when new vulnerabilities or algorithm weaknesses are identified."
+      ],
+      "evidence": [
+        "Cryptographic policy document specifying algorithms and key management requirements",
+        "Encryption configuration evidence for databases, storage, and endpoints",
+        "TLS configuration evidence and certificate management records",
+        "Key management procedure and HSM/KMS usage evidence"
+      ]
+    },
+    {
+      "id": "Art.21(i)",
+      "name": "Human resources security, access control policies and asset management",
+      "desc": "Article 21(2)(i) requires entities to address human resources security, access control, and asset management. This encompasses personnel security measures throughout the employment lifecycle, logical and physical access controls, and the management of information assets.",
+      "achieved": [
+        "Personnel are screened prior to being granted access to sensitive systems and data.",
+        "Access rights follow the principle of least privilege and are reviewed at defined intervals.",
+        "An asset inventory covering hardware, software, and data assets is maintained and current.",
+        "Access is revoked promptly upon personnel separation or role change.",
+        "Privileged access is managed through a PAM solution with session monitoring."
+      ],
+      "evidence": [
+        "Pre-employment screening policy and records",
+        "Access control policy, RBAC configuration, and quarterly access review records",
+        "Asset inventory register with owner assignments",
+        "Offboarding checklist showing access revocation dates",
+        "PAM solution deployment and privileged session records"
+      ]
+    },
+    {
+      "id": "Art.21(j)",
+      "name": "The use of multi-factor authentication or continuous authentication solutions, secured voice, video and text communications, and secured emergency communication systems",
+      "desc": "Article 21(2)(j) requires entities to use multi-factor authentication (MFA) or continuous authentication solutions, and to use secure communications systems. This reflects the critical importance of strong authentication and encrypted communications in preventing account compromise and eavesdropping.",
+      "achieved": [
+        "MFA is enforced for all users accessing the entity's systems and services, prioritising phishing-resistant methods.",
+        "MFA is required for all remote access, privileged accounts, and externally-facing services.",
+        "Voice, video, and text communications used for sensitive operational matters are secured and encrypted.",
+        "Emergency communication systems (out-of-band) are available and tested during exercises.",
+        "MFA coverage and exception management are monitored and reported regularly."
+      ],
+      "evidence": [
+        "MFA enforcement policy and coverage report across all user types and access methods",
+        "Phishing-resistant MFA configuration (FIDO2/hardware token) for privileged and remote access",
+        "Secure communications platform configuration (end-to-end encryption evidence)",
+        "Out-of-band emergency communication system documentation and test records"
+      ]
+    }
+  ]
+}

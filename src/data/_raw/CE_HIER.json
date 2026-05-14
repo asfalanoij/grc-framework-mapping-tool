@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "name": "Cyber Essentials",
+    "version": "3.3 (April 2026)",
+    "url": "https://www.ncsc.gov.uk/cyberessentials/overview",
+    "color": "#06B6D4"
+  },
+  "about": {
+    "title": "About Cyber Essentials",
+    "blurb": "Cyber Essentials is a UK government-backed certification scheme, managed by the National Cyber Security Centre (NCSC) and delivered through accredited certification bodies. It defines a baseline of five technical security controls designed to protect organisations against the most common cyber threats, which the NCSC assesses account for the majority of cyber attacks. Cyber Essentials (self-assessed) and Cyber Essentials Plus (independently assessed through technical verification) are both recognised certifications. From April 2026, the scheme operates under version 3.3 of the requirements. Certification is mandatory for organisations bidding for certain UK government contracts involving the handling of sensitive information and personal data. The scheme is intentionally accessible and achievable for organisations of all sizes.",
+    "sections": [
+      {
+        "id": "Firewalls",
+        "name": "Firewalls",
+        "desc": "Boundary firewalls and internet gateways protect the organisation's devices and networks from unauthorised access from the internet."
+      },
+      {
+        "id": "Secure Config",
+        "name": "Secure Configuration",
+        "desc": "Computers and network devices are configured to reduce vulnerabilities and provide only the functionality required for the organisation's purposes."
+      },
+      {
+        "id": "Access Control",
+        "name": "Access Control",
+        "desc": "User accounts, administrator accounts, and access to applications and data are managed through appropriate access control measures, including multi-factor authentication."
+      },
+      {
+        "id": "Malware Protection",
+        "name": "Malware Protection",
+        "desc": "Malware protection measures protect the organisation's devices and data from malicious software."
+      },
+      {
+        "id": "Security Updates",
+        "name": "Security Updates",
+        "desc": "Devices, software, and operating systems are kept up to date to address known security vulnerabilities."
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "Firewalls",
+      "name": "Firewalls",
+      "desc": "The Firewalls theme requires organisations to protect all devices that can be connected to the internet, whether directly or via a home or public network, using boundary firewalls and internet gateways. All devices must have a software firewall or host-based firewall enabled. The default firewall configuration must block all traffic that has not been explicitly permitted, and rules must be documented and reviewed regularly. Unapproved services must not be exposed to the internet.",
+      "achieved": [
+        "A boundary firewall or equivalent network security control is in place at every connection point between the organisation's network and the internet",
+        "All organisation-managed devices have a host-based software firewall enabled, blocking all inbound connections not explicitly required",
+        "Firewall rules are documented with a business justification for each permitted rule, and unapproved services are not exposed",
+        "Default administrative passwords on all firewalls and routers have been changed to strong, unique credentials",
+        "Firewall rule sets are reviewed at least every 12 months and whenever a significant network change is made"
+      ],
+      "evidence": [
+        "Network diagram showing firewall placement at all internet-facing boundaries",
+        "Firewall rule set documentation with business justification for each permitted rule and most recent review date",
+        "Host-based firewall configuration screenshots or management console reports showing enabled status on all managed devices",
+        "Evidence that administrative credentials on firewalls have been changed from vendor defaults (e.g., password management system entries)"
+      ],
+      "items": [
+        {
+          "id": "Firewalls.1",
+          "name": "Boundary firewall protection at all internet connections",
+          "desc": "A boundary firewall or equivalent control is deployed at every connection between the organisation's internal network and the internet, ensuring all traffic passes through an approved security control point.",
+          "achieved": [
+            "All internet connections pass through a firewall or equivalent NSC before reaching internal devices",
+            "Cloud-hosted assets are protected by cloud security groups or equivalent controls configured to the same standards",
+            "Network topology diagrams are maintained showing all internet connection points and associated firewall positions",
+            "Perimeter firewalls are patched and maintained in accordance with the Security Updates theme"
+          ],
+          "evidence": [
+            "Current network diagram showing all internet connection points and firewall positions",
+            "Cloud security group or NSC configuration export for cloud-hosted assets",
+            "Firewall patch level and maintenance records"
+          ]
+        },
+        {
+          "id": "Firewalls.2",
+          "name": "Firewall rule documentation and review",
+          "desc": "All firewall rules permitting traffic are documented with a clear business justification, and the rule set is reviewed at least annually to remove rules that are no longer required.",
+          "achieved": [
+            "Every firewall rule that permits inbound or outbound traffic has a documented business justification",
+            "Rule sets are reviewed and validated by an authorised person at least every 12 months",
+            "Rules that are no longer required are removed or disabled promptly following the review",
+            "A change management process governs the addition of new firewall rules"
+          ],
+          "evidence": [
+            "Firewall rule documentation with justification for each permitted rule",
+            "Annual rule review sign-off record showing review date and reviewer identity",
+            "Change management records for firewall rule additions or modifications"
+          ]
+        },
+        {
+          "id": "Firewalls.3",
+          "name": "Host-based software firewall on all devices",
+          "desc": "A software firewall is enabled on all organisation-managed devices, blocking all inbound connections that have not been explicitly permitted.",
+          "achieved": [
+            "Host-based firewall or equivalent endpoint protection is enabled on all managed endpoints (desktops, laptops, servers)",
+            "The default inbound rule is to block all connections unless explicitly permitted",
+            "Users are prevented from disabling the host-based firewall without administrative approval",
+            "Mobile devices used for work purposes have equivalent protection via MDM-enforced firewall policies"
+          ],
+          "evidence": [
+            "Endpoint management tool (MDM/EPP) report showing firewall status across all managed devices",
+            "Group Policy or MDM policy configuration preventing user disablement of the firewall",
+            "Mobile device management policy configuration for work mobile devices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Secure Config",
+      "name": "Secure Configuration",
+      "desc": "The Secure Configuration theme requires that all organisation-managed computers and network devices are configured to reduce the attack surface. Unnecessary software, services, and user accounts must be removed or disabled. Vendor-supplied default passwords must be changed before devices are put into use. Only approved and necessary software should be installed on devices, and auto-run features that automatically execute code from removable media should be disabled.",
+      "achieved": [
+        "All devices are configured using documented secure configuration standards before being put into use",
+        "Default usernames and passwords on all devices and software are changed before deployment",
+        "Unnecessary user accounts (including default accounts) are disabled or removed",
+        "Unnecessary software, services, and protocols are uninstalled or disabled on all devices",
+        "Auto-run and auto-play features are disabled on all devices to prevent malicious code execution from removable media"
+      ],
+      "evidence": [
+        "Secure configuration standards or hardening guides for each device type managed by the organisation",
+        "Evidence that default credentials have been changed (password manager records, device configuration screenshots)",
+        "Device build record or MDM configuration profile showing unnecessary services are disabled",
+        "Group Policy or MDM policy evidence showing auto-run is disabled"
+      ],
+      "items": [
+        {
+          "id": "Secure Config.1",
+          "name": "Default password changes on all devices and software",
+          "desc": "Vendor-supplied default passwords on all internet-connected devices, accounts, and software are changed to unique, strong passwords before the device or software is put into use.",
+          "achieved": [
+            "A documented process requires default passwords to be changed before any device or software is deployed",
+            "A password management solution or policy ensures strong, unique credentials are set",
+            "Default accounts that cannot be removed are renamed or disabled where the operating system permits",
+            "Verification that defaults have been changed is part of the device build acceptance process"
+          ],
+          "evidence": [
+            "Device deployment procedure referencing default credential changes",
+            "Password management system entries for device administrative credentials",
+            "Build acceptance checklist including default credential verification step"
+          ]
+        },
+        {
+          "id": "Secure Config.2",
+          "name": "Disable unnecessary services and open ports",
+          "desc": "All services, protocols, and open network ports that are not required for the device's function are disabled or removed to reduce the attack surface.",
+          "achieved": [
+            "Hardening standards define which services and ports should be enabled for each device role",
+            "Devices are audited against hardening standards before and after deployment",
+            "Vulnerability scanning identifies services and open ports that deviate from the hardening baseline",
+            "Services that were not required but found enabled are disabled within a defined remediation timeframe"
+          ],
+          "evidence": [
+            "Hardening standards for each device type showing permitted and prohibited services",
+            "Vulnerability or port scan results confirming compliance with hardening standards",
+            "Remediation records for any deviations found during audits"
+          ]
+        },
+        {
+          "id": "Secure Config.3",
+          "name": "Restrict software installation to authorised software only",
+          "desc": "Users are prevented from installing software that has not been approved by the organisation, and a process exists to manage and review what software is installed across the estate.",
+          "achieved": [
+            "Users do not have local administrative rights that would allow arbitrary software installation",
+            "An approved software list is maintained and communicated to users",
+            "Technical controls (application allow-listing, MDM restrictions) prevent installation of unapproved software",
+            "The software inventory is reviewed periodically and unauthorised software is removed"
+          ],
+          "evidence": [
+            "MDM or Group Policy configuration preventing standard users from installing software",
+            "Approved software list with review date",
+            "Software inventory report with any unauthorised software flagged and remediated",
+            "Application control or allow-listing configuration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Access Control",
+      "name": "Access Control",
+      "desc": "The Access Control theme requires that user accounts are created and maintained on the basis of least privilege, with access limited to what is needed for the user's role. Administrative accounts must be used only for administrative tasks and must be separate from standard user accounts. Multi-factor authentication must be enabled for all accounts that can access cloud services, administrator accounts, and accounts accessing data or services exposed to the internet. Unused accounts must be removed or disabled promptly.",
+      "achieved": [
+        "User accounts are created only when there is a business need and are assigned only the privileges required for the user's role",
+        "Administrative accounts are separate from standard user accounts and are used exclusively for administrative tasks",
+        "Multi-factor authentication is enabled for all cloud service accounts, all administrative accounts, and all accounts with internet-facing access to organisation data",
+        "User accounts are reviewed at least every 12 months and accounts that are no longer required are removed or disabled",
+        "All account creation, modification, and removal is authorised and documented"
+      ],
+      "evidence": [
+        "User account management procedure covering creation, modification, and removal",
+        "Annual user access review report with evidence of accounts removed or disabled as a result",
+        "MFA configuration evidence for cloud services, administrative accounts, and internet-facing applications",
+        "Joiner–mover–leaver procedure and sample evidence of timely de-provisioning"
+      ],
+      "items": [
+        {
+          "id": "Access Control.1",
+          "name": "User account management and least privilege",
+          "desc": "User accounts are created with only the privileges needed for the individual's role, and privilege is reviewed and adjusted when roles change.",
+          "achieved": [
+            "A documented process exists for creating, modifying, and disabling user accounts based on role requirements",
+            "Access requests are reviewed and approved by a manager or account owner before access is granted",
+            "Access rights are reviewed when a user changes role and unnecessary privileges are removed",
+            "A user access review is completed at least annually"
+          ],
+          "evidence": [
+            "Access provisioning procedure",
+            "Sample access request tickets showing manager approval",
+            "User access review report from the most recent review cycle",
+            "Evidence of access adjustment on role changes (e.g., tickets, provisioning system logs)"
+          ]
+        },
+        {
+          "id": "Access Control.2",
+          "name": "Multi-factor authentication for all applicable accounts",
+          "desc": "Multi-factor authentication is enabled for all user and administrator accounts that access cloud services, administrator interfaces, and internet-facing data or services.",
+          "achieved": [
+            "MFA is enforced for all Microsoft 365, Google Workspace, or equivalent cloud service accounts",
+            "MFA is enforced for all accounts with access to administrative interfaces (servers, routers, firewalls, management consoles)",
+            "MFA is enforced for all accounts that can access organisation data via internet-facing applications",
+            "MFA cannot be bypassed by users or disabled without authorised approval",
+            "MFA method used meets the NCSC strength guidance (app-based authentication preferred over SMS)"
+          ],
+          "evidence": [
+            "Identity provider or cloud console MFA enforcement configuration screenshots",
+            "MFA coverage report showing percentage of accounts with MFA enabled",
+            "MFA policy documentation specifying required methods and exclusion approval process"
+          ]
+        },
+        {
+          "id": "Access Control.3",
+          "name": "Separate administrative accounts",
+          "desc": "Administrative privileges are used only via dedicated administrative accounts, separate from the user's standard day-to-day account, and used only for administrative tasks.",
+          "achieved": [
+            "All users who require administrative access have a separate, dedicated administrative account",
+            "Administrative accounts are not used for everyday activities such as email, web browsing, or accessing non-administrative applications",
+            "The use of administrative accounts is logged and monitored for suspicious activity",
+            "Administrative account credentials are held securely, ideally in a privileged access management (PAM) solution"
+          ],
+          "evidence": [
+            "Account management procedure requiring separate administrative accounts",
+            "Active Directory, Azure AD, or equivalent report showing administrative account separation",
+            "Audit log evidence of administrative account usage patterns",
+            "PAM solution configuration or password management records for administrative credentials"
+          ]
+        },
+        {
+          "id": "Access Control.4",
+          "name": "Prompt removal of unused accounts",
+          "desc": "User accounts that are no longer required (for example, because a user has left the organisation or a service has been decommissioned) are removed or disabled promptly.",
+          "achieved": [
+            "A leaver process ensures accounts are disabled within 24 hours of departure for standard users and immediately for privileged accounts",
+            "Regular account audits identify stale or unused accounts that have not been deactivated via the leaver process",
+            "Service and shared accounts are reviewed periodically and disabled or removed when no longer needed",
+            "Account disablement is logged and the log is retained for audit purposes"
+          ],
+          "evidence": [
+            "Leaver process documentation showing account disablement timelines",
+            "Sample leaver tickets showing timely account disablement",
+            "Stale account audit report with remediation evidence",
+            "Account disablement audit log extracts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Malware Protection",
+      "name": "Malware Protection",
+      "desc": "The Malware Protection theme requires that organisation-managed devices are protected against malware using one or more of: anti-malware software, application allow-listing, or sandboxing. Anti-malware software must be kept up to date, must be actively running, and must perform regular scans or real-time protection. Devices that are not covered by anti-malware must be covered by application allow-listing as an alternative approach, which the NCSC considers equally or more effective.",
+      "achieved": [
+        "All devices are protected against malware using anti-malware software with real-time protection enabled, application allow-listing, or equivalent sandboxing controls",
+        "Anti-malware signature definitions are updated automatically and at least daily",
+        "Anti-malware software is actively running on all protected devices and the protection cannot be disabled by the user",
+        "Email and web filtering controls reduce the risk of malware delivery via the most common attack vectors",
+        "The malware protection approach is documented, maintained, and reviewed at least annually"
+      ],
+      "evidence": [
+        "Anti-malware deployment report showing coverage and active status across all managed devices",
+        "Anti-malware update configuration showing automatic daily updates",
+        "Email filtering and web filtering configuration evidence",
+        "Malware protection policy and most recent annual review record"
+      ],
+      "items": [
+        {
+          "id": "Malware Protection.1",
+          "name": "Anti-malware software deployed and actively running",
+          "desc": "Anti-malware or endpoint detection and response software is deployed on all organisation-managed devices, is running with real-time protection enabled, and is configured to prevent users from disabling it.",
+          "achieved": [
+            "Anti-malware software with real-time scanning is installed and running on all managed endpoints",
+            "Users cannot disable or uninstall anti-malware software without administrative credentials",
+            "The anti-malware console provides visibility into the protection status of all managed devices",
+            "Devices that are offline or have out-of-date protection are identified and remediated"
+          ],
+          "evidence": [
+            "Anti-malware management console report showing real-time protection status across the device estate",
+            "Policy configuration preventing user disablement of anti-malware",
+            "Report identifying devices with protection gaps and remediation records"
+          ]
+        },
+        {
+          "id": "Malware Protection.2",
+          "name": "Web filtering to block access to malicious sites",
+          "desc": "Web content filtering is in place to prevent users from accessing known malicious websites and to reduce the risk of malware delivery via web browsing.",
+          "achieved": [
+            "DNS or proxy-based web filtering blocks access to known malicious domains and categories",
+            "Web filtering covers all devices, including those accessing the internet from home or public networks (via VPN, DNS-based filtering, or browser extensions)",
+            "Web filtering logs are reviewed for suspicious access patterns",
+            "The filtering policy is reviewed and updated at least annually"
+          ],
+          "evidence": [
+            "Web filtering configuration and category block list",
+            "Coverage evidence showing filtering applies to remote and office-based devices equally",
+            "Sample web filtering log review records",
+            "Annual web filtering policy review record"
+          ]
+        },
+        {
+          "id": "Malware Protection.3",
+          "name": "Application allow-listing as an alternative or supplementary control",
+          "desc": "Where anti-malware software is not deployed, or as a supplementary control, application allow-listing is implemented to prevent the execution of unapproved software on devices.",
+          "achieved": [
+            "An approved application list is maintained for device types covered by allow-listing",
+            "Allow-listing controls are enforced through technical means (e.g., AppLocker, Windows Defender Application Control, MDM restrictions)",
+            "Users cannot run applications not on the approved list without explicit authorisation",
+            "The approved application list is reviewed at least annually and updated when new software is needed"
+          ],
+          "evidence": [
+            "Application allow-listing policy or approved software list",
+            "Technical control configuration (e.g., AppLocker policy, WDAC policy)",
+            "Evidence that unapproved applications are blocked (e.g., block event logs)",
+            "Annual approved application list review record"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Security Updates",
+      "name": "Security Updates",
+      "desc": "The Security Updates theme requires that all software, operating systems, and firmware on in-scope devices are kept up to date to address known security vulnerabilities. High and critical severity patches must be applied within 14 days of release. Software that is no longer supported by the vendor (end-of-life or end-of-support) and that cannot be patched must be removed from the scope of the Cyber Essentials assessment or protected by compensating controls. Automatic updates should be enabled where possible.",
+      "achieved": [
+        "All in-scope operating systems, software, and firmware receive security updates within 14 days of release for high and critical severity patches",
+        "Automatic updates are enabled for all software where this option is available",
+        "A patch management process is documented, covering discovery, prioritisation, deployment, and verification of patches",
+        "Unsupported or end-of-life software is removed from in-scope devices or is subject to risk acceptance with documented compensating controls",
+        "The patch status of all in-scope devices is monitored and devices with missing patches are remediated within the required timeframe"
+      ],
+      "evidence": [
+        "Patch management policy defining the 14-day SLA for high and critical patches",
+        "Vulnerability scan or patch management tool report showing patch compliance across all in-scope devices",
+        "Evidence of auto-update configuration on operating systems and key software",
+        "Software inventory identifying any end-of-life or unsupported software with risk acceptance records or removal evidence"
+      ],
+      "items": [
+        {
+          "id": "Security Updates.1",
+          "name": "14-day patching SLA for high and critical vulnerabilities",
+          "desc": "Security patches rated high or critical severity are applied to all in-scope devices within 14 days of the patch becoming available from the vendor.",
+          "achieved": [
+            "A patch management process identifies new high and critical patches within 24 hours of release",
+            "Patches are tested and deployed within the 14-day SLA; where testing delays are unavoidable, a documented exception process is followed",
+            "Compliance with the 14-day SLA is tracked and reported to management",
+            "Emergency patching procedures allow out-of-band deployment for critical patches when the standard cycle cannot meet the SLA"
+          ],
+          "evidence": [
+            "Patch management procedure specifying the 14-day SLA and emergency patching process",
+            "Patch compliance report showing application dates relative to release dates for high and critical patches",
+            "Exception records for any patches not applied within SLA, with risk acceptance",
+            "Management reporting on patch compliance KPIs"
+          ]
+        },
+        {
+          "id": "Security Updates.2",
+          "name": "Operating system, firmware, and application updates applied",
+          "desc": "Security updates are applied to all in-scope software categories: operating systems, firmware (BIOS, UEFI, network device firmware), and third-party applications.",
+          "achieved": [
+            "Operating system updates are managed centrally and deployed within the required timeframe",
+            "Network device and server firmware updates are tracked and applied when security patches are released",
+            "Third-party application updates (browsers, office suites, productivity tools) are managed and applied promptly",
+            "A software and firmware inventory enables complete visibility of what needs to be patched"
+          ],
+          "evidence": [
+            "OS patch management tool report (e.g., WSUS, SCCM, Intune) showing OS patch status",
+            "Network device and firmware inventory with current version levels and available patch versions",
+            "Third-party application update management configuration and compliance report",
+            "Software and firmware asset inventory"
+          ]
+        },
+        {
+          "id": "Security Updates.3",
+          "name": "Unsupported software removed or risk-accepted",
+          "desc": "Software, operating systems, and firmware that are no longer supported by the vendor and no longer receive security updates are removed from in-scope devices. Where removal is not possible, a formal risk acceptance is documented and compensating controls are applied.",
+          "achieved": [
+            "A software inventory identifies the support status and end-of-life dates for all installed software and OS versions",
+            "End-of-life software is removed from in-scope devices before or immediately upon reaching end of support",
+            "Where removal is not possible prior to assessment, a formal risk acceptance is documented with details of compensating controls applied",
+            "A process exists to proactively plan migrations away from software approaching end of life"
+          ],
+          "evidence": [
+            "Software inventory with vendor-stated support end dates",
+            "Evidence of end-of-life software removal (e.g., before/after software inventory comparison)",
+            "Risk acceptance records for any end-of-life software retained, with compensating control documentation",
+            "Migration plan for software approaching end of life"
+          ]
+        }
+      ]
+    }
+  ]
+}

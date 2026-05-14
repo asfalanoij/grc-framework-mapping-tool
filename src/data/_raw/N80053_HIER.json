@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "name": "NIST SP 800-53 Rev 5",
+    "version": "Rev 5 (2020, updated 2021)",
+    "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+    "color": "#8B5CF6"
+  },
+  "about": {
+    "title": "NIST SP 800-53 Rev 5",
+    "blurb": "NIST Special Publication 800-53 provides a catalogue of security and privacy controls for information systems and organisations. Revision 5 reorganised controls into 20 families, made them outcome-based, and integrated privacy controls alongside security controls. It is widely used as the baseline for US federal systems and referenced globally.",
+    "sections": [
+      {
+        "h": "Control Families",
+        "p": [
+          "Controls are organised into 20 families identified by two-letter identifiers (e.g. AC for Access Control). Each family contains a set of numbered controls and control enhancements."
+        ]
+      },
+      {
+        "h": "Baselines",
+        "p": [
+          "NIST SP 800-53B defines three control baselines — Low, Moderate, and High — corresponding to the impact level of the information system. Organisations select and tailor controls from the appropriate baseline."
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "AC",
+      "name": "Access Control",
+      "desc": "Policies and procedures for system access, account management, least privilege, remote access, and wireless access. Covers the full spectrum of who can access what resources and under what conditions.",
+      "achieved": [
+        "An Access Control policy is established, documented, approved, and reviewed at defined intervals.",
+        "Account management procedures are implemented covering provisioning, modification, disabling, removal, and review.",
+        "Least privilege is enforced; users have only the access required for their assigned roles.",
+        "Remote access is controlled, monitored, and requires multi-factor authentication.",
+        "Separation of duties is implemented to reduce the risk of malicious activity."
+      ],
+      "evidence": [
+        "Access Control Policy document (AC-1) with approval and review history",
+        "Account management procedure and quarterly user access review records (AC-2)",
+        "Least-privilege configuration evidence and role-based access reports (AC-6)",
+        "Remote access policy and MFA configuration evidence (AC-17)"
+      ]
+    },
+    {
+      "id": "AT",
+      "name": "Awareness and Training",
+      "desc": "Ensures that personnel are aware of the security risks associated with their activities and are trained to carry out their assigned security responsibilities.",
+      "achieved": [
+        "All personnel complete security awareness training before system access and annually thereafter.",
+        "Individuals with security responsibilities receive role-specific training.",
+        "Training records are maintained and used to track completion.",
+        "Training content is reviewed and updated at least annually."
+      ],
+      "evidence": [
+        "Security awareness training completion records for all personnel (AT-2)",
+        "Role-specific security training records for privileged users and system administrators (AT-3)",
+        "Training programme documentation with annual review evidence (AT-1)"
+      ]
+    },
+    {
+      "id": "AU",
+      "name": "Audit and Accountability",
+      "desc": "Creates, protects, retains, and reviews system audit records to enable monitoring, analysis, investigation, and reporting of unlawful or unauthorised system activity.",
+      "achieved": [
+        "Audit logging is enabled for all in-scope systems capturing required event types.",
+        "Audit records are protected from unauthorised access, modification, and deletion.",
+        "Log retention meets defined requirements (minimum 90 days online, 12 months archived).",
+        "Audit records are reviewed at least weekly for anomalies and potential incidents.",
+        "System clocks are synchronised to authoritative time sources."
+      ],
+      "evidence": [
+        "Audit log configuration showing enabled event types per system (AU-2, AU-12)",
+        "SIEM centralised logging evidence with log protection configuration (AU-9)",
+        "Log retention policy and storage configuration (AU-11)",
+        "Weekly audit review records or automated review evidence (AU-6)"
+      ]
+    },
+    {
+      "id": "CA",
+      "name": "Assessment, Authorisation, and Monitoring",
+      "desc": "Assesses security and privacy controls, authorises system operation, monitors controls on an ongoing basis, and conducts penetration testing and security assessments.",
+      "achieved": [
+        "Security assessments are conducted at defined intervals and when significant changes occur.",
+        "Systems operate under an authorisation to operate (ATO) based on accepted risk.",
+        "Plan of action and milestones (POA&M) tracks identified weaknesses to remediation.",
+        "Continuous monitoring programme is in place covering all controls."
+      ],
+      "evidence": [
+        "Security assessment report (SAR) and plan of action and milestones (CA-2, CA-5)",
+        "Authorisation to operate (ATO) documentation (CA-6)",
+        "Continuous monitoring strategy and evidence of ongoing assessment activities (CA-7)",
+        "Penetration testing records (CA-8)"
+      ]
+    },
+    {
+      "id": "CM",
+      "name": "Configuration Management",
+      "desc": "Establishes and maintains the integrity of information systems by using a configuration management and change control process for hardware, software, firmware, and documentation.",
+      "achieved": [
+        "Security configuration baselines are established and documented for all system types.",
+        "Configuration changes go through a formal change control process with security impact analysis.",
+        "Unauthorised changes to system configurations are detected and remediated.",
+        "Software installation on operational systems is restricted to authorised software only."
+      ],
+      "evidence": [
+        "Security configuration baseline documents (CIS Benchmarks or equivalent) (CM-6)",
+        "Change management policy and change approval records (CM-3)",
+        "Configuration monitoring scan reports showing baseline compliance (CM-6)",
+        "Approved software list and installation control evidence (CM-7, CM-11)"
+      ]
+    },
+    {
+      "id": "CP",
+      "name": "Contingency Planning",
+      "desc": "Establishes, maintains, and effectively implements plans for emergency response, backup operations, and post-disaster recovery for systems to ensure the availability of critical resources and continuity of operations.",
+      "achieved": [
+        "A contingency plan is developed, tested, and updated at least annually.",
+        "Backups of system data and software are performed and protected.",
+        "Recovery objectives (RTO/RPO) are defined and met through redundancy and backup strategies.",
+        "Contingency plan exercises are conducted at least annually."
+      ],
+      "evidence": [
+        "Contingency plan document with approval and last update date (CP-2)",
+        "Backup schedule, completion logs, and restore test records (CP-9)",
+        "Annual contingency plan exercise report with lessons learned (CP-4)",
+        "Alternate processing and storage site documentation (CP-7, CP-8)"
+      ]
+    },
+    {
+      "id": "IA",
+      "name": "Identification and Authentication",
+      "desc": "Identifies information system users, processes acting on behalf of users, and devices, and authenticates the identities of those users, processes, or devices as a prerequisite to allowing access.",
+      "achieved": [
+        "All users are uniquely identified — shared or generic accounts are prohibited.",
+        "Multi-factor authentication is enforced for privileged accounts and remote access.",
+        "Passwords or authenticators meet defined strength and lifecycle requirements.",
+        "Service and device identities are managed through a formal process."
+      ],
+      "evidence": [
+        "Identity and authentication policy and unique user ID verification (IA-2, IA-4)",
+        "MFA enforcement configuration and coverage report for privileged accounts (IA-2(1))",
+        "Password policy configuration showing strength and expiry settings (IA-5)",
+        "Service account and device identity inventory (IA-3)"
+      ]
+    },
+    {
+      "id": "IR",
+      "name": "Incident Response",
+      "desc": "Establishes an operational incident handling capability for information system security incidents that includes preparation, detection, analysis, containment, recovery, and user response activities.",
+      "achieved": [
+        "An incident response plan is documented covering all phases from preparation to lessons learned.",
+        "Incident response team roles and escalation paths are defined and communicated.",
+        "Incidents are detected, classified, and responded to within defined timeframes.",
+        "Post-incident reviews are conducted and drive improvements to controls and the IRP."
+      ],
+      "evidence": [
+        "Incident response plan document with approval and review history (IR-8)",
+        "Incident response team RACI and contact list (IR-2)",
+        "Incident tracking records showing classification, response, and closure times (IR-5)",
+        "Post-incident review reports with follow-up action tracking (IR-4)"
+      ]
+    },
+    {
+      "id": "MA",
+      "name": "Maintenance",
+      "desc": "Performs maintenance on information systems, including controls on the tools, techniques, mechanisms, and personnel that conduct system maintenance.",
+      "achieved": [
+        "System maintenance is performed by authorised personnel only.",
+        "Maintenance activities are logged with details of work performed.",
+        "Equipment sent off-site for maintenance is sanitised of sensitive data.",
+        "Remote maintenance sessions are monitored and terminated when complete."
+      ],
+      "evidence": [
+        "Maintenance authorisation records and personnel vetting evidence (MA-2, MA-5)",
+        "Maintenance logs with timestamps, personnel, and work performed (MA-2)",
+        "Remote maintenance session monitoring configuration and logs (MA-4)",
+        "Media sanitisation records for equipment sent for off-site maintenance (MA-3)"
+      ]
+    },
+    {
+      "id": "MP",
+      "name": "Media Protection",
+      "desc": "Protects system media, both digital and non-digital, limits access to information on system media to authorised users, and sanitises or destroys media before disposal or reuse.",
+      "achieved": [
+        "Access to system media is restricted to authorised personnel.",
+        "Media containing sensitive information is marked, protected, and tracked.",
+        "Media is sanitised or destroyed in accordance with approved procedures before disposal or reuse.",
+        "Media transport is protected using encryption or physical safeguards."
+      ],
+      "evidence": [
+        "Media access control configuration and inventory of sensitive media (MP-2, MP-3)",
+        "Media sanitisation procedures and destruction records (MP-6)",
+        "Media transport policy and encryption configuration for transportable media (MP-5)",
+        "Certificates of destruction from approved media disposal provider (MP-6)"
+      ]
+    },
+    {
+      "id": "PE",
+      "name": "Physical and Environmental Protection",
+      "desc": "Limits physical access to information systems, equipment, and the respective operating environments to authorised individuals, and protects systems from environmental hazards.",
+      "achieved": [
+        "Physical access to facilities and systems is controlled and limited to authorised personnel.",
+        "Access logs and CCTV records are maintained and reviewed.",
+        "Environmental controls (fire, flood, temperature, power) protect information processing facilities.",
+        "Visitors are escorted and logged in controlled areas."
+      ],
+      "evidence": [
+        "Physical access control configuration and quarterly access review records (PE-2, PE-3)",
+        "CCTV coverage documentation and footage retention policy (PE-6)",
+        "Environmental monitoring system configuration and alert records (PE-14)",
+        "Visitor log records and escort procedure documentation (PE-8)"
+      ]
+    },
+    {
+      "id": "PL",
+      "name": "Planning",
+      "desc": "Develops, documents, and periodically updates security and privacy plans for information systems that describe the security controls in place and the rules of behaviour for individuals accessing the systems.",
+      "achieved": [
+        "A system security plan (SSP) is developed, maintained, and reviewed at defined intervals.",
+        "Rules of behaviour (acceptable use) are defined and acknowledged by all users.",
+        "Security planning processes address the overall strategy for protecting systems.",
+        "Privacy plans are developed where personally identifiable information is processed."
+      ],
+      "evidence": [
+        "System Security Plan (SSP) with approval and last update evidence (PL-2)",
+        "Acceptable Use Policy (Rules of Behaviour) with signed acknowledgements (PL-4)",
+        "Security and privacy planning process documentation (PL-1)"
+      ]
+    },
+    {
+      "id": "PM",
+      "name": "Programme Management",
+      "desc": "Enterprise-wide programme management controls that support the implementation of the risk management framework — including security governance, risk management strategy, insider threat programme, and security workforce management.",
+      "achieved": [
+        "An enterprise-wide information security programme is established with senior management accountability.",
+        "Risk management strategy and tolerance levels are defined and communicated.",
+        "An insider threat programme is established to detect and respond to insider risk.",
+        "Security resources are allocated commensurate with identified risks."
+      ],
+      "evidence": [
+        "Information Security Programme Plan (PM-1)",
+        "Risk management strategy document with risk tolerance thresholds (PM-9)",
+        "Insider threat programme documentation and monitoring evidence (PM-12)",
+        "Information security workforce and training plan (PM-13)"
+      ]
+    },
+    {
+      "id": "PS",
+      "name": "Personnel Security",
+      "desc": "Ensures that individuals occupying positions of responsibility within organisations are trustworthy and meet established security criteria, and that systems are protected during and after personnel actions such as terminations and transfers.",
+      "achieved": [
+        "Personnel are screened before being granted access to systems and data.",
+        "Position risk designations are established for all positions.",
+        "Access is terminated promptly upon personnel separation.",
+        "Personnel security requirements are included in agreements with third-party providers."
+      ],
+      "evidence": [
+        "Pre-employment screening policy and records (PS-3)",
+        "Position risk designation register (PS-2)",
+        "Offboarding checklist showing timely access revocation on separation (PS-4)",
+        "Third-party personnel security clauses in contracts (PS-7)"
+      ]
+    },
+    {
+      "id": "PT",
+      "name": "Personally Identifiable Information Processing and Transparency",
+      "desc": "Addresses the processing of personally identifiable information (PII), including consent and privacy notices, the minimisation of PII collection, and the rights of individuals with respect to their PII.",
+      "achieved": [
+        "Privacy notices are provided to individuals at the point of PII collection.",
+        "PII is minimised to only that which is necessary for the stated purpose.",
+        "Consent records are maintained where consent is the legal basis for processing.",
+        "Individual access and correction rights are supported through defined procedures."
+      ],
+      "evidence": [
+        "Privacy notice documentation and publication evidence (PT-5)",
+        "Data minimisation policy and privacy impact assessment records (PT-2, PT-3)",
+        "Consent management records (PT-4)",
+        "Data subject rights procedure and request handling records (PT-6)"
+      ]
+    },
+    {
+      "id": "RA",
+      "name": "Risk Assessment",
+      "desc": "Assesses the risk to organisational operations, assets, individuals, and other organisations resulting from the operation of information systems and the processing of information.",
+      "achieved": [
+        "Risk assessments are conducted at defined intervals and when significant changes occur.",
+        "Vulnerability scanning is performed regularly and findings are risk-ranked.",
+        "Threat intelligence is collected and used to inform risk assessments.",
+        "Risk assessment results are used to inform control selection and risk treatment decisions."
+      ],
+      "evidence": [
+        "Risk assessment methodology document and completed risk assessments (RA-3)",
+        "Vulnerability scanning configuration and output reports (RA-5)",
+        "Threat intelligence sources and integration into risk assessment process (RA-3)",
+        "Risk treatment decisions and risk acceptance records (RA-7)"
+      ]
+    },
+    {
+      "id": "SA",
+      "name": "System and Services Acquisition",
+      "desc": "Allocates sufficient resources to protect information systems, employs system development life cycle processes that incorporate information security, applies developer configuration management, and ensures appropriate security considerations in supply chain risk management.",
+      "achieved": [
+        "Security requirements are defined and included in system and service acquisitions.",
+        "An SDL process incorporating security is defined and followed.",
+        "Supply chain risk management is integrated into acquisition processes.",
+        "External systems interfaces are controlled and monitored."
+      ],
+      "evidence": [
+        "Security requirements in procurement documentation and contracts (SA-4)",
+        "SDL process documentation with security checkpoints (SA-3)",
+        "Supply chain risk management policy and supplier assessment records (SA-12)",
+        "External system connection agreements and interface controls (SA-9)"
+      ]
+    },
+    {
+      "id": "SC",
+      "name": "System and Communications Protection",
+      "desc": "Monitors, controls, and protects communications at the external boundaries and key internal boundaries of information systems, and employs architectural designs, software development techniques, and systems engineering principles that promote security.",
+      "achieved": [
+        "Network communications are monitored and controlled at external and key internal boundaries.",
+        "Encryption is used to protect the confidentiality and integrity of transmitted information.",
+        "Network segmentation isolates sensitive components from general-purpose systems.",
+        "Denial-of-service protection mechanisms are in place for critical services."
+      ],
+      "evidence": [
+        "Boundary protection configuration (firewalls, IPS) and rule review records (SC-7)",
+        "Encryption policy and configuration evidence for data in transit (SC-8)",
+        "Network segmentation architecture documentation (SC-7)",
+        "Denial-of-service protection configuration (SC-5)"
+      ]
+    },
+    {
+      "id": "SI",
+      "name": "System and Information Integrity",
+      "desc": "Identifies, reports, and corrects information system flaws, provides protection from malicious code, monitors alerts and advisories, and verifies the correct operation of security functions.",
+      "achieved": [
+        "Malware protection is deployed and maintained on all managed systems.",
+        "Security alerts and advisories are received, assessed, and acted upon.",
+        "Software and firmware flaws are identified and remediated within defined timeframes.",
+        "Intrusion detection monitoring is in place and alerts are investigated."
+      ],
+      "evidence": [
+        "Anti-malware deployment coverage and signature update configuration (SI-3)",
+        "Vulnerability and patch management records showing SLA compliance (SI-2)",
+        "Security alert and advisory subscription and response records (SI-5)",
+        "IDS/IPS deployment and alert review records (SI-4)"
+      ]
+    },
+    {
+      "id": "SR",
+      "name": "Supply Chain Risk Management",
+      "desc": "Establishes a supply chain risk management strategy, identifies and assesses supply chain risks, and implements controls to address those risks throughout the system development life cycle.",
+      "achieved": [
+        "A supply chain risk management policy and strategy are established and documented.",
+        "Suppliers are assessed prior to engagement and monitored throughout the relationship.",
+        "Software Bill of Materials (SBOM) is maintained for critical systems.",
+        "Supply chain incidents are tracked and responded to using defined procedures."
+      ],
+      "evidence": [
+        "Supply chain risk management policy and strategy document (SR-1, SR-2)",
+        "Supplier risk assessment records and ongoing monitoring evidence (SR-3, SR-6)",
+        "SBOM for critical software components (SR-4)",
+        "Supply chain incident response procedure and exercise records (SR-8)"
+      ]
+    }
+  ]
+}

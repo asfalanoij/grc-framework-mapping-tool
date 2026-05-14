@@ -1,0 +1,1022 @@
+{
+  "meta": {
+    "name": "NCSC CAF 4.0",
+    "color": "#1E40AF",
+    "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework"
+  },
+  "about": {
+    "title": "About the NCSC Cyber Assessment Framework",
+    "blurb": "A systematic, outcome-focused tool for assessing how well cyber risks to essential functions are managed. Used for self-assessment or by independent / regulatory assessors.",
+    "sections": [
+      {
+        "h": "A tool for assessing cyber resilience",
+        "p": [
+          "The Cyber Assessment Framework (CAF) provides a systematic and comprehensive approach to assessing the extent to which cyber risks to essential function(s) are being managed by the organisation responsible.",
+          "CAF-based assessments can be carried out either by the responsible organisation itself (self-assessment) or by an independent external entity, possibly a regulator / cyber oversight body or a suitably qualified organisation acting on behalf of a regulator, such as an NCSC assured commercial service provider.",
+          "The 4 high-level objectives and 14 principles are written in terms of outcomes — what needs to be achieved, rather than a checklist of what needs to be done. The CAF adds further detail through structured sets of Indicators of Good Practice (IGPs).",
+          "NCSC developed the CAF in its role as national technical authority for cyber security; NCSC itself has no regulatory responsibilities. Organisations subject to cyber regulation should consult their regulators on whether CAF should be used in the context of meeting regulatory requirements."
+        ]
+      },
+      {
+        "h": "CAF requirements",
+        "intro": "The CAF was developed to meet eight requirements:",
+        "l": [
+          "Provide a suitable framework to assist in carrying out cyber resilience assessments.",
+          "Maintain the outcome-focused approach of the NCSC cyber security and resilience principles and discourage tick-box assessments.",
+          "Be compatible with appropriate existing cyber security guidance and standards.",
+          "Enable the identification of effective cyber security and resilience improvement activities.",
+          "Exist in a common core version which is sector-agnostic.",
+          "Be extensible to accommodate sector-specific elements as may be required.",
+          "Enable the setting of meaningful target security levels — possibly reflecting a regulator view of appropriate and proportionate security.",
+          "Be as straightforward and cost-effective to apply as possible."
+        ]
+      },
+      {
+        "h": "Principles and contributing outcomes",
+        "p": [
+          "Each top-level NCSC security and resilience principle defines a broad cyber security outcome. The precise approach to achieving it is not specified — it varies according to organisational circumstances.",
+          "Each principle breaks down into a collection of lower-level contributing outcomes, all of which will normally need to be achieved to fully satisfy the top-level principle.",
+          "Each contributing outcome is associated with a set of Indicators of Good Practice (IGPs). The IGPs describe the circumstances under which the outcome is judged ‘achieved’, ‘not achieved’, or (in some cases) ‘partially achieved’."
+        ]
+      },
+      {
+        "h": "Using IGPs",
+        "p": [
+          "Assessment of contributing outcomes is primarily a matter of expert judgement. IGPs do not remove the requirement for informed use of cyber security expertise and sector knowledge — they are starting points, used flexibly alongside the NCSC top-level guidance.",
+          "Achieved (GREEN) — typical characteristics of an organisation fully achieving the outcome. All indicators would normally need to be present.",
+          "Not achieved (RED) — typical characteristics of an organisation not achieving the outcome. The presence of any one indicator is normally sufficient to justify a ‘not achieved’ assessment.",
+          "Partially achieved (AMBER) — when present, typical characteristics of an organisation partially achieving the outcome. Partial achievement should represent more than giving credit for doing something vaguely relevant."
+        ],
+        "t": {
+          "head": [
+            "",
+            "IGPs are…",
+            "IGPs are not…"
+          ],
+          "rows": [
+            [
+              "Purpose",
+              "Intended to help inform expert judgement.",
+              "A checklist to be used in an inflexible assessment process."
+            ],
+            [
+              "Scope",
+              "Important examples of what an assessor will normally need to consider — which may need to be supplemented in some cases.",
+              "An exhaustive list covering everything an assessor needs to consider."
+            ],
+            [
+              "Applicability",
+              "Designed to be widely applicable across different organisations, but applicability needs to be established.",
+              "Guaranteed to apply verbatim to all organisations."
+            ]
+          ]
+        }
+      },
+      {
+        "h": "Setting target levels and CAF profiles",
+        "p": [
+          "Applying the CAF produces 41 individual assessments — one per contributing outcome. A result in which all 41 are assessed as ‘achieved’ indicates a level of cyber security some way beyond the bare minimum ‘basic cyber hygiene’ level.",
+          "A cyber oversight body sets target levels for organisations within their sector. One approach is to relate target levels to the ability to withstand specified categories of cyber attacks (basic capability, moderate capability, etc.) using the idea of CAF profiles.",
+          "A CAF profile consists of a mixture: some contributing outcomes to be met at ‘achieved’, some at ‘partially achieved’, and possibly some identified as ‘not applicable’ where the capability is not appropriate at the level of the profile.",
+          "It is not the responsibility of NCSC to mandate what represents appropriate and proportionate cyber security and resilience — any target is for the relevant cyber oversight body to define."
+        ]
+      },
+      {
+        "h": "Making the CAF sector-specific",
+        "p": [
+          "The common core of the CAF (objectives, principles, contributing outcomes and IGPs) is sector-agnostic — designed to be generally applicable to all organisations responsible for essential functions across all key sectors. Sector-specific aspects can include:"
+        ],
+        "l": [
+          "Sector-specific CAF profiles — target profiles defined by the relevant cyber oversight body, possibly from a regulatory perspective.",
+          "Sector-specific interpretations of contributing outcomes / IGPs — to better clarify meaning within a sector.",
+          "Sector-specific additional contributing outcomes / IGPs — where generic outcomes cannot adequately cover sector-specific cyber security requirements."
+        ]
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "id": "A",
+      "name": "Managing Security Risk",
+      "desc": "Appropriate organisational structures, policies, processes and procedures in place to understand, assess and systematically manage security risks to network and information systems supporting essential functions.",
+      "principles": [
+        {
+          "id": "A1",
+          "name": "Governance",
+          "desc": "The organisation has appropriate management policies, processes and procedures in place to govern its approach to the security of network and information systems.",
+          "outcomes": [
+            {
+              "id": "A1.a",
+              "name": "Board Direction",
+              "desc": "You have effective organisational security management led at board level and articulated clearly in corresponding policies.",
+              "achieved": [
+                "Your organisation's approach and policy relating to the security of network and information systems supporting essential function(s) are owned and managed at board-level, communicated meaningfully to risk management decision-makers across the organisation.",
+                "Regular board-level discussions on security take place, based on timely and accurate information and informed by expert guidance.",
+                "There is a board-level individual with overall accountability for the security of network and information systems who drives regular discussion at board-level.",
+                "Board-level direction is translated into effective organisational practices that direct and control security of network and information systems supporting essential function(s).",
+                "The board has the information and understanding needed to effectively discuss how the security and resilience of network and information systems contributes to the delivery of essential function(s) and the potential impact from compromise.",
+                "Security is recognised as an important enabler for the resilience of essential function(s) and considered in all relevant discussions."
+              ],
+              "evidence": [
+                "Information Security Policy approved by board (with version & sign-off date)",
+                "Board / executive committee minutes covering security topics",
+                "Board reporting pack with security KPIs and risk dashboard",
+                "Board-level accountability charter naming the responsible director",
+                "Evidence policies are communicated to risk owners (e.g. distribution log, intranet)"
+              ]
+            },
+            {
+              "id": "A1.b",
+              "name": "Roles and Responsibilities",
+              "desc": "Your organisation has established roles and responsibilities for the security of network and information systems at all levels, with clear and well-understood channels for communicating and escalating risks.",
+              "achieved": [
+                "Key roles and responsibilities for security have been identified and are reviewed regularly to ensure they remain fit for purpose.",
+                "Appropriately capable and knowledgeable staff fill those roles and are given the time, authority and resources to carry out their duties.",
+                "There is clarity on who in your organisation has overall accountability for the security of network and information systems supporting essential function(s)."
+              ],
+              "evidence": [
+                "Security RACI matrix or accountability map",
+                "Job descriptions / role profiles for security roles (CISO, security manager, asset owners)",
+                "Org chart with security reporting lines and overall accountability owner",
+                "Annual review evidence of roles & responsibilities",
+                "Records that role-holders have time, budget and authority to deliver"
+              ]
+            },
+            {
+              "id": "A1.c",
+              "name": "Decision-making",
+              "desc": "You have senior-level accountability for the security of network and information systems, and delegate decision-making authority appropriately and effectively. Risks to systems related to essential function(s) are considered in the context of other organisational risks.",
+              "achieved": [
+                "Senior management have visibility of key risk decisions made throughout the organisation.",
+                "Risk management decision-makers understand their responsibilities for making effective and timely decisions in the context of the risk appetite regarding essential function(s), as set by senior management.",
+                "Risk management decision-making is delegated and escalated where necessary, across the organisation, to people who have the skills, knowledge, tools and authority they need.",
+                "Risk management decisions are regularly reviewed to ensure their continued relevance and validity."
+              ],
+              "evidence": [
+                "Documented risk appetite statement",
+                "Risk management framework / methodology document",
+                "Risk decision log with rationale and sign-off",
+                "Authority matrix (who can decide what at which threshold)",
+                "Regular review records showing decisions are revisited for continued validity"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "A2",
+          "name": "Risk Management",
+          "desc": "The organisation takes appropriate steps to identify, assess and understand security risks to network and information systems supporting the operation of essential functions. This includes an overall organisational approach to risk management.",
+          "outcomes": [
+            {
+              "id": "A2.a",
+              "name": "Risk Management Process",
+              "desc": "Your organisation has effective internal processes for managing risks to the security and resilience of network and information systems related to essential function(s) and communicating associated activities.",
+              "achieved": [
+                "Your organisational process ensures that security risks to network and information systems relevant to essential function(s) are identified, analysed, prioritised and managed.",
+                "Your approach to risk is focused on the possibility of adverse impact to essential function(s), leading to a detailed understanding of how impact might arise from possible threat actor actions.",
+                "Risk assessments are based on a clearly understood set of threat assumptions, informed by an up-to-date understanding of threats to essential function(s), your sector and wider national infrastructure.",
+                "Risk assessments are informed by an understanding of vulnerabilities in network and information systems supporting essential function(s).",
+                "The output of risk management is a clear set of traceable and prioritised security requirements that address risks in line with your organisational approach to security.",
+                "Significant conclusions reached are communicated to key security decision-makers and accountable individuals.",
+                "Risk assessments are dynamic and readily updated in light of relevant changes (technical changes, change of use, emergent technologies, new threat information).",
+                "The effectiveness of your risk management process is reviewed regularly and improvements made as required.",
+                "You anticipate technological developments that could be used to adversely impact network and information systems supporting essential function(s)."
+              ],
+              "evidence": [
+                "Risk Assessment Methodology document (impact, likelihood, criteria)",
+                "Current Risk Register with prioritised, traceable security requirements",
+                "Risk Treatment Plan (RTP) tied to controls",
+                "Threat assumptions document supporting risk assessments",
+                "Records of risk assessment reviews after major changes (system, threat, regulation)"
+              ]
+            },
+            {
+              "id": "A2.b",
+              "name": "Understanding Threat",
+              "desc": "You understand the capabilities, methods and techniques of threat actors and what network and information systems they may compromise to adversely impact essential function(s). This information is used to inform security and resilience risk management decisions.",
+              "achieved": [
+                "You perform detailed threat analysis and understand how this applies to network and information systems supporting essential function(s) in the context of your sector and wider national infrastructure.",
+                "Your detailed understanding of threat includes the methods and techniques available to capable and well-resourced threat actors and how they could be used systematically against your systems.",
+                "You use appropriate techniques (e.g. attacker-perspective analysis) to anticipate probable attack methods, targets and objectives, and develop plausible scenarios.",
+                "You understand the different steps a capable threat actor would need to take to reach probable targets.",
+                "You identify and justify what measures can be used at each step to reduce the likelihood of the threat actor reaching probable targets or achieving their objectives.",
+                "You maintain a detailed understanding of current threats (e.g. by threat intelligence and proactive research).",
+                "You apply your detailed understanding of threat to inform risk management decision-making.",
+                "You have documented the steps required to undertake detailed threat analysis."
+              ],
+              "evidence": [
+                "Threat intelligence subscriptions / feeds in use",
+                "Sector / national-infrastructure threat assessment reports",
+                "Threat-actor profile briefings (capability, methods, TTPs)",
+                "Attacker-perspective analysis (e.g. red-team report, attack-path analysis)",
+                "Documented detailed threat-analysis steps and how outputs inform decisions"
+              ]
+            },
+            {
+              "id": "A2.c",
+              "name": "Assurance",
+              "desc": "You have gained confidence in the effectiveness of the security of your technology, people and processes relevant to the operation of network and information systems supporting essential function(s).",
+              "achieved": [
+                "You validate that the security measures protecting essential function(s) are effective and remain effective for the lifetime over which they are needed.",
+                "You understand the assurance methods available to you and choose appropriate methods to gain confidence in security.",
+                "Your confidence in the security as it relates to your technology, people and processes can be justified to, and verified by, a third party.",
+                "Security deficiencies uncovered by assurance activities are assessed, prioritised and remedied when necessary in a timely and effective way.",
+                "The methods used for assurance are reviewed to ensure they are working as intended and remain the most appropriate method to use."
+              ],
+              "evidence": [
+                "Internal audit programme / 3-year schedule",
+                "External assessment reports (CAF, ISO 27001, SOC 2, pen test)",
+                "Control-effectiveness testing evidence",
+                "Assurance methodology document",
+                "Tracker of assurance findings, prioritisation and remediation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "A3",
+          "name": "Asset Management",
+          "desc": "Everything required to deliver, maintain or support network and information systems necessary for essential functions is determined and understood. This includes data, people and systems, as well as supporting infrastructure (such as power or cooling).",
+          "outcomes": [
+            {
+              "id": "A3.a",
+              "name": "Asset Management",
+              "desc": "All assets required to deliver, maintain or support essential function(s) are determined, understood, prioritised and managed throughout their lifecycle.",
+              "achieved": [
+                "All assets relevant to the secure operation of network and information systems supporting essential function(s) are identified and inventoried at suitable detail. The inventory is kept up-to-date.",
+                "Dependencies on supporting infrastructure (e.g. power, cooling) are recognised and recorded.",
+                "You have prioritised your assets according to their importance to the operation of essential function(s).",
+                "You have assigned responsibility for managing all assets, including physical assets, relevant to the operation of essential function(s).",
+                "Assets are managed with cyber security in mind throughout their lifecycle, from creation through to eventual decommissioning or disposal."
+              ],
+              "evidence": [
+                "Asset inventory (hardware, software, services, data, people, infra dependencies)",
+                "Asset classification and prioritisation matrix",
+                "Assigned asset owners (named individuals)",
+                "Dependency map including supporting infrastructure (power, cooling, comms)",
+                "Lifecycle policy covering creation through decommissioning / sanitisation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "A4",
+          "name": "Supply Chain",
+          "desc": "The organisation understands and manages security risks to network and information systems supporting essential functions that arise as a result of dependencies on suppliers. This includes ensuring that appropriate measures are employed where third party services are used.",
+          "outcomes": [
+            {
+              "id": "A4.a",
+              "name": "Supply Chain",
+              "desc": "You understand and effectively manage the risks associated with suppliers to the security of network and information systems supporting essential function(s).",
+              "achieved": [
+                "You have a deep understanding of your supply chain, including sub-contractors, and the wider risks it faces.",
+                "You consider supplier ownership, nationality, partnerships, competitors, sub-contractors and their cyber security approach. These factors inform risk assessment and procurement decisions.",
+                "Your supply chain risk management considers risks from supply chain subversion by capable and well-resourced threat actors.",
+                "Critical suppliers can demonstrate appropriate and proportionate cyber security in the context of capable threat actors.",
+                "You have confidence that information held by suppliers essential to the operation of essential function(s) is appropriately protected.",
+                "You understand which contracts are relevant and include appropriate security obligations.",
+                "You have a proactive contract management approach (may include a contract management plan).",
+                "Customer/supplier ownership of responsibilities is defined in contracts.",
+                "All network connections and data sharing with third parties are managed effectively and proportionately.",
+                "Where appropriate, your incident management process and that of suppliers provide mutual support in incident resolution."
+              ],
+              "evidence": [
+                "Supplier register with criticality ratings and sub-contractor visibility",
+                "Sample contracts showing security obligations and customer/supplier responsibility split",
+                "Supplier security assessment reports / due diligence records",
+                "Inventory of third-party network connections and data flows",
+                "Joint incident-management / mutual-support arrangements with critical suppliers"
+              ]
+            },
+            {
+              "id": "A4.b",
+              "name": "Secure Software Development and Support",
+              "desc": "You actively maximise the use of secure and supported software, whether developed internally or sourced externally, within network and information systems supporting essential function(s).",
+              "achieved": [
+                "Your software supplier(s) leverages an established secure software development framework (e.g. NIST SSDF, Microsoft SDL).",
+                "Your software supplier can demonstrate a thorough understanding of the composition and provenance of software provided to you, including third-party components, monitored for vulnerabilities throughout the lifespan.",
+                "You consider the security of environments (development, test, production) including source code and repositories appropriate within the context of capable and well-resourced threat actors.",
+                "The software development lifecycle is informed by detailed understanding of threat and applies techniques such as threat modelling to identify and assess potential vulnerabilities and attack vectors.",
+                "You can attest to the authenticity and integrity of software, including updates and patches."
+              ],
+              "evidence": [
+                "Software supplier(s) attested to a secure development framework (SSDF, Microsoft SDL)",
+                "Software Bill of Materials (SBOM) for in-use software",
+                "Vendor patching and security-notification SLA evidence",
+                "Open-source component inventory and vulnerability monitoring",
+                "Software signing / integrity-verification evidence for updates and patches"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Protecting Against Cyber Attack",
+      "desc": "Proportionate security measures are in place to protect network and information systems supporting essential functions from cyber attack.",
+      "principles": [
+        {
+          "id": "B1",
+          "name": "Service Protection Policies, Processes and Procedures",
+          "desc": "The organisation defines, implements, communicates and enforces appropriate policies, processes and procedures that direct its overall approach to securing systems and data that support operation of essential functions.",
+          "outcomes": [
+            {
+              "id": "B1.a",
+              "name": "Policy, Process and Procedure Development",
+              "desc": "You have developed and continue to improve a set of cyber security and resilience policies, processes and procedures that manage and mitigate the risk of adverse impact to network and information systems supporting essential function(s).",
+              "achieved": [
+                "You fully document your overarching security governance and risk management approach, technical security practice and specific regulatory compliance.",
+                "Cyber security is integrated and embedded throughout policies, processes and procedures and key performance indicators are reported to executive management.",
+                "Policies, processes and procedures are practical, usable and appropriate to mitigate risk of adverse impact to essential function(s).",
+                "Policies, processes and procedures that rely on user behaviour are practical, appropriate and achievable.",
+                "You review and update policies, processes and procedures at suitably regular intervals (and after major incidents).",
+                "Any changes to essential function(s) or threat triggers a review of policies, processes and procedures.",
+                "Your systems are designed so they remain secure even when user policies, processes and procedures are not always followed."
+              ],
+              "evidence": [
+                "Policy register / catalogue covering governance, technical practice and regulatory compliance",
+                "Policy review schedule and review records",
+                "Sample policies (acceptable use, access control, incident response, etc.)",
+                "KPIs / metrics on policy effectiveness reported to executive management",
+                "Evidence systems remain secure even when manual user policies are not followed"
+              ]
+            },
+            {
+              "id": "B1.b",
+              "name": "Policy, Process and Procedure Implementation",
+              "desc": "You have successfully implemented your security policies, processes and procedures and can demonstrate the security benefits achieved.",
+              "achieved": [
+                "All your policies, processes and procedures are followed; their correct application and security effectiveness is evaluated.",
+                "Policies, processes and procedures are integrated with other organisational policies (including HR assessments of trustworthiness).",
+                "Policies, processes and procedures are effectively and appropriately communicated across all levels of the organisation, resulting in good staff awareness of responsibilities.",
+                "Appropriate action is taken to address all breaches of policies, processes and procedures with potential to adversely impact essential function(s) including aggregated breaches."
+              ],
+              "evidence": [
+                "Communication and training records for policies",
+                "Policy breach / exception register with trend analysis",
+                "Compliance audit findings and remediation tracking",
+                "HR integration (e.g. screening tied to policy)",
+                "Sample disciplinary actions for serious breaches (anonymised)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "name": "Identity and Access Control",
+          "desc": "The organisation understands, documents and manages access to network and information systems supporting essential functions. Users (or automated functions) that can access data or systems are appropriately verified, authenticated and authorised.",
+          "outcomes": [
+            {
+              "id": "B2.a",
+              "name": "Identity Verification, Authentication and Authorisation",
+              "desc": "You robustly verify, authenticate and authorise access to network and information systems supporting essential function(s).",
+              "achieved": [
+                "Your initial identity verification process is robust enough to provide a high level of confidence of a user's identity profile before allowing access.",
+                "Only authorised and individually authenticated users can physically access and logically connect to your systems.",
+                "The number of authorised users and systems is limited to the minimum necessary to support essential function(s).",
+                "You use additional strong authentication mechanisms (e.g. MFA) for all user access, including remote, to all systems.",
+                "The list of users and systems is reviewed regularly, at least every six months.",
+                "Your approach to authenticating users, devices and systems follows up-to-date best practice."
+              ],
+              "evidence": [
+                "Identity verification and proofing policy",
+                "MFA configuration evidence for all user access",
+                "Access review records (every six months minimum)",
+                "Authentication standards aligned to current best practice",
+                "Procedure for individually authenticating remote and machine-to-machine access"
+              ]
+            },
+            {
+              "id": "B2.b",
+              "name": "Device Management",
+              "desc": "You fully know and have trust in the devices that are used to access your networks, information systems and data that support essential function(s).",
+              "achieved": [
+                "All privileged operations are conducted from highly trusted devices (e.g. Privileged Access Workstations) dedicated solely to those operations.",
+                "You obtain independent and professional assurance of third-party devices/networks before connecting, or only allow dedicated third-party devices/networks.",
+                "You perform certificate-based device identity management and only allow known devices to access systems necessary for essential function(s).",
+                "You perform regular scans to detect unknown devices and investigate findings."
+              ],
+              "evidence": [
+                "Corporate device inventory",
+                "Mobile Device Management (MDM) configuration",
+                "Privileged Access Workstation (PAW) configuration for privileged ops",
+                "Third-party device assurance evidence (or dedicated network)",
+                "Certificate-based device identity / regular unknown-device scans"
+              ]
+            },
+            {
+              "id": "B2.c",
+              "name": "Privileged User Management",
+              "desc": "You closely manage privileged user access to network and information systems supporting essential function(s).",
+              "achieved": [
+                "Privileged user access is carried out from dedicated separate accounts that are closely monitored and managed.",
+                "Temporary, time-bound rights for privileged access and external third-party support are in place.",
+                "Privileged user access rights are regularly reviewed and updated as part of joiners/movers/leavers process.",
+                "All privileged user activity is routinely reviewed, validated and recorded for offline analysis and investigation."
+              ],
+              "evidence": [
+                "Privileged user register including third parties",
+                "Just-in-time / time-bound privileged access tooling (PAM)",
+                "Privileged session logs / recordings",
+                "Privileged access review records aligned to joiners-movers-leavers",
+                "Logical separation between privileged and standard user accounts"
+              ]
+            },
+            {
+              "id": "B2.d",
+              "name": "Identity and Access Management (IdAM)",
+              "desc": "You closely manage and maintain identity and access control for users, devices and systems accessing network and information systems supporting essential function(s).",
+              "achieved": [
+                "You follow a robust procedure to verify each user and issue minimum required access rights, with the procedure regularly audited.",
+                "User access rights are reviewed both via joiners/movers/leavers and at regular intervals (at least annually).",
+                "All user, device and system access is logged and monitored.",
+                "You regularly review access logs and correlate this data with other access records and expected activity.",
+                "Attempts by unauthorised users, devices or systems to connect are alerted, promptly assessed and investigated."
+              ],
+              "evidence": [
+                "Documented identity verification & access provisioning procedure",
+                "Access reviews (joiners-movers-leavers + at least annual recerts)",
+                "Centralised access logs across users, devices and systems",
+                "Correlation of access logs with expected activity",
+                "Alerts / investigations of unauthorised access attempts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "name": "Data Security",
+          "desc": "Data stored or transmitted electronically is protected from actions such as unauthorised access, modification, or deletion that may cause an adverse impact on essential functions.",
+          "outcomes": [
+            {
+              "id": "B3.a",
+              "name": "Understanding Data",
+              "desc": "You have a good understanding of data important to network and information systems supporting essential function(s) — where it is stored, where it travels and how unavailability or unauthorised access, release, modification or deletion would adversely impact essential function(s).",
+              "achieved": [
+                "You have identified and catalogued all important data and who has access to it.",
+                "You maintain a current understanding of the location, quantity and quality of important data.",
+                "You take steps to remove or minimise unnecessary copies or unneeded historic data.",
+                "You maintain a current understanding of mobile devices, media and data links carrying important data.",
+                "You understand the context, limitations and dependencies of your important data.",
+                "You document and validate (at least annually) the impact of unauthorised access, release, modification, deletion or unavailability scenarios."
+              ],
+              "evidence": [
+                "Catalogue of important data + named owners",
+                "Data flow diagrams covering storage, transmission and third-party access",
+                "Mobile device / removable media data inventory",
+                "Documented impact statements per scenario (unauth access, modification, loss)",
+                "Annual validation evidence of data-impact statements"
+              ]
+            },
+            {
+              "id": "B3.b",
+              "name": "Data in Transit",
+              "desc": "You have protected the transit of data important to network and information systems supporting essential function(s) (including transfers to third parties).",
+              "achieved": [
+                "You have identified and protected (effectively and proportionately) all data links carrying important data.",
+                "You apply appropriate physical and/or technical means (e.g. cryptography) to protect data over non-trusted carriers, with justified confidence in the robustness of the protection.",
+                "Suitable alternative transmission paths are available where there is significant risk of impact due to resource limitations, equipment failure, blocking or jamming."
+              ],
+              "evidence": [
+                "Inventory of all data links carrying important data",
+                "Encryption-in-transit standards (TLS, IPsec, VPN configurations)",
+                "Cryptographic protection assurance (FIPS, certified products)",
+                "Alternative transmission paths for resilience",
+                "Sample TLS configurations / scan reports proving robustness"
+              ]
+            },
+            {
+              "id": "B3.c",
+              "name": "Stored Data",
+              "desc": "You have protected stored soft and hard copy data important to network and information systems supporting essential function(s).",
+              "achieved": [
+                "All copies of important data are necessary; transfers to less secure systems are limited detail and/or read-only.",
+                "You have applied suitable physical and/or technical means to protect important stored data from unauthorised access, modification or deletion.",
+                "Cryptographic protections (where used) apply suitable technical and procedural means with justified confidence in robustness.",
+                "You have suitable, secured backups (off-line or segregated, or alternative forms such as paper) to allow operation to continue if original data is unavailable.",
+                "Necessary historic or archive data is suitably secured in storage."
+              ],
+              "evidence": [
+                "Encryption-at-rest standards and implementation evidence",
+                "Cryptographic key management procedure",
+                "Backup configuration with retention policy",
+                "Backup test logs (off-line / segregated)",
+                "Secure storage of historic / archive data"
+              ]
+            },
+            {
+              "id": "B3.d",
+              "name": "Mobile Data",
+              "desc": "You have protected data important to network and information systems supporting essential function(s) on mobile devices (smartphones, tablets, laptops).",
+              "achieved": [
+                "Mobile devices that hold important data are catalogued, under your organisation's control and configured according to platform best practice with appropriate technical and procedural policies.",
+                "Your organisation can remotely wipe all mobile devices holding important data.",
+                "You have minimised data on mobile devices, with some data automatically deleted after a certain period."
+              ],
+              "evidence": [
+                "Mobile device inventory holding important data",
+                "MDM enforcing encryption, screen lock, remote wipe",
+                "Remote-wipe demonstration evidence",
+                "Mobile data minimisation policy and auto-deletion configuration",
+                "Configuration aligned to platform best practice"
+              ]
+            },
+            {
+              "id": "B3.e",
+              "name": "Media / Equipment Sanitisation",
+              "desc": "Before reuse and/or disposal you appropriately sanitise devices, equipment and removable media holding data important to essential function(s).",
+              "achieved": [
+                "You catalogue and track all devices that contain important data.",
+                "Important data is removed from all devices, equipment and removable media before reuse and/or disposal using an assured product or service."
+              ],
+              "evidence": [
+                "Asset disposal register",
+                "Sanitisation procedure citing assured product / service (e.g. NCSC-assured)",
+                "Certificates of destruction / wipe",
+                "Tracking of devices through end-of-life",
+                "Evidence storage devices are catalogued before sanitisation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "name": "System Security",
+          "desc": "Network and information systems and technology critical for essential functions are protected from cyber attack. An organisational understanding of risk informs the use of robust and reliable protective security measures.",
+          "outcomes": [
+            {
+              "id": "B4.a",
+              "name": "Secure by Design",
+              "desc": "You design security into network and information systems supporting essential function(s). You minimise their attack surface and ensure essential function(s) should not be impacted by exploitation of any single vulnerability.",
+              "achieved": [
+                "You employ appropriate expertise to design network and information systems supporting essential function(s).",
+                "Systems are segregated into appropriate security zones (essential function(s) systems segregated in a highly trusted, more secure zone).",
+                "Systems are designed with simple data flows between components to support effective security monitoring.",
+                "Systems are designed to be easy to recover.",
+                "Content-based attacks are mitigated for all inputs (e.g. transformation, inspection/sanitisation, validation).",
+                "If automated decision-making is in use, restrictions are designed and applied to prevent adverse impact."
+              ],
+              "evidence": [
+                "Architecture review board records / design approvals",
+                "Security-by-design standards / principles document",
+                "Network zoning / segmentation diagrams (essential function in highly trusted zone)",
+                "Threat models for systems supporting essential function",
+                "Input validation / content sanitisation evidence at boundaries"
+              ]
+            },
+            {
+              "id": "B4.b",
+              "name": "Secure Configuration",
+              "desc": "You securely configure network and information systems that support essential function(s).",
+              "achieved": [
+                "You have identified, documented and actively manage (security configurations, patching, updating) the assets that need careful configuration.",
+                "All platforms conform to your secure, defined baseline build, or the latest known-good configuration version for that environment.",
+                "You closely and effectively manage changes, ensuring system configurations are secure and documented.",
+                "You regularly review and validate that systems have the expected, secure settings and configuration.",
+                "Standard users cannot change settings that would adversely impact security.",
+                "Only permitted software can be installed.",
+                "If automated decision-making is in use, its operation is well understood and decisions can be replicated.",
+                "Generic, shared, default name and built-in accounts have been removed or disabled (or credentials changed); service accounts are appropriately protected."
+              ],
+              "evidence": [
+                "Configuration baseline standards (e.g. CIS benchmarks, vendor hardening guides)",
+                "Configuration management database (CMDB) coverage",
+                "Sample hardened build evidence",
+                "Change records with approvals",
+                "Software allow-listing / installation control evidence"
+              ]
+            },
+            {
+              "id": "B4.c",
+              "name": "Secure Management",
+              "desc": "You manage your organisation's network and information systems that support essential function(s) to enable and maintain security.",
+              "achieved": [
+                "Systems and devices are only administered or maintained by authorised privileged users from highly trusted devices (e.g. Privileged Access Workstations) dedicated solely to those operations.",
+                "You regularly review and update technical knowledge (documentation, network diagrams) and ensure secure storage.",
+                "You prevent, detect and remove malware and unauthorised software using technical, procedural and physical measures."
+              ],
+              "evidence": [
+                "Privileged Access Workstation (PAW) configuration for system administration",
+                "Current network and information system documentation / diagrams",
+                "Anti-malware deployment and update evidence",
+                "System administration audit logs",
+                "Procedural / physical controls supporting secure management"
+              ]
+            },
+            {
+              "id": "B4.d",
+              "name": "Vulnerability Management",
+              "desc": "You manage known vulnerabilities in network and information systems to prevent adverse impact on essential function(s).",
+              "achieved": [
+                "You maintain a current understanding of exposure to publicly-known vulnerabilities.",
+                "Announced vulnerabilities for all software packages are tracked, prioritised and mitigated (e.g. by patching) promptly.",
+                "You regularly test to fully understand vulnerabilities of systems supporting essential function(s) and verify with third-party testing.",
+                "You actively maximise the use of supported software, firmware and hardware in network and information systems supporting essential function(s)."
+              ],
+              "evidence": [
+                "Vulnerability scan reports (internal and external)",
+                "Patch management process with SLAs (criticality-based)",
+                "Vulnerability tracker showing prioritisation and remediation",
+                "Independent third-party penetration testing reports",
+                "Software / firmware lifecycle plan (replacement of unsupported tech)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "name": "Resilient Networks and Systems",
+          "desc": "The organisation builds resilience against cyber attack and system failure into the design, implementation, operation and management of systems supporting essential function(s).",
+          "outcomes": [
+            {
+              "id": "B5.a",
+              "name": "Resilience Preparation",
+              "desc": "You are prepared to restore the operation of essential function(s) following adverse impact to network and information systems.",
+              "achieved": [
+                "You have business continuity and disaster recovery plans tested for practicality, effectiveness and completeness using different methods (manual fail-over, table-top, red-teaming).",
+                "You use security awareness and threat intelligence to identify new or heightened risk levels, resulting in immediate (and potentially temporary) security measures."
+              ],
+              "evidence": [
+                "Business Continuity Plan covering essential function(s)",
+                "Disaster Recovery Plan with system dependencies",
+                "Test records (table-top, manual fail-over, red-team exercises)",
+                "Procedure for heightened-risk temporary measures (e.g. malware outbreak)",
+                "Threat-intelligence-driven enhanced-security playbooks"
+              ]
+            },
+            {
+              "id": "B5.b",
+              "name": "Design for Resilience",
+              "desc": "You design network and information systems supporting essential function(s) to be resilient to cyber security incidents. Systems are appropriately segregated and resource limitations are mitigated.",
+              "achieved": [
+                "Network and information systems supporting essential function(s) are segregated from other business and external systems by appropriate technical and physical means.",
+                "Internet services such as browsing and email are not accessible from network and information systems supporting essential function(s).",
+                "You have identified and mitigated all resource limitations (e.g. bandwidth, single network paths).",
+                "You have identified and mitigated geographical constraints or weaknesses (e.g. systems replicated in another location, alternative physical paths/providers).",
+                "You review and update assessments of dependencies, resource and geographical limitations and mitigations when necessary."
+              ],
+              "evidence": [
+                "Network segregation evidence (essential function isolated from corporate)",
+                "Capacity plan with resource limitations identified and mitigated",
+                "Geographical redundancy plans (replicated systems, alternative paths/providers)",
+                "Single-point-of-failure analysis and mitigations",
+                "Review records of dependencies, resource and geographical limits"
+              ]
+            },
+            {
+              "id": "B5.c",
+              "name": "Backups",
+              "desc": "You hold accessible and secured current backups of data and information needed to recover operation of essential function(s) following adverse impact.",
+              "achieved": [
+                "Your comprehensive, automatic and tested technical and procedural backups are secured at centrally accessible or secondary sites to recover from an extreme event.",
+                "Backups of all important data and information needed to recover essential function(s) are made, tested, documented and routinely reviewed."
+              ],
+              "evidence": [
+                "Backup configuration (frequency, scope, retention)",
+                "Backup test logs proving usability under extreme events including ransomware",
+                "Backup encryption / immutability / off-line storage evidence",
+                "Recovery time objective (RTO) and recovery point objective (RPO) test results",
+                "Documented backup of configuration, equipment, processes and knowledge"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B6",
+          "name": "Staff Awareness and Training",
+          "desc": "Staff have appropriate awareness, knowledge and skills to carry out their organisational roles effectively in relation to the security of network and information systems supporting essential function(s).",
+          "outcomes": [
+            {
+              "id": "B6.a",
+              "name": "Cyber Security Culture",
+              "desc": "You develop and maintain a positive cyber security culture and a shared sense of responsibility.",
+              "achieved": [
+                "Executive management clearly and effectively communicates cyber security priorities and objectives to all staff.",
+                "People raising potential cyber security incidents and issues are treated positively.",
+                "Individuals at all levels routinely report concerns or issues and are recognised for their contribution.",
+                "Management is seen to be committed to and actively involved in cyber security.",
+                "The organisation communicates openly about cyber security; concerns are taken seriously.",
+                "People collaborate in cyber security activities, building joint ownership and bringing area expertise."
+              ],
+              "evidence": [
+                "Executive communications on cyber security priorities",
+                "Security culture survey results and trend analysis",
+                "Reporting mechanism for security concerns (e.g. security@, whistleblowing line)",
+                "Recognition / reward programme for security contributions",
+                "Cross-team collaboration evidence (security working groups, champions network)"
+              ]
+            },
+            {
+              "id": "B6.b",
+              "name": "Cyber Security Training",
+              "desc": "The people who support the operation of network and information systems supporting essential function(s) are appropriately trained in cyber security.",
+              "achieved": [
+                "All people, from most senior to most junior, follow appropriate cyber security training paths.",
+                "Each individual's cyber security training is tracked and refreshed at suitable intervals.",
+                "You routinely evaluate cyber security training and awareness activities to ensure they reach the widest audience and are effective.",
+                "Cyber security information and good practice guidance is easily accessible, widely available, referenced and used."
+              ],
+              "evidence": [
+                "Role-based training plan covering all levels (board to junior)",
+                "Training completion records per individual",
+                "Training effectiveness evaluation (phishing sim metrics, knowledge checks)",
+                "Refresh schedule with tracking",
+                "Cyber security guidance accessible across organisation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Detecting Cyber Security Events",
+      "desc": "Capabilities exist to ensure security defences remain effective and to detect cyber security events and incidents adversely affecting (or with potential to affect) essential function(s).",
+      "principles": [
+        {
+          "id": "C1",
+          "name": "Security Monitoring",
+          "desc": "The organisation monitors the security status of network and information systems supporting essential function(s) to detect security events indicative of a security incident.",
+          "outcomes": [
+            {
+              "id": "C1.a",
+              "name": "Sources and Tools for Logging and Monitoring",
+              "desc": "The data sources and tools you include in logging and monitoring allow timely identification of events that might adversely affect security or resiliency of systems supporting essential function(s).",
+              "achieved": [
+                "Monitoring is based on thorough understanding of systems, threat actor techniques and required logging.",
+                "Monitoring data provides enough detail to promptly and reliably detect security events; reviewed regularly and after significant events.",
+                "Extensive monitoring of user and system activity enables prompt detection of policy violations, suspicious behaviour, deviations and abnormalities.",
+                "Logging and monitoring includes both host-based and network monitoring.",
+                "All new systems are considered as logging/monitoring sources to maintain comprehensive coverage.",
+                "Log datasets are synchronised (accurate common time source) so they can be correlated.",
+                "Log data is enriched with other systems data for a more comprehensive picture.",
+                "Monitoring tools make use of log data to pinpoint activity.",
+                "You regularly review data sources and tools to ensure logging/monitoring strategy remains effective."
+              ],
+              "evidence": [
+                "Log source inventory (host, network, identity, application)",
+                "SIEM / log management configuration",
+                "Detection use-case catalogue with coverage mapping",
+                "Time-synchronisation evidence across systems (NTP)",
+                "Sample monitoring data with sufficient detail for investigations"
+              ]
+            },
+            {
+              "id": "C1.b",
+              "name": "Securing Logs",
+              "desc": "You hold log data securely and grant appropriate access only to accounts with a business need. Log data is held for a suitable retention period.",
+              "achieved": [
+                "Appropriate access to log data is limited to users/systems with a business need.",
+                "Logging architecture has mechanisms, policies and procedures to protect itself from threats comparable to those it is trying to identify.",
+                "Log data analysis and normalisation is only performed on copies; master copy is unaltered.",
+                "All actions involving log data (copy, delete, modify, view) can be traced back to a unique user/system.",
+                "The integrity of log data is protected, verified and any modification (including deletion) is detected and attributed."
+              ],
+              "evidence": [
+                "Log retention policy (per source / regulatory)",
+                "Access controls on log data (named accounts, business-need)",
+                "Log integrity protection (WORM, hashing, immutable storage)",
+                "Audit logs of log access / modification",
+                "Logging-architecture self-defence evidence"
+              ]
+            },
+            {
+              "id": "C1.c",
+              "name": "Generating Alerts",
+              "desc": "Evidence of potential security incidents in your monitoring data is reliably identified and where appropriate triggers alerts.",
+              "achieved": [
+                "You easily detect IoCs (known malicious command and control signatures, abnormalities or behaviours indicative of adverse activity).",
+                "You apply all updates, new signatures and IoCs promptly.",
+                "Security alerts are prioritised and used to support incident management.",
+                "Alerts are routinely enriched in near real time as part of the original alert.",
+                "Alerts and underlying detections are regularly reviewed and tested; you can distinguish genuine incidents from false alarms.",
+                "Alerts and detection rules are customisable and tuned to reduce false positives and optimise responses.",
+                "Detections may use off-the-shelf tooling/rules as well as custom tooling/rules.",
+                "You continuously monitor for user/system abnormalities indicative of adverse activity.",
+                "Logs are monitored continuously in near real time."
+              ],
+              "evidence": [
+                "Detection rule library (signature, behavioural, custom)",
+                "SIEM configuration / detection coverage",
+                "Threat-intel integration and update cadence",
+                "Alert tuning records (false positive reduction)",
+                "Continuous near-real-time log monitoring evidence"
+              ]
+            },
+            {
+              "id": "C1.d",
+              "name": "Triage of Security Alerts",
+              "desc": "You contextualise alerts with knowledge of the threat and your systems, to identify security incidents as well as responding to all alerts appropriately.",
+              "achieved": [
+                "You investigate and triage alerts from all security tools and take action.",
+                "SOPs/Playbooks/Runbooks cover all plausible use cases; regularly reviewed for effectiveness.",
+                "You categorise alerts and incidents by type and priority/severity level.",
+                "All triage activities are documented and used to drive improvements.",
+                "Triage provides enough information for subsequent activities to be prioritised.",
+                "Your understanding of normal user/system behaviour and threats is sufficient for effective triage decisions."
+              ],
+              "evidence": [
+                "SOPs / Playbooks / Runbooks covering plausible use cases",
+                "Incident classification matrix (type / priority / severity)",
+                "Triage workflow documentation",
+                "Sample triaged alerts with documented decisions",
+                "Triage performance metrics and review evidence"
+              ]
+            },
+            {
+              "id": "C1.e",
+              "name": "Personnel Skills for Monitoring and Detection",
+              "desc": "Monitoring and detection personnel skills and roles (including outsourced) reflect governance and reporting requirements, expected threats and complexities of network/system data.",
+              "achieved": [
+                "You have monitoring/detection personnel responsible for proactive and reactive analysis, investigation and reporting.",
+                "Personnel have defined roles and skills covering all parts of monitoring and investigation.",
+                "Personnel follow policies addressing all governance reporting requirements.",
+                "Personnel are empowered to look beyond fixed processes to investigate non-standard threats.",
+                "Personnel are aware of network and information systems and essential function(s), related assets, and can identify and prioritise alerts.",
+                "Personnel drive and shape new log data collection.",
+                "Personnel are capable of following all required workflows.",
+                "Personnel have sufficient understanding of operational context to enhance security monitoring.",
+                "Personnel deal with workload and cases effectively while identifying improvement areas."
+              ],
+              "evidence": [
+                "Job descriptions / skills matrix for monitoring & detection personnel",
+                "Training records for monitoring staff",
+                "Outsourced provider SLA and skill assurance evidence",
+                "Workload metrics (alerts/analyst, time-to-triage)",
+                "Evidence personnel are empowered to investigate non-standard threats"
+              ]
+            },
+            {
+              "id": "C1.f",
+              "name": "Understanding User & System Behaviour, and Threat Intelligence",
+              "desc": "Threats to operations of network and information systems and corresponding user/system behaviour are sufficiently understood. Used to detect cyber security incidents.",
+              "achieved": [
+                "You track effectiveness of threat intelligence and actively share feedback with the threat community.",
+                "Threat intelligence feeds are selected using risk-based and threat-informed decisions based on business needs and sector.",
+                "You make relevant, reliable and actionable threat intelligence available to necessary users and systems promptly.",
+                "You contextualise threat intelligence and link it to why/how attacks take place.",
+                "You understand normal user and system abnormalities fully (you understand which systems should and should not communicate, and when).",
+                "Abnormalities monitored are based on the nature of adverse activities likely to impact essential function(s).",
+                "Abnormalities indicative of adverse activity are regularly updated to reflect changes in systems and current threat intelligence.",
+                "You can share threat intelligence (effective ways to detect adversaries) with the threat/defender community when required."
+              ],
+              "evidence": [
+                "Threat intelligence subscriptions / feed selection rationale",
+                "Threat-intel community participation (sector, ISAC, government)",
+                "Behaviour baselining documentation per system / user role",
+                "Records of TI being made actionable in detections",
+                "Outbound threat-intel sharing evidence (when permitted)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "name": "Threat Hunting",
+          "desc": "The organisation proactively seeks to detect adverse activity within networks and information systems even when the activity evades standard security solutions.",
+          "outcomes": [
+            {
+              "id": "C2.a",
+              "name": "Threat Hunting",
+              "desc": "You proactively seek to detect adverse activity affecting (or with potential to affect) essential function(s) even when the activity evades standard prevent/detect solutions.",
+              "achieved": [
+                "You understand resources required for threat hunting and deploy them as part of business as usual.",
+                "You deploy threat hunting at a frequency matching risks posed to essential function(s).",
+                "Threat hunts follow pre-determined and documented methods (hypothesis-driven, data-driven, entity-driven) to identify adverse activity not detected by automation.",
+                "You turn threat hunts into automated detections and alerting where appropriate.",
+                "You routinely record details of threat hunts and post-hunt activities to drive improvements.",
+                "You have justified confidence in the effectiveness of threat hunts; the process is reviewed and updated to match risk.",
+                "You leverage automation to improve threat hunts (some stages automated).",
+                "Threat hunts focus on TTPs of threats over atomic IoCs (hashes, IPs, domains)."
+              ],
+              "evidence": [
+                "Threat hunting methodology (hypothesis / data / entity-driven)",
+                "Threat hunt records / reports with findings",
+                "Hunt-to-detection automation evidence",
+                "TTP-based hunt examples mapped to MITRE ATT&CK",
+                "Threat hunting frequency and resource plan"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Minimising the Impact of Cyber Security Incidents",
+      "desc": "Capabilities exist to minimise the adverse impact of a cyber security incident on the operation of essential functions, including their restoration where necessary.",
+      "principles": [
+        {
+          "id": "D1",
+          "name": "Response and Recovery Planning",
+          "desc": "There are well-defined and tested incident management processes in place that aim to ensure continuity of essential function(s) in the event of system or service failure. Mitigation activities to contain or limit the impact of compromise are also in place.",
+          "outcomes": [
+            {
+              "id": "D1.a",
+              "name": "Response Plan",
+              "desc": "You have an up-to-date incident response plan grounded in a thorough risk assessment that takes account of network and information systems supporting essential function(s) and covers a range of incident scenarios.",
+              "achieved": [
+                "The incident response plan is based on clear understanding of security risks to systems supporting essential function(s).",
+                "The plan is comprehensive (covers complete incident lifecycle, roles, responsibilities, reporting) and covers known attack patterns and possible previously-unseen attacks.",
+                "The plan is documented and integrated with wider organisational business and supply chain plans, plus dependencies on supporting infrastructure.",
+                "The plan is communicated and understood by business areas involved with essential function(s)."
+              ],
+              "evidence": [
+                "Incident Response Plan covering full lifecycle",
+                "Risk-based scenario coverage (known and unseen attack patterns)",
+                "Stakeholder map (internal, supply chain, regulator, NCSC)",
+                "Plan version control and approval history",
+                "Plan accessible during IT outage (offline copies)"
+              ]
+            },
+            {
+              "id": "D1.b",
+              "name": "Response and Recovery Capability",
+              "desc": "You have the capability to enact your incident response plan, including effective limitation of impact on essential function(s). During an incident, you have access to timely information on which to base response decisions.",
+              "achieved": [
+                "You understand resources likely needed for response activities and have arrangements to make them available.",
+                "You understand information types needed to inform response decisions and have arrangements to make information available.",
+                "Response team members have skills, knowledge and authority to decide on response actions and carry them out.",
+                "Key roles are duplicated; operational delivery knowledge is shared.",
+                "Back-up mechanisms can be readily activated to allow continued (possibly reduced) operation of essential function(s) if primary systems fail.",
+                "Arrangements exist to augment incident response capabilities with external support if necessary."
+              ],
+              "evidence": [
+                "Incident response team roster with skills and authority",
+                "Tooling inventory (forensics, comms, evidence handling)",
+                "External support arrangements (CSIRT retainer, regulator hotline)",
+                "Backup / reduced-mode operating procedures",
+                "Information sources available during an incident (asset, contact, dependency data)"
+              ]
+            },
+            {
+              "id": "D1.c",
+              "name": "Testing and Exercising",
+              "desc": "Your organisation carries out exercises to test response plans, using past incidents and scenarios drawn from threat intelligence and risk assessment.",
+              "achieved": [
+                "Exercise scenarios are based on incidents experienced by you and others, or composed using experience or threat intelligence.",
+                "Exercise scenarios are documented, regularly reviewed and validated.",
+                "Exercises are routinely run; findings are documented and used to refine response plans and protective security.",
+                "Exercises test all parts of your response cycle relating to essential function(s) (e.g. restoration of normal function levels)."
+              ],
+              "evidence": [
+                "Exercise plan / annual schedule",
+                "Documented exercise scenarios drawn from threat intel and past incidents",
+                "After-action reports from exercises",
+                "Coverage matrix showing all parts of response cycle tested",
+                "Lessons-learned actions tracked from each exercise"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "name": "Lessons Learned",
+          "desc": "When an incident occurs, steps are taken to understand its causes and to ensure remediating action is taken to protect against future incidents.",
+          "outcomes": [
+            {
+              "id": "D2.a",
+              "name": "Post Incident Analysis",
+              "desc": "When an incident occurs, your organisation takes steps to understand its causes, informing appropriate remediating action.",
+              "achieved": [
+                "Post incident analysis is conducted routinely as a key part of lessons learned activities following an incident.",
+                "Post incident analysis is comprehensive: organisational factors (policies, processes), technical factors (system design, vulnerabilities), human factors (training, culture) and any threat changes.",
+                "All relevant incident data is made available to the analysis team.",
+                "Analysis considers what could have happened under plausible alternative circumstances ('what if'/'if only')."
+              ],
+              "evidence": [
+                "Post-incident review process / template",
+                "Sample post-incident review reports",
+                "Root-cause analysis records (technical, organisational, human factors)",
+                "'What if' / 'if only' alternative scenario analysis",
+                "Evidence that all relevant incident data is provided to analysts"
+              ]
+            },
+            {
+              "id": "D2.b",
+              "name": "Using Incidents to Drive Improvements",
+              "desc": "Your organisation uses lessons learned from incidents to improve security measures.",
+              "achieved": [
+                "You have a documented incident review process/policy ensuring lessons learned from each incident (including near misses) are identified, captured and acted upon.",
+                "Lessons learned cover reporting, roles, governance, skills and policies as well as technical aspects.",
+                "You use lessons learned to improve security measures, including updating and retesting response plans.",
+                "Security improvements identified from lessons learned are prioritised; highest priority improvements completed promptly.",
+                "Analysis is fed to senior management and incorporated into risk management and continuous improvement.",
+                "Your organisation maximises lessons by using 'what if'/'if only' scenario analysis.",
+                "Your organisation learns from reported incidents in your sector and the wider national infrastructure."
+              ],
+              "evidence": [
+                "Lessons-learned register linked to incidents and near-misses",
+                "Improvement action tracker with priorities and completion dates",
+                "Sector / national-infrastructure incident-learning records",
+                "Continuous improvement reporting to senior management",
+                "Evidence of plan / control updates resulting from lessons learned"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

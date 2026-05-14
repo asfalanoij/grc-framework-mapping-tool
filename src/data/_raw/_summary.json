@@ -1,0 +1,72 @@
+{
+  "CLAUSES": {
+    "count": 25,
+    "type": "array",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/CLAUSES.json"
+  },
+  "CONTROLS": {
+    "count": 118,
+    "type": "array",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/CONTROLS.json"
+  },
+  "NIST_HIER": {
+    "count": 6,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/NIST_HIER.json"
+  },
+  "SOC2_HIER": {
+    "count": 5,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/SOC2_HIER.json"
+  },
+  "CIS_HIER": {
+    "count": 18,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/CIS_HIER.json"
+  },
+  "PCI_HIER": {
+    "count": 12,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/PCI_HIER.json"
+  },
+  "CE_HIER": {
+    "count": 5,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/CE_HIER.json"
+  },
+  "N80053_HIER": {
+    "count": 20,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/N80053_HIER.json"
+  },
+  "NIS2_HIER": {
+    "count": 10,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/NIS2_HIER.json"
+  },
+  "ISO22301_HIER": {
+    "count": 7,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/ISO22301_HIER.json"
+  },
+  "ISO27017_HIER": {
+    "count": 14,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/ISO27017_HIER.json"
+  },
+  "CAF": {
+    "count": 3,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/CAF.json"
+  },
+  "ISO_EVIDENCE": {
+    "count": 118,
+    "type": "object",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/ISO_EVIDENCE.json"
+  },
+  "FRAMEWORKS": {
+    "count": 11,
+    "type": "array",
+    "file": "/Users/asfalanoi/app_oct2025/grc-framework-mapping-tool/src/data/_raw/FRAMEWORKS.json"
+  }
+}
