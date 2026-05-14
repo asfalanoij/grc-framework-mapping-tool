@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+legacy
+playwright-report
+test-results
+*.md
