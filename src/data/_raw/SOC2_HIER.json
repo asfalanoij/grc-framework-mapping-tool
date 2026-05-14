@@ -1,0 +1,1310 @@
+{
+  "meta": {
+    "name": "SOC 2 (Trust Services Criteria)",
+    "version": "2017 (updated 2022)",
+    "url": "https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2",
+    "color": "#EF4444"
+  },
+  "about": {
+    "title": "About SOC 2 Trust Services Criteria",
+    "blurb": "SOC 2 (System and Organisation Controls 2) is an auditing standard developed by the American Institute of Certified Public Accountants (AICPA). It evaluates service organisations against five Trust Services Criteria: Security (Common Criteria), Availability, Processing Integrity, Confidentiality, and Privacy. Unlike prescriptive standards, SOC 2 is principles-based — organisations define their own controls and auditors assess whether those controls meet the criteria. A SOC 2 Type II report covers a defined period (typically 6–12 months) and provides evidence of sustained operational effectiveness. It is widely required by enterprise customers as part of vendor due diligence.",
+    "sections": [
+      {
+        "id": "CC",
+        "name": "Common Criteria (Security)",
+        "desc": "The Security (Common Criteria) principle is mandatory for all SOC 2 engagements. It encompasses nine criteria covering the control environment, communication, risk assessment, monitoring, control activities, logical and physical access, system operations, change management, and risk mitigation."
+      },
+      {
+        "id": "A",
+        "name": "Availability",
+        "desc": "The Availability principle addresses whether systems are available for operation and use as committed or agreed. It covers capacity management, environmental protections, and recovery testing."
+      },
+      {
+        "id": "PI",
+        "name": "Processing Integrity",
+        "desc": "The Processing Integrity principle addresses whether system processing is complete, valid, accurate, timely, and authorised to meet entity objectives."
+      },
+      {
+        "id": "C",
+        "name": "Confidentiality",
+        "desc": "The Confidentiality principle addresses whether information designated as confidential is protected as committed or agreed."
+      },
+      {
+        "id": "P",
+        "name": "Privacy",
+        "desc": "The Privacy principle addresses whether personal information is collected, used, retained, disclosed, and disposed of in conformity with the commitments in the entity's privacy notice and with criteria set by the AICPA."
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "CC",
+      "name": "Common Criteria (Security)",
+      "desc": "The Common Criteria are required for all SOC 2 engagements and form the security foundation. They map directly to the COSO Internal Control — Integrated Framework and cover nine areas from governance through to risk mitigation.",
+      "sections": [
+        {
+          "id": "CC1",
+          "name": "Control Environment",
+          "desc": "The Control Environment criteria assess whether the organisation demonstrates commitment to integrity and ethical values, maintains appropriate oversight structures, attracts and retains competent personnel, and enforces accountability for internal control responsibilities.",
+          "items": [
+            {
+              "id": "CC1.1",
+              "name": "COSO Principle 1: Demonstrates commitment to integrity and ethical values",
+              "desc": "The entity demonstrates a commitment to integrity and ethical values.",
+              "achieved": [
+                "A formal Code of Conduct or Ethics Policy is documented, published, and communicated to all personnel",
+                "Annual acknowledgement of the Code of Conduct is tracked and completion rates meet or exceed the target threshold",
+                "Leadership visibly models ethical behaviour and security-conscious decision-making in documented forums (e.g., all-hands meetings, board minutes)",
+                "Whistleblowing or ethics reporting channels exist and are promoted across the organisation",
+                "Disciplinary procedures for violations of the Code of Conduct are documented and consistently applied"
+              ],
+              "evidence": [
+                "Signed Code of Conduct or Ethics Policy with version history and last-reviewed date",
+                "Employee acknowledgement completion report for the current review period",
+                "Board or senior leadership meeting minutes referencing ethics and integrity commitments",
+                "Whistleblowing policy and evidence of communication (e.g., intranet page, onboarding materials)"
+              ]
+            },
+            {
+              "id": "CC1.2",
+              "name": "COSO Principle 2: Board exercises oversight responsibility",
+              "desc": "The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+              "achieved": [
+                "A board or equivalent governance body is formally constituted with independent members and documented terms of reference",
+                "Regular board or audit committee meetings are held with security and risk agenda items on record",
+                "The board reviews and approves the information security policy and programme at least annually",
+                "Board members with relevant expertise (e.g., cybersecurity, legal, finance) are identifiable in governance documentation",
+                "Escalation paths from management to the board for significant security incidents or control failures are defined"
+              ],
+              "evidence": [
+                "Board or audit committee charter and terms of reference",
+                "Meeting minutes from the past 12 months showing security and risk agenda items",
+                "Board-approved information security policy with sign-off dates",
+                "Governance structure diagram or organisational chart showing board composition"
+              ]
+            },
+            {
+              "id": "CC1.3",
+              "name": "COSO Principle 3: Management establishes structures, reporting lines, and authorities",
+              "desc": "Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+              "achieved": [
+                "A documented organisational structure with clear reporting lines for security and risk functions is maintained and kept current",
+                "Role descriptions for security-relevant positions (CISO, Security Analyst, Risk Owner, Data Protection Officer) are formally documented",
+                "A RACI or responsibility matrix is maintained covering key security and compliance processes",
+                "Delegated authorities for security decisions (e.g., who can approve access, who can declare an incident) are formally defined",
+                "The structure is reviewed and updated whenever there are material organisational changes"
+              ],
+              "evidence": [
+                "Organisational chart showing security and risk function reporting lines",
+                "Role descriptions or job specifications for key security roles",
+                "RACI matrix for security processes such as incident response, change management, and access provisioning",
+                "Evidence of most recent review of the structure (e.g., HR records, policy review log)"
+              ]
+            },
+            {
+              "id": "CC1.4",
+              "name": "COSO Principle 4: Demonstrates commitment to attract, develop, and retain competent individuals",
+              "desc": "The entity demonstrates a commitment to attract, develop, and retain competent individuals in alignment with objectives.",
+              "achieved": [
+                "Minimum security competency requirements are defined for roles with security responsibilities",
+                "Personnel in security roles hold or are actively working towards relevant professional qualifications or certifications",
+                "A training and development plan covering security skills is maintained for the security function",
+                "Succession planning or knowledge-transfer processes exist for critical security roles",
+                "Performance appraisals for security staff reference security-relevant competency objectives"
+              ],
+              "evidence": [
+                "Job descriptions with defined security competency requirements",
+                "Training records and professional certification evidence for security personnel",
+                "Annual training plan or personal development plans for the security team",
+                "Performance review documentation referencing security competencies"
+              ]
+            },
+            {
+              "id": "CC1.5",
+              "name": "COSO Principle 5: Holds individuals accountable for internal control responsibilities",
+              "desc": "The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+              "achieved": [
+                "Security responsibilities are explicitly included in job descriptions and employment contracts",
+                "Performance objectives linked to security control ownership or compliance are set and tracked",
+                "A consequence management process exists for security policy violations and is consistently applied",
+                "Control owners formally accept accountability for assigned controls (e.g., via risk register sign-off)",
+                "Security KPIs or metrics are reported to management and tied to accountability frameworks"
+              ],
+              "evidence": [
+                "Employment contracts or role descriptions referencing security responsibilities",
+                "Performance management records showing security objectives and outcomes",
+                "Disciplinary records or case summaries (appropriately anonymised) demonstrating consistent enforcement",
+                "Control owner acceptance records from the risk register or GRC tool"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC2",
+          "name": "Communication and Information",
+          "desc": "The Communication and Information criteria assess whether the organisation generates, uses, and communicates relevant quality information both internally and externally to support the functioning of internal control.",
+          "items": [
+            {
+              "id": "CC2.1",
+              "name": "COSO Principle 13: Uses relevant information to support internal control",
+              "desc": "The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+              "achieved": [
+                "An information classification scheme is defined and communicated across the organisation",
+                "Security-relevant data (logs, audit trails, vulnerability reports) is collected from systems and made available to those responsible for oversight",
+                "Dashboards or reporting mechanisms surface key security metrics to management on a regular cadence",
+                "Data quality checks are in place to ensure security reporting information is accurate and timely",
+                "Threat intelligence feeds are consumed and integrated into risk and security operations processes"
+              ],
+              "evidence": [
+                "Information classification policy with asset labelling guidance",
+                "Sample of a recurring security metrics or risk dashboard report",
+                "Evidence of threat intelligence subscription or feed integration (e.g., SIEM configuration, threat intel platform screenshots)",
+                "Data quality or audit log integrity reports"
+              ]
+            },
+            {
+              "id": "CC2.2",
+              "name": "COSO Principle 14: Communicates internally to support internal control",
+              "desc": "The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+              "achieved": [
+                "Security policies and procedures are published in a central, accessible location (e.g., intranet, policy management system) and version-controlled",
+                "All personnel complete mandatory security awareness training at onboarding and annually thereafter",
+                "Security bulletins, alerts, or newsletters are distributed to staff on a defined schedule",
+                "Internal communications reference security responsibilities and reinforce expected behaviours",
+                "Security incidents and lessons learned are communicated to relevant stakeholders after resolution"
+              ],
+              "evidence": [
+                "Policy management system or intranet page listing current security policies with version history",
+                "Security awareness training completion report for the current period",
+                "Sample of internal security communications (newsletters, bulletins, emails)",
+                "Post-incident communication or lessons-learned report shared internally"
+              ]
+            },
+            {
+              "id": "CC2.3",
+              "name": "COSO Principle 15: Communicates externally",
+              "desc": "The entity communicates with external parties regarding matters affecting the functioning of internal control.",
+              "achieved": [
+                "A privacy notice or transparency statement is published and kept up to date for external data subjects",
+                "Contractual security requirements are communicated to vendors and third-party service providers",
+                "Processes exist for receiving and responding to external security disclosures (e.g., responsible disclosure or bug bounty programme)",
+                "Regulatory and customer security questionnaire responses are tracked and reviewed for accuracy",
+                "Communication protocols with regulators, law enforcement, and supervisory authorities are documented"
+              ],
+              "evidence": [
+                "Published privacy notice with last-updated date",
+                "Sample vendor contract or security addendum containing security obligations",
+                "Responsible disclosure policy or bug bounty programme documentation",
+                "Log of external security enquiries or questionnaire responses"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC3",
+          "name": "Risk Assessment",
+          "desc": "The Risk Assessment criteria assess whether the organisation specifies suitable objectives, identifies and analyses risks to achieving those objectives, assesses fraud risk, and identifies and assesses changes that could affect the system of internal control.",
+          "items": [
+            {
+              "id": "CC3.1",
+              "name": "COSO Principle 6: Specifies suitable objectives",
+              "desc": "The entity specifies objectives with sufficient clarity to enable the identification and assessment of risks relating to objectives.",
+              "achieved": [
+                "Information security objectives are formally documented, aligned to business objectives, and approved by management",
+                "Security objectives are measurable and tracked against defined KPIs or targets",
+                "Objectives are reviewed at least annually and updated to reflect changes in the threat landscape or business strategy",
+                "The scope of risk assessments is clearly defined and aligned to the ISMS or SOC 2 service boundaries",
+                "Security objectives are communicated to relevant personnel and integrated into operational planning"
+              ],
+              "evidence": [
+                "Documented information security objectives with approval signatures and review dates",
+                "KPI or metric report tracking progress against security objectives",
+                "Management review minutes confirming objectives were discussed and validated",
+                "Risk assessment scope statement or terms of reference"
+              ]
+            },
+            {
+              "id": "CC3.2",
+              "name": "COSO Principle 7: Identifies and analyses risk",
+              "desc": "The entity identifies risks to the achievement of its objectives across the entity and analyses risks as a basis for determining how the risks should be managed.",
+              "achieved": [
+                "A formal risk assessment methodology is documented and applied consistently across the in-scope system",
+                "A risk register is maintained, reviewed on a defined schedule, and includes likelihood, impact, and risk treatment decisions",
+                "Risk owners are assigned to each identified risk and are accountable for treatment actions",
+                "Risk assessments are triggered by significant changes (new technology, new services, incidents) as well as on a periodic schedule",
+                "Residual risk levels are assessed against an approved risk appetite statement"
+              ],
+              "evidence": [
+                "Risk assessment methodology document",
+                "Current risk register with risk owner assignments, likelihood/impact scores, and treatment plans",
+                "Risk appetite statement approved by senior management or the board",
+                "Evidence of risk reassessment triggered by a change event (e.g., new system launch)"
+              ]
+            },
+            {
+              "id": "CC3.3",
+              "name": "COSO Principle 8: Assesses fraud risk",
+              "desc": "The entity considers the potential for fraud in assessing risks to the achievement of objectives.",
+              "achieved": [
+                "Fraud risk is explicitly included as a category within the risk assessment process",
+                "Anti-fraud controls (e.g., segregation of duties, reconciliations, audit trails) are identified and mapped to fraud risk scenarios",
+                "Management assesses the risk of management override of controls as part of the fraud risk assessment",
+                "Fraud awareness is included in the security awareness training programme",
+                "Whistleblowing mechanisms are in place and communicated as a fraud-reporting channel"
+              ],
+              "evidence": [
+                "Risk register or risk assessment output showing fraud risk entries",
+                "Anti-fraud control documentation or control matrix",
+                "Security awareness training content referencing fraud and social engineering risks",
+                "Whistleblowing policy and evidence of accessibility to staff"
+              ]
+            },
+            {
+              "id": "CC3.4",
+              "name": "COSO Principle 9: Identifies and analyses significant change",
+              "desc": "The entity identifies and assesses changes that could significantly impact the system of internal control.",
+              "achieved": [
+                "A change management process formally incorporates a security risk assessment gate before changes are approved",
+                "Triggers for re-assessment of controls include organisational restructuring, new regulatory requirements, significant technology changes, and major incidents",
+                "Change risk assessments are documented and retained as evidence of due diligence",
+                "A mechanism exists to monitor external changes (regulatory updates, threat landscape shifts) and translate them into control adjustments",
+                "The risk register is updated whenever significant changes are identified"
+              ],
+              "evidence": [
+                "Change management policy or procedure referencing security assessment requirements",
+                "Sample completed change request records with security risk assessment sections",
+                "Evidence of a regulatory change log or threat intelligence update process",
+                "Risk register entries created or updated as a result of a change event"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC4",
+          "name": "Monitoring Activities",
+          "desc": "The Monitoring Activities criteria assess whether the organisation selects and performs ongoing evaluations to verify that components of internal control are present and functioning, and communicates deficiencies in a timely manner.",
+          "items": [
+            {
+              "id": "CC4.1",
+              "name": "COSO Principle 16: Conducts ongoing and/or separate evaluations",
+              "desc": "The entity selects, develops, and performs ongoing and/or separate evaluations to ascertain whether the components of internal control are present and functioning.",
+              "achieved": [
+                "A programme of internal audits, self-assessments, or control testing is defined and executed on a scheduled basis",
+                "Automated monitoring controls (e.g., SIEM alerts, configuration compliance scans) provide continuous assurance over key controls",
+                "Management reviews of key security metrics occur at defined intervals",
+                "External assessments or penetration tests are performed at least annually",
+                "Results of evaluations are documented with findings, root causes, and remediation actions"
+              ],
+              "evidence": [
+                "Internal audit plan and most recent audit report(s)",
+                "SIEM or monitoring platform dashboards showing automated control coverage",
+                "Penetration test or vulnerability assessment report from the past 12 months",
+                "Management review minutes or security review meeting records"
+              ]
+            },
+            {
+              "id": "CC4.2",
+              "name": "COSO Principle 17: Evaluates and communicates deficiencies",
+              "desc": "The entity evaluates and communicates internal control deficiencies in a timely manner to those parties responsible for taking corrective action, including senior management and the board of directors as appropriate.",
+              "achieved": [
+                "A process exists to formally log, track, and remediate identified control deficiencies",
+                "Deficiencies are categorised by severity and escalated appropriately (e.g., significant deficiencies to senior management, material weaknesses to the board)",
+                "Remediation owners and target dates are assigned to all open deficiencies",
+                "Status of deficiency remediation is reported to management on a regular cycle",
+                "Repeat or unresolved deficiencies trigger an escalation or exception process"
+              ],
+              "evidence": [
+                "Control deficiency log or issue register with severity ratings, owners, and due dates",
+                "Evidence of management or board communication of significant control deficiencies",
+                "Status report showing open, in-progress, and closed deficiency items",
+                "Escalation records for overdue or repeated deficiencies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC5",
+          "name": "Control Activities",
+          "desc": "The Control Activities criteria assess whether the organisation selects and develops general and technology-specific control activities, and deploys policies and procedures to support the achievement of objectives.",
+          "items": [
+            {
+              "id": "CC5.1",
+              "name": "COSO Principle 10: Selects and develops control activities",
+              "desc": "The entity selects and develops control activities that contribute to the mitigation of risks to the achievement of objectives to acceptable levels.",
+              "achieved": [
+                "A control framework maps risks to specific mitigating controls, ensuring all material risks have at least one associated control",
+                "Controls are categorised as preventive, detective, and corrective to provide layered coverage",
+                "Control design is reviewed whenever risk assessments identify new or changed risks",
+                "Management formally accepts residual risk where controls are assessed as insufficient to reduce risk to appetite",
+                "Control objectives are aligned to the SOC 2 Trust Services Criteria and documented in a control matrix"
+              ],
+              "evidence": [
+                "Risk-to-control mapping matrix or control framework documentation",
+                "Control matrix showing preventive, detective, and corrective control categories",
+                "Risk treatment decisions and management sign-off on residual risk acceptance",
+                "Control design review records linked to risk assessment outputs"
+              ]
+            },
+            {
+              "id": "CC5.2",
+              "name": "COSO Principle 11: Selects and develops technology control activities",
+              "desc": "The entity also selects and develops general control activities over technology to support the achievement of objectives.",
+              "achieved": [
+                "General IT controls covering change management, access management, operations, and IT governance are documented and operational",
+                "Technology-specific controls (e.g., encryption standards, patch management, hardening baselines) are formally defined and implemented",
+                "Automated controls are preferred over manual controls where feasible to reduce human error",
+                "Control coverage of the technology stack is reviewed at least annually and when significant technology changes occur",
+                "Technology controls are tested and evidence of their effectiveness is retained"
+              ],
+              "evidence": [
+                "General IT controls documentation or IT governance policy",
+                "Technical security standards (e.g., hardening guides, encryption policy)",
+                "Evidence of automated control implementation (e.g., configuration management tool reports, SIEM rule documentation)",
+                "Annual technology control testing results and effectiveness evidence"
+              ]
+            },
+            {
+              "id": "CC5.3",
+              "name": "COSO Principle 12: Deploys through policies and procedures",
+              "desc": "The entity deploys control activities through policies that establish what is expected and procedures that put policies into action.",
+              "achieved": [
+                "All material controls are backed by a documented policy or procedure that defines expected behaviour",
+                "Policies and procedures are reviewed and updated at least annually or when significant changes occur",
+                "A policy lifecycle management process tracks review dates, owners, and approval status",
+                "Staff are trained on policies relevant to their roles and acknowledgement is recorded",
+                "Policies are accessible to all relevant personnel through a centralised policy repository"
+              ],
+              "evidence": [
+                "Policy register with review dates, owners, and version history",
+                "Sample of a key security procedure (e.g., access provisioning procedure, incident response procedure)",
+                "Staff acknowledgement records for key policies",
+                "Policy repository or intranet location accessible to all personnel"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC6",
+          "name": "Logical and Physical Access Controls",
+          "desc": "The Logical and Physical Access Controls criteria address the most operationally detailed security requirements in the Common Criteria, covering identity management, access provisioning and de-provisioning, physical security, data transmission controls, and malware prevention.",
+          "items": [
+            {
+              "id": "CC6.1",
+              "name": "Implements logical access security software, infrastructure, and architectures",
+              "desc": "The entity implements logical access security software, infrastructure, and architectures over protected information assets to protect them from security events to meet the entity's objectives.",
+              "achieved": [
+                "An Identity and Access Management (IAM) solution is deployed and governs access to all in-scope systems",
+                "Multi-factor authentication (MFA) is enforced for all privileged accounts and for remote access to in-scope systems",
+                "Role-based access control (RBAC) is implemented so users receive the minimum access necessary for their roles",
+                "Access to production environments is restricted, logged, and subject to approval workflows",
+                "Network segmentation and firewall rules restrict lateral movement between security zones"
+              ],
+              "evidence": [
+                "IAM platform configuration screenshots or access provisioning workflow documentation",
+                "MFA enforcement policy and evidence of MFA being required (e.g., identity provider configuration)",
+                "RBAC role definition documentation and sample access provisioning records",
+                "Firewall rule sets or network architecture diagram showing segmentation"
+              ]
+            },
+            {
+              "id": "CC6.2",
+              "name": "Registers and authorises users prior to issuing credentials",
+              "desc": "Prior to issuing system credentials and granting system access, the entity registers and authorises new internal and external users whose access is administered by the entity.",
+              "achieved": [
+                "A formal access provisioning process requires management authorisation before credentials are issued",
+                "New user onboarding includes identity verification and role-appropriate access assignment",
+                "Service accounts and external user accounts are subject to the same provisioning controls as internal users",
+                "A joiner–mover–leaver process ensures access rights are correctly assigned at each lifecycle stage",
+                "Provisioning records are retained and available for audit"
+              ],
+              "evidence": [
+                "Access provisioning workflow or procedure documentation",
+                "Sample access request tickets showing manager approval before access was granted",
+                "Joiner–mover–leaver process documentation",
+                "Service account register with ownership and approval records"
+              ]
+            },
+            {
+              "id": "CC6.3",
+              "name": "Authorises, modifies, or removes access based on roles",
+              "desc": "The entity authorises, modifies, or removes access to data, software, functions, and other protected information assets based on roles, responsibilities, or the system design and changes, in a timely manner.",
+              "achieved": [
+                "Access rights are reviewed at least quarterly for privileged accounts and at least annually for standard users",
+                "Access recertification campaigns are completed on schedule with evidence of manager sign-off",
+                "Access modifications triggered by role changes are processed within a defined SLA",
+                "Leavers' access is revoked promptly (within 24 hours for standard users, immediately for privileged or high-risk departures)",
+                "Orphaned accounts (no associated active user) are identified and removed through regular reviews"
+              ],
+              "evidence": [
+                "Access recertification campaign report with completion rates and manager attestations",
+                "Leaver account de-provisioning log showing timestamps and SLA compliance",
+                "Access modification tickets demonstrating role-change triggered reviews",
+                "Orphaned account remediation report from the most recent user access review"
+              ]
+            },
+            {
+              "id": "CC6.4",
+              "name": "Restricts physical access to authorised personnel",
+              "desc": "The entity restricts physical access to facilities and protected information assets (for example, servers, backup media, printers) to authorised personnel to meet the entity's objectives.",
+              "achieved": [
+                "Physical access to data centre and server room environments is controlled by electronic access control systems (key card, biometric)",
+                "A register of individuals with physical access to critical infrastructure is maintained and reviewed regularly",
+                "Visitor access to secure areas requires escorting by an authorised employee and is logged",
+                "CCTV surveillance covers physical entry and exit points to secure areas and records are retained in accordance with policy",
+                "Physical access rights are reviewed and updated promptly when personnel change roles or leave the organisation"
+              ],
+              "evidence": [
+                "Physical access control system configuration and access log export",
+                "Visitor logbook or electronic visitor management system records",
+                "CCTV footage retention policy and evidence of system operation",
+                "Physical access rights review report showing current authorised users"
+              ]
+            },
+            {
+              "id": "CC6.5",
+              "name": "Discontinues protections over physical assets only after data has been made unreadable",
+              "desc": "The entity discontinues logical and physical protections over physical assets only after the ability to read or recover data and software from those assets has been diminished and is consistent with the entity's objectives.",
+              "achieved": [
+                "A media sanitisation and disposal procedure is documented and applied before physical assets are decommissioned or repurposed",
+                "Cryptographic erasure, overwriting, degaussing, or physical destruction is used depending on media classification",
+                "Certificates of destruction are obtained from third-party destruction vendors and retained",
+                "An asset disposal register tracks hardware from decommission through to verified destruction",
+                "The disposal process differentiates between media sensitivity levels and applies proportionate sanitisation methods"
+              ],
+              "evidence": [
+                "Media sanitisation and disposal policy or procedure",
+                "Asset disposal register showing decommissioned hardware and disposal method",
+                "Certificates of destruction from a third-party vendor",
+                "Evidence of sanitisation tool usage (e.g., NIST SP 800-88 compliant wiping software reports)"
+              ]
+            },
+            {
+              "id": "CC6.6",
+              "name": "Implements logical access security measures against external threats",
+              "desc": "The entity implements logical access security measures to protect against threats from sources outside its system boundaries.",
+              "achieved": [
+                "Perimeter firewalls and web application firewalls (WAF) are deployed and configured to deny-by-default traffic from untrusted sources",
+                "Remote access is exclusively via approved, encrypted channels (VPN, Zero Trust Network Access) with MFA enforced",
+                "External-facing attack surfaces are enumerated and subjected to regular vulnerability scanning and penetration testing",
+                "Intrusion detection or prevention systems (IDS/IPS) monitor traffic at system boundaries",
+                "A vulnerability disclosure or bug bounty programme enables responsible reporting of externally discovered vulnerabilities"
+              ],
+              "evidence": [
+                "Firewall and WAF configuration review or audit report",
+                "VPN or ZTNA configuration documentation and access logs",
+                "External vulnerability scan or penetration test report from the past 12 months",
+                "IDS/IPS deployment architecture diagram and alert summary report"
+              ]
+            },
+            {
+              "id": "CC6.7",
+              "name": "Restricts transmission, movement, and removal of information",
+              "desc": "The entity restricts the transmission, movement, and removal of information to authorised internal and external users and processes, and protects it during transmission, movement, and removal to meet the entity's objectives.",
+              "achieved": [
+                "Data in transit is encrypted using industry-standard protocols (TLS 1.2 or higher) for all external transmissions",
+                "Data loss prevention (DLP) controls are deployed to detect and block unauthorised data exfiltration",
+                "Approved methods for sharing sensitive data externally are defined in policy (e.g., approved file-sharing platforms, encrypted email)",
+                "Removable media usage is restricted by policy and enforced through endpoint controls",
+                "Data transfer agreements or contractual clauses govern the transfer of personal or confidential data to third parties"
+              ],
+              "evidence": [
+                "Encryption policy specifying protocols and key management requirements",
+                "DLP tool configuration and sample alert report",
+                "Approved data-sharing platform list and any contractual data transfer agreements",
+                "Endpoint control policy or DLP report showing removable media controls"
+              ]
+            },
+            {
+              "id": "CC6.8",
+              "name": "Prevents or detects introduction of unauthorised or malicious software",
+              "desc": "The entity implements controls to prevent or detect and act upon the introduction of unauthorised or malicious software to meet the entity's objectives.",
+              "achieved": [
+                "Endpoint detection and response (EDR) or anti-malware software is deployed on all managed endpoints",
+                "Software allow-listing or application control prevents execution of unauthorised applications on sensitive systems",
+                "Automated vulnerability scanning identifies software with known CVEs and triggers remediation workflows",
+                "Code repositories enforce security scanning (SAST/SCA) before code is merged to production branches",
+                "Email and web filtering controls scan attachments and URLs for malicious content before delivery"
+              ],
+              "evidence": [
+                "EDR or anti-malware deployment report showing coverage percentage across managed endpoints",
+                "Application control policy and evidence of enforcement (e.g., blocked execution logs)",
+                "Vulnerability scan report and remediation tracking records",
+                "CI/CD pipeline security scanning configuration and scan results summary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC7",
+          "name": "System Operations",
+          "desc": "The System Operations criteria address how the organisation detects and responds to security events, anomalies, and incidents, including recovery from identified security incidents.",
+          "items": [
+            {
+              "id": "CC7.1",
+              "name": "Detects and monitors for new vulnerabilities",
+              "desc": "To meet its objectives, the entity uses detection and monitoring procedures to identify (1) changes to configurations that result in the introduction of new vulnerabilities, and (2) susceptibilities to newly discovered vulnerabilities.",
+              "achieved": [
+                "Continuous vulnerability scanning is performed across all in-scope assets on a defined schedule (at minimum monthly)",
+                "A security configuration monitoring tool detects and alerts on unauthorised configuration changes",
+                "Vulnerability intelligence feeds are subscribed to and integrated into the vulnerability management programme",
+                "Critical and high vulnerabilities are remediated within defined SLAs (e.g., critical within 7 days, high within 30 days)",
+                "A formal vulnerability management policy defines roles, scanning frequency, and remediation SLAs"
+              ],
+              "evidence": [
+                "Vulnerability scan results from the most recent scan cycle with remediation status",
+                "Configuration change monitoring tool alerts and response records",
+                "Vulnerability management policy showing remediation SLAs",
+                "Vulnerability intelligence feed subscription confirmation and integration evidence"
+              ]
+            },
+            {
+              "id": "CC7.2",
+              "name": "Monitors system components for anomalies",
+              "desc": "The entity monitors system components and the operation of those components for anomalies that are indicative of malicious acts, natural disasters, and errors affecting the entity's ability to meet its objectives.",
+              "achieved": [
+                "A Security Information and Event Management (SIEM) platform aggregates logs from all in-scope systems and generates alerts for anomalous behaviour",
+                "Baseline behaviour profiles are established for critical systems and users to enable anomaly detection",
+                "Security Operations Centre (SOC) or equivalent monitoring function reviews alerts on a continuous or near-real-time basis",
+                "Performance and availability monitoring tools alert on degradation or outage conditions",
+                "Log retention meets the defined retention policy (minimum 12 months online, 24 months archived)"
+              ],
+              "evidence": [
+                "SIEM platform configuration documentation and sample alert ruleset",
+                "SOC or monitoring team shift logs or alert triage records from a representative period",
+                "Log retention configuration and evidence of compliance with retention policy",
+                "Availability monitoring tool dashboard or uptime report"
+              ]
+            },
+            {
+              "id": "CC7.3",
+              "name": "Evaluates potential security events",
+              "desc": "The entity evaluates security events to determine whether they could or have resulted in a failure of the entity to meet its objectives (security incidents) and, if so, takes actions to prevent or address such failures.",
+              "achieved": [
+                "An incident triage and classification process is documented and applied consistently to all security events",
+                "Severity levels are defined with clear criteria distinguishing events, incidents, and major incidents",
+                "Security events are reviewed within a defined SLA and escalated when they meet incident criteria",
+                "Root cause analysis is performed for all classified incidents and documented in incident records",
+                "Trends in security events are analysed and reported to management periodically"
+              ],
+              "evidence": [
+                "Incident response procedure including triage and classification guidance",
+                "Incident register showing event triage outcomes and classifications",
+                "Root cause analysis records for incidents occurring in the review period",
+                "Security event trend report or management dashboard summary"
+              ]
+            },
+            {
+              "id": "CC7.4",
+              "name": "Responds to identified security incidents",
+              "desc": "The entity responds to identified security incidents by executing a defined incident response program to understand, contain, remediate, and communicate security incidents, as appropriate.",
+              "achieved": [
+                "A documented Incident Response Plan (IRP) exists, is tested at least annually, and is readily accessible to responders",
+                "Incident response roles and responsibilities are defined, including an Incident Commander or equivalent",
+                "Containment, eradication, and recovery steps are defined for key incident types (e.g., ransomware, data breach, DDoS)",
+                "Communication plans covering internal escalation, customer notification, and regulatory notification are documented within the IRP",
+                "Incidents are tracked through to closure in a formal incident management system"
+              ],
+              "evidence": [
+                "Incident Response Plan document with version history and last-test date",
+                "Tabletop exercise or incident response drill records from the past 12 months",
+                "Incident tickets showing containment, eradication, and recovery steps taken",
+                "Evidence of regulatory or customer notification for applicable incidents (e.g., GDPR breach notification records)"
+              ]
+            },
+            {
+              "id": "CC7.5",
+              "name": "Identifies and implements activities to recover from security incidents",
+              "desc": "The entity identifies, develops, and implements activities to recover from identified security incidents.",
+              "achieved": [
+                "Recovery procedures are documented for key systems and are aligned to defined Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs)",
+                "Backups are performed on a schedule consistent with RPO requirements and stored in a secondary, isolated location",
+                "Backup restoration is tested at least annually and test results are documented",
+                "Post-incident reviews identify improvements to prevent recurrence and these are tracked to closure",
+                "Lessons learned from incidents are fed back into the security programme and training content"
+              ],
+              "evidence": [
+                "Disaster recovery or business continuity plan referencing RTOs and RPOs",
+                "Backup schedule configuration and most recent backup completion reports",
+                "Backup restoration test report from the past 12 months",
+                "Post-incident review or lessons-learned report with action tracking"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC8",
+          "name": "Change Management",
+          "desc": "The Change Management criteria address whether changes to infrastructure, data, software, and procedures are authorised, designed, tested, approved, and implemented in a controlled manner.",
+          "items": [
+            {
+              "id": "CC8.1",
+              "name": "Authorises, designs, develops, tests, approves, and implements changes",
+              "desc": "The entity authorises, designs, develops or acquires, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures to meet its objectives.",
+              "achieved": [
+                "A formal change management policy and procedure is documented and enforced across all in-scope systems",
+                "Changes are classified by risk level (standard, normal, emergency) and subject to proportionate approval requirements",
+                "All production changes are tracked in a change management system with approval records, test results, and roll-back plans",
+                "Separation of duties prevents the same individual from developing, approving, and deploying a change",
+                "Emergency changes are subject to retrospective review and approval within a defined timeframe"
+              ],
+              "evidence": [
+                "Change management policy and procedure document",
+                "Sample change request tickets showing risk classification, testing evidence, approval records, and roll-back plans",
+                "Change management system access control configuration demonstrating separation of duties",
+                "Emergency change post-implementation review records"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CC9",
+          "name": "Risk Mitigation",
+          "desc": "The Risk Mitigation criteria address whether the organisation identifies and manages risks arising from business disruption, vendor relationships, and business partner dependencies.",
+          "items": [
+            {
+              "id": "CC9.1",
+              "name": "Identifies and mitigates risks from business disruption",
+              "desc": "The entity identifies, selects, and develops risk mitigation activities for risks arising from potential business disruptions.",
+              "achieved": [
+                "A Business Impact Analysis (BIA) has been performed and identifies critical processes and acceptable downtime thresholds",
+                "Business continuity plans are documented for critical processes and aligned to BIA findings",
+                "Business continuity plans are tested at least annually through exercises or actual invocation",
+                "Recovery capability is reviewed after major organisational or technology changes",
+                "Dependencies on single points of failure in critical infrastructure are identified and mitigated"
+              ],
+              "evidence": [
+                "Business Impact Analysis report",
+                "Business Continuity Plan (BCP) documentation",
+                "BCP exercise or test records from the past 12 months",
+                "Critical dependency register or infrastructure resilience review"
+              ]
+            },
+            {
+              "id": "CC9.2",
+              "name": "Assesses and manages risks from vendors and business partners",
+              "desc": "The entity assesses and manages risks associated with vendors and business partners.",
+              "achieved": [
+                "A third-party risk management framework is documented and covers onboarding, ongoing monitoring, and offboarding of vendors",
+                "Vendors with access to sensitive data or critical systems undergo formal security due diligence before engagement",
+                "Vendor risk assessments are reviewed at least annually or when there is a material change to the vendor relationship",
+                "Contractual security requirements (data processing agreements, right-to-audit clauses) are included in all material vendor contracts",
+                "A register of critical third parties is maintained and their security posture is monitored through periodic reassessment or continuous monitoring tools"
+              ],
+              "evidence": [
+                "Third-party risk management policy or procedure",
+                "Vendor security assessment questionnaires or risk assessment reports for key suppliers",
+                "Sample vendor contracts showing data processing agreements and security clauses",
+                "Third-party risk register with assessment dates and risk ratings"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "name": "Availability",
+      "desc": "The Availability principle applies when availability of the system is included in the scope of engagement. It addresses capacity management, environmental protections, data backup, and recovery testing to ensure systems are available for operation and use as committed or agreed.",
+      "sections": [
+        {
+          "id": "A1",
+          "name": "Availability Criteria",
+          "desc": "The three availability criteria cover current and future capacity management, environmental and infrastructure resilience, and the regular testing of recovery procedures.",
+          "items": [
+            {
+              "id": "A1.1",
+              "name": "Maintains, monitors, and evaluates processing capacity",
+              "desc": "The entity maintains, monitors, and evaluates current processing capacity and use of system components (infrastructure, data, and software) to manage capacity demand and to enable the implementation of additional capacity to help meet its objectives.",
+              "achieved": [
+                "Capacity monitoring is in place across compute, storage, network, and database tiers with defined thresholds and alerting",
+                "Capacity planning reviews are conducted at least annually or ahead of peak demand periods",
+                "Capacity metrics (CPU, memory, storage utilisation) are reported to management regularly",
+                "Scaling processes (auto-scaling, capacity procurement procedures) are documented and tested",
+                "Historical capacity trends inform forward-looking capacity plans"
+              ],
+              "evidence": [
+                "Infrastructure monitoring dashboards showing capacity utilisation metrics",
+                "Capacity planning review report or annual forecast",
+                "Auto-scaling configuration documentation (for cloud environments) or procurement lead time documentation (for on-premise)",
+                "Alerting configuration showing thresholds for capacity warnings and critical alerts"
+              ]
+            },
+            {
+              "id": "A1.2",
+              "name": "Maintains environmental protections, backups, and recovery infrastructure",
+              "desc": "The entity authorises, designs, develops or acquires, implements, operates, approves, maintains, and monitors environmental protections, software, data backup processes, and recovery infrastructure to meet its objectives.",
+              "achieved": [
+                "Data centres or cloud environments have environmental controls (UPS, cooling, fire suppression) that are monitored and regularly serviced",
+                "Data backup processes are automated, run on a schedule meeting RPO requirements, and are monitored for completion",
+                "Backup data is stored in a geographically separate location (or separate cloud region/availability zone) from production",
+                "Recovery infrastructure (hot/warm/cold standby) is provisioned and maintained to meet RTO commitments",
+                "Environmental monitoring alerts (temperature, humidity, power) are configured and reviewed"
+              ],
+              "evidence": [
+                "Data centre facilities report or cloud provider compliance certification (e.g., ISO 27001, SOC 2)",
+                "Backup schedule configuration and daily backup completion reports",
+                "Evidence of geographically separate backup storage (e.g., cloud replication configuration, off-site tape manifest)",
+                "Recovery infrastructure architecture documentation and maintenance records"
+              ]
+            },
+            {
+              "id": "A1.3",
+              "name": "Tests recovery plan procedures",
+              "desc": "The entity tests recovery plan procedures supporting system recovery to meet its objectives.",
+              "achieved": [
+                "Recovery procedures for in-scope systems are tested at least annually",
+                "Test scenarios cover realistic failure modes relevant to the in-scope services (e.g., database corruption, cloud region outage, ransomware)",
+                "Test results are documented with RTO and RPO outcomes measured against targets",
+                "Deficiencies identified during recovery testing are tracked and remediated",
+                "Recovery test plans are reviewed and updated based on lessons learned from tests or actual incidents"
+              ],
+              "evidence": [
+                "Recovery test plan and test results report from the past 12 months",
+                "Evidence of RTO and RPO measurement during recovery tests",
+                "Deficiency log created during recovery testing with remediation actions",
+                "Updated recovery procedure document reflecting lessons learned"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PI",
+      "name": "Processing Integrity",
+      "desc": "The Processing Integrity principle applies when complete, accurate, timely, and authorised processing is included in the scope of the engagement. It addresses whether system processing is valid, complete, and authorised from input through to output.",
+      "sections": [
+        {
+          "id": "PI1",
+          "name": "Processing Integrity Criteria",
+          "desc": "The five processing integrity criteria address whether information is processed completely, validly, accurately, in a timely manner, and by authorised individuals or processes.",
+          "items": [
+            {
+              "id": "PI1.1",
+              "name": "Obtains and processes inputs completely, accurately, and timely",
+              "desc": "The entity obtains or generates, uses, and communicates relevant, quality information regarding the objectives related to processing, including definitions of data processed and product and service specifications.",
+              "achieved": [
+                "Input validation controls are implemented at application boundaries to reject malformed, incomplete, or out-of-range data",
+                "Processing accuracy is validated through reconciliation procedures comparing input counts/values to output counts/values",
+                "Processing error logs are monitored and reviewed on a defined schedule",
+                "Data quality standards are documented and enforced for information entering in-scope systems",
+                "Automated alerts notify operators of processing failures or data quality exceptions"
+              ],
+              "evidence": [
+                "Application input validation design documentation or code review evidence",
+                "Sample reconciliation reports showing input-to-output completeness checks",
+                "Processing error log and review records from a representative period",
+                "Data quality standards documentation"
+              ]
+            },
+            {
+              "id": "PI1.2",
+              "name": "Processes inputs to achieve complete and accurate results",
+              "desc": "The entity implements policies and procedures over system inputs, including definitions of valid and invalid data inputs, to allow the system to process inputs correctly.",
+              "achieved": [
+                "Business rules governing valid inputs are documented and implemented as system controls",
+                "Data validation rules are version-controlled and reviewed when business logic changes",
+                "Processing pipelines include checkpointing to detect and recover from mid-process failures",
+                "Duplicate detection controls prevent the same input from being processed more than once",
+                "Test environments reflect production business rules to ensure effective pre-deployment testing"
+              ],
+              "evidence": [
+                "Data validation rule documentation or business rules repository",
+                "Duplicate detection control configuration and test evidence",
+                "Pipeline checkpoint configuration and sample recovery logs",
+                "Test environment equivalence review records"
+              ]
+            },
+            {
+              "id": "PI1.3",
+              "name": "Stores and maintains inputs and outputs completely and accurately",
+              "desc": "The entity stores and maintains the completeness, current status, and accuracy of system inputs, outputs, and the processing it performs.",
+              "achieved": [
+                "Storage integrity controls (checksums, hash verification) detect unauthorised modification of stored data",
+                "Data retention schedules are implemented and enforced, ensuring records are retained for the required period and disposed of securely thereafter",
+                "Database integrity constraints (referential integrity, not-null constraints) enforce data quality at the storage layer",
+                "Audit logs capture all create, read, update, and delete operations on sensitive data",
+                "Storage media is monitored for degradation and data is migrated proactively before media failure"
+              ],
+              "evidence": [
+                "Database integrity constraint configuration evidence",
+                "Audit log configuration showing CRUD operation capture for sensitive data",
+                "Data retention and disposal policy with evidence of enforcement",
+                "Storage health monitoring reports"
+              ]
+            },
+            {
+              "id": "PI1.4",
+              "name": "Outputs are complete, accurate, and distributed to authorised parties",
+              "desc": "The entity implements policies and procedures to make available or deliver output completely, accurately, and timely to meet the entity's objectives.",
+              "achieved": [
+                "Output distribution processes ensure reports and data files are delivered only to authorised recipients",
+                "Output completeness checks verify that all expected records are present before distribution",
+                "Delivery confirmation mechanisms (receipts, acknowledgements) are used where appropriate",
+                "Output formats are validated against specifications before distribution",
+                "Unauthorised or unreconciled outputs are held and reviewed before release"
+              ],
+              "evidence": [
+                "Output distribution procedure and authorised recipient list",
+                "Completeness check reports for outputs produced during the review period",
+                "Delivery confirmation records or acknowledgement logs",
+                "Output format validation test evidence"
+              ]
+            },
+            {
+              "id": "PI1.5",
+              "name": "Inputs and outputs are retained and protected",
+              "desc": "The entity implements policies and procedures to store inputs and resulting outputs to meet the entity's objectives.",
+              "achieved": [
+                "Input and output records are retained for the period required by regulatory, contractual, and business requirements",
+                "Retention and disposal schedules are documented and applied consistently",
+                "Access to retained inputs and outputs is restricted to authorised users",
+                "Retained records are protected from tampering through integrity controls or immutable storage",
+                "Disposal of retained records is performed securely and evidenced"
+              ],
+              "evidence": [
+                "Data retention and disposal schedule",
+                "Access control configuration for retained records",
+                "Immutable storage or write-once logging configuration",
+                "Secure disposal records or certificates"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Confidentiality",
+      "desc": "The Confidentiality principle applies when the protection of confidential information is included in the scope of engagement. It addresses the identification and protection of confidential information throughout its lifecycle.",
+      "sections": [
+        {
+          "id": "C1",
+          "name": "Confidentiality Criteria",
+          "desc": "The two confidentiality criteria address the identification and protection of confidential information, and the disposal of confidential information when it is no longer needed.",
+          "items": [
+            {
+              "id": "C1.1",
+              "name": "Identifies and maintains confidential information",
+              "desc": "The entity identifies and maintains confidential information to meet the entity's objectives related to confidentiality.",
+              "achieved": [
+                "Confidential information is defined and classified according to a formal information classification scheme",
+                "An information asset register identifies confidential data assets, their owners, and their handling requirements",
+                "Access to confidential information is restricted on a need-to-know basis and enforced through access controls",
+                "Confidential information is labelled or tagged to enable consistent handling",
+                "Staff are trained on how to identify and handle confidential information appropriately"
+              ],
+              "evidence": [
+                "Information classification policy defining confidential and other classification tiers",
+                "Information asset register with confidential assets highlighted and owners assigned",
+                "Access control report showing restricted access to confidential data repositories",
+                "Confidential data labelling or tagging configuration (e.g., DLP tag policies)"
+              ]
+            },
+            {
+              "id": "C1.2",
+              "name": "Disposes of confidential information",
+              "desc": "The entity disposes of confidential information to meet the entity's objectives related to confidentiality.",
+              "achieved": [
+                "Confidential information is disposed of securely when no longer required, using cryptographic erasure, certified destruction, or equivalent methods",
+                "A data disposal procedure is documented and covers both physical and electronic media",
+                "Disposal is evidenced through certificates of destruction or disposal logs",
+                "Retention and disposal schedules define when confidential information must be disposed of",
+                "Third-party disposal is performed by approved vendors who provide evidence of compliant destruction"
+              ],
+              "evidence": [
+                "Data disposal procedure document",
+                "Certificates of destruction or disposal logs for confidential assets",
+                "Approved disposal vendor contract and relevant certifications",
+                "Retention and disposal schedule showing confidential information categories"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "name": "Privacy",
+      "desc": "The Privacy principle applies when the collection, use, retention, disclosure, and disposal of personal information is included in the scope of the engagement. It addresses whether the entity handles personal information in conformity with its privacy notice and applicable privacy requirements.",
+      "sections": [
+        {
+          "id": "P1",
+          "name": "Notice and Communication of Objectives",
+          "desc": "The notice criteria address whether the entity provides clear, accessible notice to data subjects about its privacy practices.",
+          "items": [
+            {
+              "id": "P1.1",
+              "name": "Provides notice to data subjects",
+              "desc": "The entity provides notice to data subjects about its privacy practices to meet the entity's objectives related to privacy. The notice is updated and communicated to data subjects in a timely manner for changes to the entity's privacy practices.",
+              "achieved": [
+                "A privacy notice is published on all touchpoints where personal information is collected and is written in plain, accessible language",
+                "The privacy notice covers all required elements: identity of the controller, purposes of processing, data subject rights, retention periods, and third-party disclosures",
+                "The privacy notice is reviewed and updated whenever processing activities materially change",
+                "Data subjects are notified of material changes to the privacy notice in a timely manner",
+                "Records of consent (where consent is the lawful basis) are maintained and demonstrable"
+              ],
+              "evidence": [
+                "Published privacy notice with version history and last-updated date",
+                "Privacy notice review log showing review dates and change triggers",
+                "Evidence of data subject notification on material privacy notice changes (e.g., email campaign records)",
+                "Consent records or consent management platform configuration"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P2",
+          "name": "Choice and Consent",
+          "desc": "The choice and consent criteria address whether data subjects are given the opportunity to provide consent and make choices about the collection, use, and disclosure of their personal information.",
+          "items": [
+            {
+              "id": "P2.1",
+              "name": "Provides choices regarding collection, use, and disclosure",
+              "desc": "The entity communicates choices available regarding the collection, use, retention, disclosure, and disposal of personal information to the data subjects and the consequences, if any, of each choice.",
+              "achieved": [
+                "Data subjects are presented with clear opt-in or opt-out choices at the point of data collection",
+                "Consent granularity allows data subjects to accept or decline specific processing purposes independently",
+                "Consequences of each choice are clearly communicated before consent is obtained",
+                "Consent preferences are honoured consistently across all processing systems",
+                "Data subjects can update or withdraw consent at any time through accessible mechanisms"
+              ],
+              "evidence": [
+                "Consent collection interface design and configuration",
+                "Consent management platform logs showing granular preferences captured",
+                "Evidence of consent preferences being propagated to downstream processing systems",
+                "Consent withdrawal mechanism documentation and test evidence"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P3",
+          "name": "Collection",
+          "desc": "The collection criteria address whether personal information is collected only for the purposes disclosed in the privacy notice and only when the entity has a valid lawful basis.",
+          "items": [
+            {
+              "id": "P3.1",
+              "name": "Collects personal information consistent with privacy notice",
+              "desc": "Personal information is collected consistent with the entity's objectives related to privacy.",
+              "achieved": [
+                "Data collection is limited to information necessary for the stated purposes (data minimisation principle applied)",
+                "A Records of Processing Activities (ROPA) maps all data collection points to stated purposes and lawful bases",
+                "New data collection activities are subject to a Data Protection Impact Assessment (DPIA) where required",
+                "Technical controls prevent collection of data categories beyond what is specified in system designs",
+                "Data collection forms and APIs are reviewed to ensure alignment with the privacy notice"
+              ],
+              "evidence": [
+                "Records of Processing Activities (ROPA) document",
+                "DPIA records for high-risk processing activities",
+                "Data collection point audit showing alignment with privacy notice",
+                "Data minimisation review evidence for key collection forms or APIs"
+              ]
+            },
+            {
+              "id": "P3.2",
+              "name": "Collects personal information only when consent or other lawful basis exists",
+              "desc": "The entity collects personal information only when a legal basis exists for doing so.",
+              "achieved": [
+                "A lawful basis is identified and documented in the ROPA for each processing activity",
+                "Consent is obtained before collection where consent is the identified lawful basis",
+                "Legitimate interests assessments are documented where legitimate interests is the lawful basis",
+                "Processing of special category data (health, biometric, etc.) has an additional Article 9 condition identified and documented",
+                "Lawful basis assessments are reviewed when processing purposes change"
+              ],
+              "evidence": [
+                "ROPA entries showing lawful basis for each processing activity",
+                "Legitimate interests assessment (LIA) records",
+                "Consent records for consent-based processing activities",
+                "Special category data processing condition documentation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P4",
+          "name": "Use, Retention, and Disposal",
+          "desc": "The use, retention, and disposal criteria address whether personal information is used only for the purposes it was collected for, retained only as long as necessary, and disposed of securely.",
+          "items": [
+            {
+              "id": "P4.1",
+              "name": "Uses personal information for disclosed purposes",
+              "desc": "The entity limits the use of personal information to the purposes disclosed to data subjects.",
+              "achieved": [
+                "Technical and organisational controls prevent use of personal information for purposes not disclosed at collection",
+                "Secondary use of personal information is assessed against the original collection purpose and requires additional legal basis if incompatible",
+                "Access controls restrict personal information to teams with a legitimate processing need",
+                "Data flows are mapped and monitored to detect unauthorised use",
+                "Privacy impact assessments evaluate proposed new uses of existing personal data"
+              ],
+              "evidence": [
+                "Data flow diagrams showing authorised uses of personal information",
+                "Access control configuration limiting personal data access to authorised teams",
+                "Secondary use assessment records",
+                "Privacy impact assessment for new uses of existing personal data"
+              ]
+            },
+            {
+              "id": "P4.2",
+              "name": "Retains personal information only as long as necessary",
+              "desc": "The entity retains personal information consistent with the entity's objectives related to privacy.",
+              "achieved": [
+                "Retention schedules define maximum retention periods for each category of personal information",
+                "Automated deletion or archival processes enforce retention schedules",
+                "Exceptions to standard retention periods are documented and approved",
+                "Retention periods are reviewed when regulatory requirements change",
+                "Data subjects can request erasure of personal information and requests are processed within the required timeframe"
+              ],
+              "evidence": [
+                "Data retention schedule covering personal information categories",
+                "Automated deletion job configuration and execution logs",
+                "Data subject erasure request log with response times",
+                "Retention period review records"
+              ]
+            },
+            {
+              "id": "P4.3",
+              "name": "Disposes of personal information securely",
+              "desc": "The entity disposes of personal information in a timely manner to meet the entity's objectives related to privacy.",
+              "achieved": [
+                "Personal information is disposed of securely using cryptographic erasure, certified destruction, or equivalent methods",
+                "Disposal of personal information held by third parties is governed by contractual data processing agreements",
+                "Disposal is evidenced through records or certificates of destruction",
+                "Disposal procedures apply equally to backup copies and test data environments",
+                "Regular audits confirm that personal information past its retention period has been disposed of"
+              ],
+              "evidence": [
+                "Data disposal procedure referencing personal information",
+                "Disposal records or certificates for personal information",
+                "Third-party data processing agreements referencing secure disposal obligations",
+                "Test data management procedure showing anonymisation or disposal of personal data in non-production environments"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P5",
+          "name": "Access",
+          "desc": "The access criteria address whether data subjects can access their personal information and correct inaccuracies.",
+          "items": [
+            {
+              "id": "P5.1",
+              "name": "Grants data subjects access to their personal information",
+              "desc": "The entity grants identified and authenticated data subjects the ability to access their stored personal information for review.",
+              "achieved": [
+                "A process for handling Subject Access Requests (SARs) is documented and staff responsible for responding are trained",
+                "SARs are fulfilled within the legally required timeframe (e.g., one month under UK GDPR)",
+                "Data subjects can access their personal information through a self-service portal or by submitting a formal request",
+                "Identity verification procedures are applied before personal information is disclosed",
+                "A log of SARs received and their outcomes is maintained"
+              ],
+              "evidence": [
+                "SAR handling procedure document",
+                "SAR log showing requests received, response dates, and outcomes",
+                "Identity verification procedure for data subject requests",
+                "Self-service data access portal configuration (if applicable)"
+              ]
+            },
+            {
+              "id": "P5.2",
+              "name": "Corrects personal information upon request",
+              "desc": "The entity corrects or amends personal information based on a valid request by a data subject.",
+              "achieved": [
+                "A process for handling rectification requests from data subjects is documented",
+                "Rectification requests are assessed and fulfilled or declined within the required timeframe",
+                "Where correction is not made, the reasons are documented and communicated to the data subject",
+                "Corrections are propagated to all systems holding the relevant personal information",
+                "A log of rectification requests and their outcomes is maintained"
+              ],
+              "evidence": [
+                "Rectification request handling procedure",
+                "Rectification request log with response times and outcomes",
+                "Evidence of corrections being propagated to downstream systems",
+                "Declined rectification request documentation showing reasons communicated to data subjects"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P6",
+          "name": "Disclosure to Third Parties",
+          "desc": "The disclosure criteria address whether personal information is disclosed to third parties only for disclosed purposes with appropriate protections in place.",
+          "items": [
+            {
+              "id": "P6.1",
+              "name": "Discloses personal information only for disclosed purposes",
+              "desc": "The entity discloses personal information to third parties with the consent of data subjects or as required by applicable law or regulation.",
+              "achieved": [
+                "A register of third-party disclosures is maintained, covering the recipient, purpose, data categories, and legal basis",
+                "Disclosures are limited to what is necessary for the stated purpose (data minimisation)",
+                "Third-party recipients are contractually bound by data processing agreements",
+                "Disclosures to law enforcement or regulators are tracked and reviewed for legal compliance",
+                "Data subjects are informed of third-party disclosures in the privacy notice"
+              ],
+              "evidence": [
+                "Third-party disclosure register",
+                "Data processing agreements with key third-party recipients",
+                "Privacy notice referencing third-party disclosure categories",
+                "Law enforcement disclosure log and legal review records"
+              ]
+            },
+            {
+              "id": "P6.2",
+              "name": "Creates and retains complete, accurate records of third-party disclosures",
+              "desc": "The entity creates and retains a complete and accurate record of authorized disclosures of personal information.",
+              "achieved": [
+                "All disclosures of personal information to third parties are logged with timestamps, recipient identity, and data categories disclosed",
+                "Disclosure logs are retained in accordance with the data retention policy",
+                "Audit trails for disclosures are tamper-evident",
+                "Regular reviews confirm that disclosure logs are complete and accurate",
+                "Access to disclosure logs is restricted to authorised personnel"
+              ],
+              "evidence": [
+                "Third-party disclosure log with timestamps and recipient details",
+                "Disclosure log access control configuration",
+                "Disclosure log integrity or audit trail evidence",
+                "Periodic disclosure log review records"
+              ]
+            },
+            {
+              "id": "P6.3",
+              "name": "Informs data subjects of third-party disclosures",
+              "desc": "The entity provides notification of disclosures of personal information to third parties.",
+              "achieved": [
+                "The privacy notice identifies categories of third-party recipients and purposes",
+                "Where individual disclosure notifications are required, they are made within the required timeframe",
+                "Data subjects can request a list of specific recipients to whom their data has been disclosed",
+                "Notification processes are documented and tested"
+              ],
+              "evidence": [
+                "Privacy notice referencing third-party disclosure categories",
+                "Individual disclosure notification records where applicable",
+                "Process documentation for responding to data subject enquiries about specific disclosures"
+              ]
+            },
+            {
+              "id": "P6.4",
+              "name": "Discloses personal information only to service providers with equivalent privacy protections",
+              "desc": "The entity discloses personal information to third-party service providers only when the provider has agreed to implement the protections called for in the entity's privacy policies.",
+              "achieved": [
+                "Third-party service providers are assessed for privacy and security adequacy before personal data is shared",
+                "Data processing agreements contractually require service providers to implement equivalent privacy protections",
+                "Service providers are subject to periodic re-assessment or monitoring",
+                "Sub-processor arrangements are documented and approved",
+                "International data transfers are governed by appropriate transfer mechanisms (e.g., adequacy decision, SCCs)"
+              ],
+              "evidence": [
+                "Third-party privacy assessment records",
+                "Data processing agreements with service providers",
+                "Sub-processor register",
+                "International transfer mechanism documentation (SCCs, adequacy decisions)"
+              ]
+            },
+            {
+              "id": "P6.5",
+              "name": "Notifies data subjects and authorities of privacy breaches",
+              "desc": "The entity notifies data subjects and, as required, authorities and others of a privacy breach or other event that could impact data subjects.",
+              "achieved": [
+                "A data breach notification procedure defines assessment, notification, and escalation steps",
+                "Breach notification timelines comply with applicable law (e.g., 72 hours to supervisory authority under UK GDPR)",
+                "Notification to affected data subjects is made when the breach is likely to result in high risk to their rights and freedoms",
+                "Breach records are maintained in a breach register",
+                "Post-breach reviews identify control improvements"
+              ],
+              "evidence": [
+                "Data breach notification procedure",
+                "Breach register covering the review period",
+                "Supervisory authority notification records (if applicable)",
+                "Data subject notification records and post-breach review reports"
+              ]
+            },
+            {
+              "id": "P6.6",
+              "name": "Addresses requests from data subjects and others regarding personal information",
+              "desc": "The entity addresses inquiries, complaints, and disputes from data subjects regarding personal information.",
+              "achieved": [
+                "A process for handling data subject rights requests and complaints is documented",
+                "All rights requests (access, erasure, portability, restriction, objection) are tracked and responded to within required timeframes",
+                "Complaints are triaged and resolved or escalated appropriately",
+                "A point of contact for privacy enquiries is published and accessible",
+                "Unresolved complaints can be escalated to the supervisory authority"
+              ],
+              "evidence": [
+                "Data subject rights request handling procedure",
+                "Rights request and complaint log with response times",
+                "Privacy contact point evidence (privacy notice, website)",
+                "Escalation records for unresolved complaints"
+              ]
+            },
+            {
+              "id": "P6.7",
+              "name": "Provides accurate and complete personal information to third parties",
+              "desc": "The entity provides accurate and complete personal information to third parties when disclosure is authorized.",
+              "achieved": [
+                "Data quality checks are performed before personal information is shared with third parties",
+                "Disclosure processes include steps to verify completeness and accuracy of the data to be shared",
+                "Amendments to previously disclosed personal information are communicated to recipients where required",
+                "Third-party disclosure accuracy is periodically reviewed"
+              ],
+              "evidence": [
+                "Data quality check procedure for third-party disclosures",
+                "Sample disclosure output with completeness and accuracy verification",
+                "Amendment notification records to third parties"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P7",
+          "name": "Quality",
+          "desc": "The quality criteria address whether personal information is accurate, complete, and relevant for the purposes it was collected.",
+          "items": [
+            {
+              "id": "P7.1",
+              "name": "Ensures accuracy and completeness of personal information",
+              "desc": "The entity collects and maintains accurate, up-to-date, complete, and relevant personal information to meet the entity's objectives related to privacy.",
+              "achieved": [
+                "Data quality standards are defined for personal information and enforced through technical and procedural controls",
+                "Data subjects can update their personal information through accessible self-service mechanisms",
+                "Periodic data quality reviews assess the accuracy and completeness of held personal information",
+                "Data quality issues identified through audits or subject feedback are remediated",
+                "Data collected from third-party sources is validated for accuracy before use"
+              ],
+              "evidence": [
+                "Data quality standards documentation",
+                "Self-service personal information update mechanism",
+                "Data quality audit or review report",
+                "Remediation log for data quality issues"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P8",
+          "name": "Monitoring and Enforcement",
+          "desc": "The monitoring and enforcement criteria address whether the entity monitors compliance with its privacy programme and enforces its privacy policies.",
+          "items": [
+            {
+              "id": "P8.1",
+              "name": "Monitors compliance with privacy policies and procedures",
+              "desc": "The entity monitors compliance with its privacy policies and procedures and has procedures to address privacy-related complaints and disputes.",
+              "achieved": [
+                "Privacy compliance monitoring activities (audits, assessments, privacy KPIs) are conducted on a defined schedule",
+                "Privacy metrics are reported to senior management and the board or data protection committee",
+                "A Data Protection Officer (DPO) or equivalent privacy lead is appointed and empowers the privacy programme",
+                "Privacy compliance findings are tracked and remediated",
+                "Regulatory guidance and supervisory authority decisions are monitored and integrated into the privacy programme"
+              ],
+              "evidence": [
+                "Privacy compliance monitoring plan and most recent assessment report",
+                "Privacy metrics or KPI dashboard report",
+                "DPO appointment record and evidence of DPO activities",
+                "Remediation log for privacy compliance findings"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

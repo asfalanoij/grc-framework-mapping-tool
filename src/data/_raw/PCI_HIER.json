@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "name": "PCI DSS 4.0",
+    "version": "4.0.1",
+    "url": "https://www.pcisecuritystandards.org",
+    "color": "#F59E0B"
+  },
+  "about": {
+    "title": "About PCI DSS 4.0",
+    "blurb": "The Payment Card Industry Data Security Standard (PCI DSS) is a global security standard established by the PCI Security Standards Council (PCI SSC) and required by card brands including Visa, Mastercard, and American Express. Version 4.0 (updated to 4.0.1) was released in 2022 and introduces a customised approach alongside the traditional defined approach, giving organisations greater flexibility to demonstrate equivalent security outcomes. Compliance is mandatory for any organisation that stores, processes, or transmits cardholder data, and is validated annually through a Report on Compliance (ROC) completed by a Qualified Security Assessor (QSA) or a Self-Assessment Questionnaire (SAQ) depending on transaction volumes. PCI DSS 4.0 significantly emphasises security as a continuous process rather than a point-in-time assessment.",
+    "sections": [
+      {
+        "id": "Build",
+        "name": "Build and Maintain a Secure Network",
+        "desc": "Requirements 1 and 2 address the foundational network and system security configuration controls that form the perimeter of the cardholder data environment."
+      },
+      {
+        "id": "Protect",
+        "name": "Protect Cardholder Data",
+        "desc": "Requirements 3 and 4 address the protection of stored and transmitted cardholder data through encryption and data minimisation."
+      },
+      {
+        "id": "Manage",
+        "name": "Maintain a Vulnerability Management Programme",
+        "desc": "Requirements 5 and 6 address malware protection and secure development practices to maintain a resilient environment."
+      },
+      {
+        "id": "Access",
+        "name": "Implement Strong Access Control Measures",
+        "desc": "Requirements 7, 8, and 9 address logical and physical access controls to the cardholder data environment."
+      },
+      {
+        "id": "Monitor",
+        "name": "Regularly Monitor and Test Networks",
+        "desc": "Requirements 10 and 11 address logging, monitoring, and security testing of the cardholder data environment."
+      },
+      {
+        "id": "Policy",
+        "name": "Maintain an Information Security Policy",
+        "desc": "Requirement 12 addresses the governance, policies, and organisational practices that underpin the entire PCI DSS programme."
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "Req 1",
+      "name": "Install and Maintain Network Security Controls",
+      "desc": "Requirement 1 requires organisations to establish and maintain network security controls (NSCs) — firewalls, routers, and equivalent devices — that restrict inbound and outbound network traffic to that which is necessary for the cardholder data environment (CDE). All NSC rule sets must be documented, reviewed at least every six months, and default deny rules applied. Network diagrams must be maintained showing all connections between the CDE and other networks.",
+      "achieved": [
+        "Network security controls (firewalls, routers, cloud security groups) are deployed at all connections between the CDE and untrusted networks",
+        "A documented and approved policy exists for managing network security controls, including the review and approval of rule sets",
+        "All traffic into and out of the CDE is restricted to that which is business-justified; a default-deny rule is applied",
+        "Network diagrams are maintained and kept current, showing all CDE boundaries, data flows, and connections to external networks",
+        "NSC rule sets are reviewed by authorised personnel at least every six months and documented evidence of review is retained"
+      ],
+      "evidence": [
+        "Current network architecture diagram showing CDE boundaries and connections to other network segments and the internet",
+        "Firewall or NSC rule set export with most recent review date and reviewer sign-off",
+        "Network security control policy and change management records",
+        "Evidence of bi-annual rule set review (e.g., review sign-off sheets, ticketing system records)"
+      ]
+    },
+    {
+      "id": "Req 2",
+      "name": "Apply Secure Configurations to All System Components",
+      "desc": "Requirement 2 requires that all system components within the CDE are configured securely from deployment. Vendor-supplied defaults (default passwords, unnecessary services, default accounts) must be changed or disabled before systems are placed in production. Configuration standards must be developed based on industry-accepted hardening guidance (e.g., CIS Benchmarks, NIST guidelines) and applied consistently.",
+      "achieved": [
+        "Vendor-supplied default credentials are changed or disabled on all system components before deployment in the CDE",
+        "Hardening standards based on industry-accepted benchmarks are developed and applied to all CDE system component types",
+        "Unnecessary services, protocols, and features are disabled on all CDE components",
+        "System configuration standards are reviewed and updated at least every 12 months and whenever new vulnerabilities affect the standard",
+        "Configuration compliance is verified through automated scanning or manual review on a defined schedule"
+      ],
+      "evidence": [
+        "System hardening standards or secure configuration baselines for each CDE component type",
+        "Configuration compliance scan results showing adherence to hardening standards",
+        "Evidence that default credentials have been changed (e.g., password management system records, configuration screenshots)",
+        "Annual review records for configuration standards with change log"
+      ]
+    },
+    {
+      "id": "Req 3",
+      "name": "Protect Stored Account Data",
+      "desc": "Requirement 3 requires that stored cardholder data is minimised and protected. The primary account number (PAN) must be rendered unreadable anywhere it is stored using strong cryptography, truncation, tokenisation, or one-way hashing. Sensitive authentication data (SAD) — including full track data, CVV/CVC codes, and PINs — must never be stored after authorisation, regardless of encryption. A data retention and disposal policy must define the minimum data storage needed.",
+      "achieved": [
+        "The full PAN is stored only where there is a legitimate business need, and the data retention policy documents and justifies all PAN storage locations",
+        "Stored PAN is protected using strong cryptography (AES-256 or equivalent), tokenisation, or truncation",
+        "Sensitive authentication data (SAD) is never stored after transaction authorisation",
+        "Cryptographic key management procedures are documented, including key generation, distribution, storage, access, retirement, and destruction",
+        "Data discovery tools or processes are used to identify all locations where cardholder data is stored, including unintended storage"
+      ],
+      "evidence": [
+        "Data retention and disposal policy identifying PAN storage locations and retention justification",
+        "Encryption implementation documentation showing algorithms and key lengths used for PAN protection",
+        "Key management procedure and key inventory",
+        "Data discovery scan results confirming no SAD is stored after authorisation and identifying all PAN storage locations"
+      ]
+    },
+    {
+      "id": "Req 4",
+      "name": "Protect Cardholder Data with Strong Cryptography During Transmission Over Open, Public Networks",
+      "desc": "Requirement 4 requires that cardholder data (particularly PAN) is protected using strong cryptography during transmission over open or public networks. Only trusted keys and certificates must be used, and TLS 1.2 or higher must be implemented. The use of end-user messaging technologies (email, SMS, chat) to transmit unprotected PAN is prohibited.",
+      "achieved": [
+        "All transmissions of PAN over open or public networks use TLS 1.2 or higher with strong cipher suites",
+        "Certificates used for TLS are from trusted certificate authorities and are renewed before expiry",
+        "An inventory of all trusted keys and certificates is maintained",
+        "PAN is never transmitted via unprotected end-user messaging technologies (email, SMS, chat)",
+        "Wireless networks transmitting cardholder data use strong encryption (WPA3 or equivalent)"
+      ],
+      "evidence": [
+        "TLS configuration documentation and SSL/TLS scan results confirming TLS 1.2+ and strong cipher suites",
+        "Certificate inventory with expiry dates and renewal process",
+        "Evidence of certificate authority trust chain validation",
+        "Technical control evidence showing PAN transmission is blocked over unprotected messaging channels"
+      ]
+    },
+    {
+      "id": "Req 5",
+      "name": "Protect All Systems and Networks from Malicious Software",
+      "desc": "Requirement 5 requires that all systems — particularly those commonly affected by malware — are protected by anti-malware solutions. Anti-malware software must be kept current, generate audit logs, and actively run. The requirement now extends to all components in the CDE, not just those traditionally targeted by malware, with a risk-based evaluation for components where malware risk is low.",
+      "achieved": [
+        "Anti-malware software is deployed on all components susceptible to malware within the CDE, including endpoints, servers, and any system that can connect to external networks",
+        "Anti-malware signature files or heuristic engines are updated automatically and on a defined schedule",
+        "Anti-malware solutions generate audit logs, and tampering with or disabling the solution is prevented or detected",
+        "Anti-malware scanning is performed on a periodic basis and on any removable media before use",
+        "A risk-based evaluation documents CDE components where anti-malware is not deployed and provides evidence that risk is low and monitored"
+      ],
+      "evidence": [
+        "Anti-malware deployment report showing coverage across all in-scope CDE components",
+        "Anti-malware update configuration and last-updated timestamp records",
+        "Anti-malware audit log samples and tamper-detection configuration",
+        "Risk evaluation documentation for any components where anti-malware is not deployed"
+      ]
+    },
+    {
+      "id": "Req 6",
+      "name": "Develop and Maintain Secure Systems and Software",
+      "desc": "Requirement 6 requires that all system components are protected from known vulnerabilities and that software developed by or for the organisation follows a secure development lifecycle (SDLC). This includes applying security patches within defined timeframes, identifying vulnerabilities through code review and security testing, and training developers in secure coding techniques.",
+      "achieved": [
+        "A formal SDLC process incorporates security activities at each phase: requirements, design, coding, testing, and deployment",
+        "All custom software is reviewed for common vulnerabilities (OWASP Top 10 equivalent) before deployment to production",
+        "Security patches rated critical are applied within one month of release; all other patches within a defined timeframe",
+        "Developers receive training in secure coding techniques relevant to the languages and frameworks they use",
+        "Web-facing applications are protected against known web-based attacks through a web application firewall or equivalent"
+      ],
+      "evidence": [
+        "Secure SDLC policy or procedure documentation",
+        "Code review records or SAST/DAST scan results for custom applications",
+        "Patch management policy and evidence of patch application within the required timeframe",
+        "Developer secure coding training completion records"
+      ]
+    },
+    {
+      "id": "Req 7",
+      "name": "Restrict Access to System Components and Cardholder Data by Business Need to Know",
+      "desc": "Requirement 7 requires that access to cardholder data and CDE system components is limited to only those individuals whose job requires such access. This is achieved through formal access control systems, role-based access policies, and the principle of least privilege. Access to all system components must be managed through an access control system that enforces deny-all by default.",
+      "achieved": [
+        "An access control policy defines the principle of least privilege and business need-to-know requirements for CDE access",
+        "Access rights to the CDE are assigned based on documented job role definitions and business justification",
+        "All access to CDE system components and cardholder data is controlled through an access control system with deny-all as the default",
+        "Access rights are reviewed at least every six months for privileged users and every 12 months for all other users",
+        "Changes to access rights are authorised, documented, and implemented through a formal access provisioning process"
+      ],
+      "evidence": [
+        "Access control policy referencing least privilege and business need-to-know",
+        "Access control system configuration showing deny-all default rule",
+        "User access review records for the past 12 months showing reviewer sign-off",
+        "Access provisioning request records with business justification and approval"
+      ]
+    },
+    {
+      "id": "Req 8",
+      "name": "Identify Users and Authenticate Access to System Components",
+      "desc": "Requirement 8 requires that all users are uniquely identified and that strong authentication mechanisms are used. Shared or generic accounts are prohibited. Multi-factor authentication (MFA) is required for all non-console access into the CDE and for all remote access. Passwords and passphrases must meet complexity and length requirements, and account lockout thresholds must be set.",
+      "achieved": [
+        "All user accounts in the CDE are unique to individual users; shared or generic accounts are not used except in documented exceptional circumstances",
+        "Multi-factor authentication is enforced for all non-console administrative access to the CDE and all remote access to the CDE",
+        "Password and passphrase complexity requirements meet or exceed PCI DSS minimums (minimum 12 characters, complexity enabled)",
+        "Account lockout is configured to trigger after no more than 10 failed authentication attempts, with a lockout duration of at least 30 minutes",
+        "Inactive accounts are disabled or removed after no more than 90 days of inactivity"
+      ],
+      "evidence": [
+        "User account management policy covering uniqueness, MFA, and password requirements",
+        "MFA configuration evidence for administrative and remote CDE access",
+        "Password policy configuration showing minimum length and complexity settings",
+        "Account lockout configuration and inactive account management configuration"
+      ]
+    },
+    {
+      "id": "Req 9",
+      "name": "Restrict Physical Access to Cardholder Data",
+      "desc": "Requirement 9 requires that physical access to systems that store, process, or transmit cardholder data is restricted to authorised individuals. This includes secure data centre access controls, visitor management, protection of physical media, and secure disposal of media containing cardholder data.",
+      "achieved": [
+        "Physical access to the CDE is restricted using electronic access controls (key card, biometric) and monitored by CCTV",
+        "A register of individuals authorised to access the CDE physically is maintained and reviewed at least every three months",
+        "Visitors to physical CDE areas are escorted at all times and visitor access is logged",
+        "Physical media containing cardholder data is classified and stored securely; access is restricted to authorised personnel",
+        "Media containing cardholder data is destroyed securely before disposal, with certificates of destruction obtained"
+      ],
+      "evidence": [
+        "Physical access control system configuration and access log export",
+        "Visitor access log for the CDE and escorting procedure",
+        "Physical media inventory and storage access records",
+        "Certificates of destruction for media disposed of during the review period"
+      ]
+    },
+    {
+      "id": "Req 10",
+      "name": "Log and Monitor All Access to System Components and Cardholder Data",
+      "desc": "Requirement 10 requires that all access to CDE system components, particularly access by administrators and access to cardholder data, is logged and the logs are monitored for anomalies and suspicious activity. Audit logs must be protected from destruction and modification, retained for at least 12 months with at least three months immediately available, and reviewed daily.",
+      "achieved": [
+        "Audit logging is enabled on all in-scope CDE system components, capturing at minimum: individual user access, all actions taken by individuals with root or administrative privileges, access to and changes to audit trails, authentication events, and use of identification and authentication mechanisms",
+        "Audit logs are reviewed at least daily, with automated alerts for suspicious or anomalous events",
+        "Audit logs are protected from modification and deletion; access to log modification is restricted",
+        "Audit logs are retained for at least 12 months, with a minimum of three months readily available",
+        "Time synchronisation technology (NTP) is used to ensure consistent and accurate time-stamps across all CDE systems"
+      ],
+      "evidence": [
+        "Audit logging configuration for all CDE system components showing required event types are captured",
+        "Log review records or SIEM alert logs demonstrating daily review activities",
+        "Log retention configuration and storage evidence (12 months total, 3 months immediately accessible)",
+        "NTP configuration and time synchronisation status reports",
+        "Log access control configuration showing restricted access to log modification"
+      ]
+    },
+    {
+      "id": "Req 11",
+      "name": "Test Security of Systems and Networks Regularly",
+      "desc": "Requirement 11 requires that the security of CDE systems and networks is tested regularly through vulnerability scanning, penetration testing, intrusion detection, and change detection. Internal and external vulnerability scans must be performed quarterly. Penetration testing must be performed at least annually and after any significant CDE changes. A change-detection mechanism must monitor critical files for unauthorised modifications.",
+      "achieved": [
+        "Internal and external vulnerability scans are performed at least every three months using an Approved Scanning Vendor (ASV) for external scans",
+        "External vulnerability scans achieve passing results before compliance is confirmed; failed scans trigger remediation and re-scanning",
+        "Penetration testing is performed at least annually by a qualified internal or external tester, and covers all CDE components and connections",
+        "Penetration test scope includes network layer and application layer testing, and tests for exploitable vulnerabilities rather than just theoretical risks",
+        "A file integrity monitoring (FIM) or change-detection mechanism monitors critical CDE files and alerts on unauthorised changes at least weekly"
+      ],
+      "evidence": [
+        "Quarterly internal and external vulnerability scan reports with pass/fail status and remediation evidence for any failures",
+        "Annual penetration test report with scope, methodology, findings, and remediation records",
+        "Tester qualifications documentation (for internal testers) or QSA/third-party firm credentials",
+        "File integrity monitoring tool configuration and alert logs showing weekly review"
+      ]
+    },
+    {
+      "id": "Req 12",
+      "name": "Support Information Security with Organisational Policies and Programs",
+      "desc": "Requirement 12 addresses the governance and organisational foundations of the PCI DSS programme. It requires a comprehensive information security policy, acceptable use policies, risk assessments, security awareness training, incident response capability, vendor management, and executive accountability for PCI DSS compliance. The requirement emphasises that security is an ongoing organisational commitment, not a point-in-time exercise.",
+      "achieved": [
+        "A comprehensive information security policy is published, covers all PCI DSS requirements, is reviewed at least annually, and is communicated to all personnel",
+        "A formal risk assessment process is documented and performed at least annually, identifying threats and vulnerabilities that could impact the CDE",
+        "A security awareness programme provides training to all personnel at hire and at least annually thereafter, covering relevant security topics including cardholder data protection",
+        "An incident response plan is documented, tested at least annually, and designates specific roles and responsibilities for responding to security incidents",
+        "A programme to manage service providers with access to cardholder data is established, including due diligence, contractual requirements, and ongoing monitoring"
+      ],
+      "evidence": [
+        "Information security policy with review history and executive approval",
+        "Annual risk assessment report",
+        "Security awareness training completion records",
+        "Incident response plan with last test date and test results"
+      ]
+    }
+  ]
+}

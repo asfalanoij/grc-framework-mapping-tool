@@ -1,0 +1,2307 @@
+{
+  "meta": {
+    "name": "CIS Controls v8",
+    "version": "v8 (2021)",
+    "url": "https://www.cisecurity.org/controls/v8",
+    "color": "#10B981"
+  },
+  "about": {
+    "title": "CIS Controls v8",
+    "blurb": "The CIS Controls are a prioritised set of 18 safeguard categories and 153 individual safeguards designed to defend against the most prevalent cyber attacks. Controls are organised into three Implementation Groups (IG1, IG2, IG3) based on organisational risk profile and resources.",
+    "sections": [
+      {
+        "h": "Implementation Groups",
+        "p": [
+          "IG1 (Basic): 56 safeguards for small organisations with limited IT/security expertise. Represent essential cyber hygiene.",
+          "IG2 (Foundational): adds 74 safeguards for organisations with moderate IT complexity and regulatory obligations.",
+          "IG3 (Advanced): adds 23 safeguards for mature organisations with significant security teams and high-risk profiles."
+        ]
+      },
+      {
+        "h": "Structure",
+        "p": [
+          "Each Control group has a title, description, and a set of numbered Safeguards. Safeguard IDs follow the pattern CIS X.Y where X is the Control number and Y is the Safeguard number within that Control."
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "CIS 1",
+      "name": "Inventory and Control of Enterprise Assets",
+      "desc": "Actively manage (inventory, track, and correct) all enterprise assets connected to the infrastructure — physically, virtually, remotely, and those within cloud environments — to accurately know the totality of assets that need to be monitored and protected.",
+      "achieved": [
+        "A complete, up-to-date hardware asset inventory exists covering all connected devices.",
+        "Unauthorised devices are detected and addressed within a defined SLA.",
+        "Passive and active discovery tools run continuously or on a scheduled basis.",
+        "Asset ownership is assigned for every entry in the inventory."
+      ],
+      "evidence": [
+        "CMDB or asset inventory export showing all physical and virtual assets with owner and classification",
+        "Network discovery scan reports (e.g. Nmap, Qualys, Rapid7) with timestamps",
+        "Alerts or tickets raised for unauthorised device detections"
+      ],
+      "items": [
+        {
+          "id": "CIS 1.1",
+          "name": "Establish and Maintain Detailed Enterprise Asset Inventory",
+          "desc": "[IG1] Establish and maintain an accurate, detailed, and up-to-date inventory of all enterprise assets with potential to store or process data, including end-user devices, network devices, non-computing/IoT devices, and servers. Ensure the inventory captures the network address, hardware address, machine name, data asset owner, department, and whether the asset has been approved to connect to the network.",
+          "achieved": [
+            "Inventory contains hardware address, IP, hostname, owner, and department for every asset.",
+            "Inventory is reviewed and reconciled at least quarterly."
+          ],
+          "evidence": [
+            "Asset inventory spreadsheet or CMDB extract",
+            "Quarterly reconciliation log"
+          ]
+        },
+        {
+          "id": "CIS 1.2",
+          "name": "Address Unauthorised Assets",
+          "desc": "[IG1] Ensure that a process exists to address unauthorised assets on a weekly basis. The enterprise may choose to remove the asset from the network, deny the asset from connecting remotely to the network, or quarantine the asset.",
+          "achieved": [
+            "Documented process for handling unauthorised assets exists and is followed.",
+            "Evidence of unauthorised devices being quarantined or removed."
+          ],
+          "evidence": [
+            "Incident or change tickets for unauthorised device handling",
+            "NAC quarantine logs"
+          ]
+        },
+        {
+          "id": "CIS 1.3",
+          "name": "Utilise an Active Discovery Tool",
+          "desc": "[IG2] Utilise an active discovery tool to identify assets connected to the enterprise's network. Configure the active discovery tool to execute daily, or more frequently.",
+          "achieved": [
+            "Active scanning tool is deployed and runs on a defined schedule.",
+            "Scan results are reviewed and fed into the asset inventory."
+          ],
+          "evidence": [
+            "Discovery tool configuration showing scan schedule",
+            "Scan output reports"
+          ]
+        },
+        {
+          "id": "CIS 1.4",
+          "name": "Use Dynamic Host Configuration Protocol (DHCP) Logging",
+          "desc": "[IG2] Use DHCP logging on all DHCP servers or IP address management tools to update the enterprise's asset inventory. Review and use logs to update the asset inventory at a minimum weekly, or more frequently.",
+          "achieved": [
+            "DHCP logs are retained and reviewed to validate and update asset records."
+          ],
+          "evidence": [
+            "DHCP server log exports",
+            "Evidence of inventory updates driven by DHCP data"
+          ]
+        },
+        {
+          "id": "CIS 1.5",
+          "name": "Use a Passive Asset Discovery Tool",
+          "desc": "[IG3] Use a passive discovery tool to identify assets connected to the enterprise's network. Review and use scans to update the enterprise's asset inventory at a minimum weekly, or more frequently.",
+          "achieved": [
+            "Passive discovery (e.g. network traffic analysis) supplements active scanning.",
+            "New assets appear in inventory within 24 hours of connection."
+          ],
+          "evidence": [
+            "Passive discovery tool configuration and output reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 2",
+      "name": "Inventory and Control of Software Assets",
+      "desc": "Actively manage (inventory, track, and correct) all software on the network so that only authorised software is installed and can execute, and unauthorised and unmanaged software is found and prevented from installation or execution.",
+      "achieved": [
+        "A complete software inventory exists covering all installed applications, SaaS subscriptions, and libraries.",
+        "Unauthorised software is detected and removed or blocked within a defined SLA.",
+        "Only software from the approved catalogue is permitted to run on managed devices.",
+        "Software inventory is reconciled against approved catalogue at least monthly."
+      ],
+      "evidence": [
+        "Software asset inventory or SAM tool export",
+        "Approved software catalogue",
+        "Application whitelisting or endpoint policy configuration evidence"
+      ],
+      "items": [
+        {
+          "id": "CIS 2.1",
+          "name": "Establish and Maintain a Software Inventory",
+          "desc": "[IG1] Establish and maintain a detailed inventory of all licensed software installed on enterprise assets. The software inventory must document the title, publisher, initial install/use date, and business purpose for each entry. Review and update the inventory bi-annually or more frequently.",
+          "achieved": [
+            "Inventory lists all installed software with title, publisher, version, and business owner.",
+            "Inventory reviewed at least every six months."
+          ],
+          "evidence": [
+            "Software inventory export from endpoint management or SAM tool"
+          ]
+        },
+        {
+          "id": "CIS 2.2",
+          "name": "Ensure Authorised Software is Currently Supported",
+          "desc": "[IG1] Ensure that only currently supported software is designated as authorised in the software inventory. Unsupported software should be tagged as unsupported and reviewed monthly.",
+          "achieved": [
+            "All authorised software has an active support/maintenance status.",
+            "EOL software is identified and remediation-tracked."
+          ],
+          "evidence": [
+            "EOL software report from SAM or patch management tool"
+          ]
+        },
+        {
+          "id": "CIS 2.3",
+          "name": "Address Unauthorised Software",
+          "desc": "[IG1] Ensure that unauthorised software is either removed, quarantined, or the exception is documented with business justification.",
+          "achieved": [
+            "Process for handling unauthorised software is defined and followed.",
+            "Evidence of removal or exception approval for all detected unauthorised software."
+          ],
+          "evidence": [
+            "Tickets or change records for unauthorised software removal",
+            "Exception register"
+          ]
+        },
+        {
+          "id": "CIS 2.4",
+          "name": "Utilise Automated Software Inventory Tools",
+          "desc": "[IG2] Utilise software inventory tools, such as endpoint management or application management tools, throughout the enterprise to automate the collection of the software inventory.",
+          "achieved": [
+            "Automated discovery tool covers all managed endpoints.",
+            "Inventory is updated automatically on a defined schedule."
+          ],
+          "evidence": [
+            "Endpoint management tool configuration and coverage report"
+          ]
+        },
+        {
+          "id": "CIS 2.5",
+          "name": "Allowlist Authorised Software",
+          "desc": "[IG3] Use technical controls such as application allowlisting to ensure that only authorised software can execute on enterprise assets.",
+          "achieved": [
+            "Application allowlisting policy is enforced on all managed endpoints.",
+            "Exceptions require formal approval."
+          ],
+          "evidence": [
+            "Allowlisting tool configuration",
+            "Exception approval records"
+          ]
+        },
+        {
+          "id": "CIS 2.6",
+          "name": "Allowlist Authorised Libraries",
+          "desc": "[IG3] Use technical controls to ensure that only authorised software libraries, such as specific .dll, .ocx, .so, and other similar files, are allowed to load into a system process.",
+          "achieved": [
+            "Library allowlisting or integrity monitoring is in place for critical systems."
+          ],
+          "evidence": [
+            "File integrity monitoring (FIM) or allowlisting configuration for library paths"
+          ]
+        },
+        {
+          "id": "CIS 2.7",
+          "name": "Allowlist Authorised Scripts",
+          "desc": "[IG3] Use technical controls such as script allowlisting or code signing to ensure that only authorised scripts, such as specific .ps1, .py, and other similar files, are allowed to execute.",
+          "achieved": [
+            "Script execution policy restricts unsigned or non-whitelisted scripts.",
+            "PowerShell and other scripting engines are configured to enforce policy."
+          ],
+          "evidence": [
+            "Script execution policy configuration (e.g. PowerShell Constrained Language Mode settings)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 3",
+      "name": "Data Protection",
+      "desc": "Develop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+      "achieved": [
+        "A data classification scheme is defined and applied across all data stores.",
+        "Sensitive data is encrypted at rest and in transit.",
+        "Data retention and disposal procedures are implemented and enforced.",
+        "DLP controls monitor and prevent unauthorised data exfiltration."
+      ],
+      "evidence": [
+        "Data classification policy and scheme documentation",
+        "Encryption configuration evidence for storage and transport (e.g. TLS, AES-256)",
+        "DLP policy configuration and incident reports",
+        "Data disposal records and certificates of destruction"
+      ],
+      "items": [
+        {
+          "id": "CIS 3.1",
+          "name": "Establish and Maintain a Data Management Process",
+          "desc": "[IG1] Establish and maintain a data management process. In the process, address data sensitivity, data owner, handling of data, data retention limits, and disposal requirements, based on sensitivity and retention standards for the enterprise.",
+          "achieved": [
+            "Data management process is documented, approved, and communicated.",
+            "Data owners are assigned for all sensitive data types."
+          ],
+          "evidence": [
+            "Data management policy document",
+            "Data owner assignment register"
+          ]
+        },
+        {
+          "id": "CIS 3.2",
+          "name": "Establish and Maintain a Data Inventory",
+          "desc": "[IG1] Establish and maintain a data inventory based on the enterprise's data management process. Inventory sensitive data at a minimum. Review and update inventory annually, at a minimum, with a priority on sensitive data.",
+          "achieved": [
+            "Data inventory covers all sensitive data stores with classification, location, and owner.",
+            "Inventory reviewed at least annually."
+          ],
+          "evidence": [
+            "Data inventory register or data map"
+          ]
+        },
+        {
+          "id": "CIS 3.3",
+          "name": "Configure Data Access Control Lists",
+          "desc": "[IG1] Configure data access control lists based on a user's need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.",
+          "achieved": [
+            "Access to sensitive data is restricted to those with documented business need.",
+            "Access control lists are reviewed at least quarterly."
+          ],
+          "evidence": [
+            "Access control configuration screenshots or exports",
+            "Access review reports"
+          ]
+        },
+        {
+          "id": "CIS 3.4",
+          "name": "Enforce Data Retention",
+          "desc": "[IG1] Retain data according to the enterprise's data management process. Data retention must include both minimum and maximum timeframes.",
+          "achieved": [
+            "Automated retention policies are configured in document management and email systems.",
+            "Retention schedules are aligned with legal and regulatory requirements."
+          ],
+          "evidence": [
+            "Retention policy configuration in DMS or email platform",
+            "Retention schedule document"
+          ]
+        },
+        {
+          "id": "CIS 3.5",
+          "name": "Securely Dispose of Data",
+          "desc": "[IG1] Securely dispose of data as outlined in the enterprise's data management process. Ensure the disposal process and method are commensurate with the data sensitivity.",
+          "achieved": [
+            "Secure disposal procedures are in place for all media types.",
+            "Certificates of destruction are retained for sensitive data disposal."
+          ],
+          "evidence": [
+            "Certificates of destruction from approved disposal provider",
+            "Data disposal log"
+          ]
+        },
+        {
+          "id": "CIS 3.6",
+          "name": "Encrypt Data on End-User Devices",
+          "desc": "[IG1] Encrypt data on end-user devices containing sensitive data. Example implementations include BitLocker for Windows, FileVault for macOS, and full-disk encryption on mobile devices.",
+          "achieved": [
+            "Full-disk encryption is enforced on all managed end-user devices.",
+            "Encryption status is monitored and non-compliant devices are remediated."
+          ],
+          "evidence": [
+            "MDM/endpoint management encryption compliance report"
+          ]
+        },
+        {
+          "id": "CIS 3.7",
+          "name": "Establish and Maintain a Data Classification Scheme",
+          "desc": "[IG2] Establish and maintain an overall data classification scheme for the enterprise. Enterprises may use labels such as 'Sensitive', 'Confidential', and 'Public' and classify data according to those labels.",
+          "achieved": [
+            "Classification scheme is documented with clear criteria for each level.",
+            "Staff are trained on how to classify data correctly."
+          ],
+          "evidence": [
+            "Data classification policy",
+            "Training completion records"
+          ]
+        },
+        {
+          "id": "CIS 3.8",
+          "name": "Document Data Flows",
+          "desc": "[IG2] Document data flows. Data flow documentation includes service provider data flows and should be based on the enterprise's data management process.",
+          "achieved": [
+            "Data flow diagrams cover all sensitive data movement including to/from third parties.",
+            "Data flows are reviewed when systems change."
+          ],
+          "evidence": [
+            "Data flow diagrams",
+            "Third-party data transfer agreements"
+          ]
+        },
+        {
+          "id": "CIS 3.9",
+          "name": "Encrypt Data on Removable Media",
+          "desc": "[IG2] Encrypt data on removable media.",
+          "achieved": [
+            "All removable media containing sensitive data is encrypted using approved algorithms.",
+            "Port control prevents use of unapproved removable media."
+          ],
+          "evidence": [
+            "Removable media encryption policy",
+            "Port control configuration"
+          ]
+        },
+        {
+          "id": "CIS 3.10",
+          "name": "Encrypt Sensitive Data in Transit",
+          "desc": "[IG2] Encrypt sensitive data in transit. Example implementations include Transport Layer Security (TLS) and Open Secure Shell (OpenSSH).",
+          "achieved": [
+            "TLS 1.2 or higher is enforced for all data in transit.",
+            "Unencrypted protocols are blocked for sensitive data paths."
+          ],
+          "evidence": [
+            "TLS configuration reports",
+            "Network policy documentation blocking cleartext protocols"
+          ]
+        },
+        {
+          "id": "CIS 3.11",
+          "name": "Encrypt Sensitive Data at Rest",
+          "desc": "[IG2] Encrypt sensitive data at rest on servers, applications, and databases containing sensitive data.",
+          "achieved": [
+            "Database and application-level encryption is enabled for all sensitive data stores.",
+            "Encryption keys are managed using a key management service."
+          ],
+          "evidence": [
+            "Database encryption configuration",
+            "KMS key policy documentation"
+          ]
+        },
+        {
+          "id": "CIS 3.12",
+          "name": "Segment Data Processing and Storage Based on Sensitivity",
+          "desc": "[IG2] Segment data processing and storage based on the sensitivity of the data. Do not process sensitive data on enterprise assets intended for lower sensitivity data.",
+          "achieved": [
+            "High-sensitivity data is processed only on designated, hardened systems.",
+            "Network segmentation separates sensitive data processing zones."
+          ],
+          "evidence": [
+            "Network architecture diagram showing segmentation",
+            "System classification inventory"
+          ]
+        },
+        {
+          "id": "CIS 3.13",
+          "name": "Deploy a Data Loss Prevention Solution",
+          "desc": "[IG2] Implement an automated tool, such as a DLP solution, to identify all sensitive data stored, processed, or transmitted through enterprise assets, including those located on-site or at a remote service provider, and update the enterprise's data inventory.",
+          "achieved": [
+            "DLP solution is deployed covering endpoints, email, and cloud channels.",
+            "DLP incidents are reviewed and acted upon within defined SLAs."
+          ],
+          "evidence": [
+            "DLP tool configuration and coverage report",
+            "DLP incident response log"
+          ]
+        },
+        {
+          "id": "CIS 3.14",
+          "name": "Log Sensitive Data Access",
+          "desc": "[IG3] Log sensitive data access, including modification and disposal. Example implementations include logging access to all sensitive data stored in structured data repositories such as databases or data warehouses.",
+          "achieved": [
+            "Audit logging is enabled for all access to sensitive data stores.",
+            "Logs are centralised, protected, and reviewed for anomalies."
+          ],
+          "evidence": [
+            "Database audit log configuration",
+            "SIEM alert rules for sensitive data access"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 4",
+      "name": "Secure Configuration of Enterprise Assets and Software",
+      "desc": "Establish and maintain the secure configuration of enterprise assets (end-user devices, network devices, non-computing/IoT devices, and servers) and software (operating systems and applications).",
+      "achieved": [
+        "Security configuration baselines are defined for all asset and software types.",
+        "Baseline compliance is monitored continuously and deviations are remediated.",
+        "Default credentials and unnecessary services are removed from all assets.",
+        "Configuration changes go through a formal change management process."
+      ],
+      "evidence": [
+        "CIS Benchmark or equivalent hardening baseline documents",
+        "Configuration compliance scan reports showing baseline adherence percentage",
+        "Change management records for configuration changes",
+        "Default account removal evidence"
+      ],
+      "items": [
+        {
+          "id": "CIS 4.1",
+          "name": "Establish and Maintain a Secure Configuration Process",
+          "desc": "[IG1] Establish and maintain a secure configuration process for enterprise assets and software. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+          "achieved": [
+            "Secure configuration process is documented, approved, and reviewed annually.",
+            "Process covers all asset and software types in scope."
+          ],
+          "evidence": [
+            "Configuration management policy document"
+          ]
+        },
+        {
+          "id": "CIS 4.2",
+          "name": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
+          "desc": "[IG1] Establish and maintain a secure configuration process for network devices. Review and update documentation annually.",
+          "achieved": [
+            "Network device baselines are defined and applied at provisioning.",
+            "Baseline compliance is verified during change management."
+          ],
+          "evidence": [
+            "Network device hardening baseline document",
+            "Network device configuration audit report"
+          ]
+        },
+        {
+          "id": "CIS 4.3",
+          "name": "Configure Automatic Session Locking on Enterprise Assets",
+          "desc": "[IG1] Configure automatic session locking on enterprise assets after a defined period of inactivity. For general purpose operating systems, the period must not exceed 15 minutes. For mobile end-user devices, the period must not exceed 2 minutes.",
+          "achieved": [
+            "Screen lock timeout is enforced via GPO or MDM on all managed devices.",
+            "Mobile devices lock after no more than 2 minutes of inactivity."
+          ],
+          "evidence": [
+            "GPO/MDM screen lock policy configuration"
+          ]
+        },
+        {
+          "id": "CIS 4.4",
+          "name": "Implement and Manage a Firewall on Servers",
+          "desc": "[IG1] Implement and manage a firewall on servers, where supported. Example implementations include a virtual firewall, operating system firewall, or a third-party firewall agent.",
+          "achieved": [
+            "Host-based firewalls are enabled and configured on all servers.",
+            "Firewall rules follow least-privilege and default-deny principles."
+          ],
+          "evidence": [
+            "Server firewall configuration baseline",
+            "Firewall rule audit report"
+          ]
+        },
+        {
+          "id": "CIS 4.5",
+          "name": "Implement and Manage a Firewall on End-User Devices",
+          "desc": "[IG1] Implement and manage a host-based firewall on end-user devices, with a default-deny rule that drops all traffic except those services and ports that are explicitly allowed.",
+          "achieved": [
+            "Host-based firewall is enforced on all end-user devices via MDM or GPO.",
+            "Default-deny inbound policy is applied."
+          ],
+          "evidence": [
+            "MDM/GPO firewall policy configuration report"
+          ]
+        },
+        {
+          "id": "CIS 4.6",
+          "name": "Securely Manage Enterprise Assets and Software",
+          "desc": "[IG2] Securely manage enterprise assets and software. Manage the security configuration of enterprise assets and software using an enterprise patch management system, configuration manager, or equivalent.",
+          "achieved": [
+            "Enterprise management tooling (e.g. SCCM, Intune, Ansible) deploys and enforces configurations.",
+            "Configuration drift is detected and remediated within defined SLA."
+          ],
+          "evidence": [
+            "Endpoint/configuration management tool coverage report",
+            "Drift remediation ticket samples"
+          ]
+        },
+        {
+          "id": "CIS 4.7",
+          "name": "Manage Default Accounts on Enterprise Assets and Software",
+          "desc": "[IG1] Manage default accounts on enterprise assets and software. Example implementations include disabling default accounts, or making them unusable.",
+          "achieved": [
+            "All default accounts are disabled, renamed, or their passwords changed before deployment.",
+            "No default credentials remain active on production assets."
+          ],
+          "evidence": [
+            "Hardening checklist showing default account remediation",
+            "Privileged account audit report"
+          ]
+        },
+        {
+          "id": "CIS 4.8",
+          "name": "Uninstall or Disable Unnecessary Services on Enterprise Assets and Software",
+          "desc": "[IG2] Uninstall or disable unnecessary services on enterprise assets and software, such as an unused file sharing service, web application module, or service function.",
+          "achieved": [
+            "Only required services are enabled; all others are disabled.",
+            "Service inventory is reviewed when configurations change."
+          ],
+          "evidence": [
+            "Hardening baseline showing disabled services",
+            "Vulnerability scan report confirming no unnecessary services"
+          ]
+        },
+        {
+          "id": "CIS 4.9",
+          "name": "Configure Trusted DNS Servers on Enterprise Assets",
+          "desc": "[IG2] Configure trusted DNS servers on enterprise assets. Example implementations include configuring assets to use enterprise-controlled DNS servers and/or reputable externally accessible DNS servers.",
+          "achieved": [
+            "All assets use enterprise-approved DNS servers.",
+            "Rogue DNS configuration is detected via monitoring."
+          ],
+          "evidence": [
+            "DNS configuration policy",
+            "DHCP/DNS server configuration export"
+          ]
+        },
+        {
+          "id": "CIS 4.10",
+          "name": "Enforce Automatic Device Lockout on Portable End-User Devices",
+          "desc": "[IG2] Enforce automatic device lockout following a predetermined threshold of local failed authentication attempts on portable end-user devices, where supported. For laptops, do not allow more than 20 failed authentication attempts; for tablets and smartphones, no more than 10 failed authentication attempts.",
+          "achieved": [
+            "Account lockout policy is enforced on all portable devices via MDM.",
+            "Lockout thresholds are set at or below defined maximums."
+          ],
+          "evidence": [
+            "MDM lockout policy configuration"
+          ]
+        },
+        {
+          "id": "CIS 4.11",
+          "name": "Enforce Remote Wipe Capability on Portable End-User Devices",
+          "desc": "[IG2] Remotely wipe enterprise data from enterprise-owned portable end-user devices when deemed appropriate such as lost or stolen devices, or when an individual no longer supports the enterprise.",
+          "achieved": [
+            "Remote wipe capability is provisioned for all managed portable devices.",
+            "Remote wipe can be initiated within a defined timeframe."
+          ],
+          "evidence": [
+            "MDM remote wipe capability evidence",
+            "Sample wipe request/confirmation tickets"
+          ]
+        },
+        {
+          "id": "CIS 4.12",
+          "name": "Separate Enterprise Workspaces on Mobile End-User Devices",
+          "desc": "[IG3] Ensure separate enterprise workspaces are used on mobile end-user devices where supported. Example implementations include using an MDM system to enable separation such as Apple Business Manager or Android for Work.",
+          "achieved": [
+            "Enterprise data is containerised and separated from personal data on BYOD devices.",
+            "Container policies are enforced via MDM."
+          ],
+          "evidence": [
+            "MDM container policy configuration",
+            "Coverage report for enrolled BYOD devices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 5",
+      "name": "Account Management",
+      "desc": "Use processes and tools to assign and manage authorisation to credentials for user accounts, including administrator accounts, as well as service and application accounts.",
+      "achieved": [
+        "All accounts are provisioned through a formal request and approval process.",
+        "Dormant and orphaned accounts are identified and disabled within a defined timeframe.",
+        "Privileged accounts are separate from standard user accounts.",
+        "Account inventory is reviewed at least quarterly."
+      ],
+      "evidence": [
+        "Account provisioning process documentation and approval records",
+        "Dormant account report showing accounts disabled within SLA",
+        "Privileged account register",
+        "Quarterly access review evidence"
+      ],
+      "items": [
+        {
+          "id": "CIS 5.1",
+          "name": "Establish and Maintain an Inventory of Accounts",
+          "desc": "[IG1] Establish and maintain an inventory of all accounts managed in the enterprise. The inventory must include both user and administrator accounts. Validate that all active accounts are authorised on a recurring schedule at a minimum quarterly, or more frequently.",
+          "achieved": [
+            "Account inventory is complete and reviewed at least quarterly.",
+            "Inactive accounts are identified and actioned."
+          ],
+          "evidence": [
+            "Identity provider account export with review sign-off"
+          ]
+        },
+        {
+          "id": "CIS 5.2",
+          "name": "Use Unique Passwords",
+          "desc": "[IG1] Use unique passwords for all enterprise assets. Best practice implementation includes, at minimum, an 8-character password for accounts using MFA, and a 14-character password for accounts not using MFA.",
+          "achieved": [
+            "Password policy enforces minimum length and complexity.",
+            "Shared or generic passwords are prohibited and enforced."
+          ],
+          "evidence": [
+            "Password policy configuration (AD/IdP settings)",
+            "Evidence of no shared accounts"
+          ]
+        },
+        {
+          "id": "CIS 5.3",
+          "name": "Disable Dormant Accounts",
+          "desc": "[IG1] Delete or disable any dormant accounts after a period of 45 days of inactivity, where supported.",
+          "achieved": [
+            "Dormant accounts are disabled within 45 days via automated policy or manual review.",
+            "Disabled accounts are reviewed before re-enablement."
+          ],
+          "evidence": [
+            "Dormant account policy",
+            "Account management tool report showing last login dates and disable dates"
+          ]
+        },
+        {
+          "id": "CIS 5.4",
+          "name": "Restrict Administrator Privileges to Dedicated Administrator Accounts",
+          "desc": "[IG1] Restrict administrator privileges to dedicated administrator accounts on enterprise assets. Conduct general computing activities, such as internet browsing, email, and productivity suite use, from the user's primary, non-privileged account.",
+          "achieved": [
+            "Administrators use separate privileged and standard accounts.",
+            "Privileged accounts are not used for day-to-day activities."
+          ],
+          "evidence": [
+            "Privileged account register",
+            "Evidence of separate user accounts for admins"
+          ]
+        },
+        {
+          "id": "CIS 5.5",
+          "name": "Establish and Maintain an Inventory of Service Accounts",
+          "desc": "[IG2] Establish and maintain an inventory of service accounts. The inventory, at a minimum, must contain department owner, review date, and purpose. Perform service account reviews to validate that all active accounts are authorised, on a recurring schedule at a minimum quarterly, or more frequently.",
+          "achieved": [
+            "Service account inventory is maintained with owner, purpose, and review date.",
+            "Service accounts are reviewed at least quarterly."
+          ],
+          "evidence": [
+            "Service account inventory register",
+            "Quarterly review evidence"
+          ]
+        },
+        {
+          "id": "CIS 5.6",
+          "name": "Centralise Account Management",
+          "desc": "[IG2] Centralise account management through a directory or identity service.",
+          "achieved": [
+            "All accounts are managed through a central directory (e.g. Azure AD, LDAP).",
+            "No local accounts exist on managed devices outside of approved exceptions."
+          ],
+          "evidence": [
+            "Directory service configuration",
+            "Local account audit showing only approved exceptions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 6",
+      "name": "Access Control Management",
+      "desc": "Use processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service/application accounts.",
+      "achieved": [
+        "Role-based access control is implemented and access reflects current roles.",
+        "Multi-factor authentication is enforced for all remote and privileged access.",
+        "Access rights are reviewed at least quarterly for privileged accounts.",
+        "The principle of least privilege is demonstrably enforced."
+      ],
+      "evidence": [
+        "RBAC configuration and role definitions",
+        "MFA enforcement policy and coverage report",
+        "Privilege access review records",
+        "Least-privilege access audit evidence"
+      ],
+      "items": [
+        {
+          "id": "CIS 6.1",
+          "name": "Establish an Access Granting Process",
+          "desc": "[IG1] Establish and follow a process, preferably automated, for granting access to enterprise assets upon new hire, rights grant, or role change of a subject.",
+          "achieved": [
+            "Formal access request and approval process is documented and followed.",
+            "All access grants are traceable to an approved request."
+          ],
+          "evidence": [
+            "Joiner-mover-leaver process documentation",
+            "Sample access request approval tickets"
+          ]
+        },
+        {
+          "id": "CIS 6.2",
+          "name": "Establish an Access Revoking Process",
+          "desc": "[IG1] Establish and follow a process, preferably automated, for revoking access to enterprise assets, through disabling accounts immediately upon termination, rights revocation, or role change of a subject.",
+          "achieved": [
+            "Access is revoked within 24 hours of termination.",
+            "Role change triggers access review and adjustment within defined SLA."
+          ],
+          "evidence": [
+            "Offboarding checklist with access revocation confirmation",
+            "Terminated account disable audit log"
+          ]
+        },
+        {
+          "id": "CIS 6.3",
+          "name": "Require MFA for Externally-Exposed Applications",
+          "desc": "[IG1] Require all externally-exposed enterprise or third-party applications to enforce MFA, where supported. Enforcing MFA through a directory service or SSO provider is a satisfactory implementation of this Safeguard.",
+          "achieved": [
+            "MFA is enforced for all externally-accessible applications.",
+            "SSO with MFA is the standard authentication method."
+          ],
+          "evidence": [
+            "MFA policy and coverage report for internet-facing apps",
+            "SSO configuration evidence"
+          ]
+        },
+        {
+          "id": "CIS 6.4",
+          "name": "Require MFA for Remote Network Access",
+          "desc": "[IG1] Require MFA for remote network access.",
+          "achieved": [
+            "VPN and remote access solutions require MFA for all connections.",
+            "No remote access is permitted without MFA."
+          ],
+          "evidence": [
+            "VPN/remote access MFA configuration",
+            "Remote access policy document"
+          ]
+        },
+        {
+          "id": "CIS 6.5",
+          "name": "Require MFA for Administrative Access",
+          "desc": "[IG2] Require MFA for all administrative access accounts, where supported, on all enterprise assets, whether managed on-site or through a third-party provider.",
+          "achieved": [
+            "All administrative accounts require MFA using phishing-resistant methods where possible.",
+            "PAM solution enforces MFA for privileged sessions."
+          ],
+          "evidence": [
+            "PAM/privileged access tool MFA configuration",
+            "Admin account MFA coverage report"
+          ]
+        },
+        {
+          "id": "CIS 6.6",
+          "name": "Establish and Maintain an Inventory of Authentication and Authorisation Systems",
+          "desc": "[IG2] Establish and maintain an inventory of the enterprise's authentication and authorisation systems, including those hosted on-site or at a remote service provider. Review the inventory, at a minimum, annually.",
+          "achieved": [
+            "Inventory of all AuthN/AuthZ systems is maintained and reviewed annually.",
+            "Each system is assigned an owner and review date."
+          ],
+          "evidence": [
+            "AuthN/AuthZ system inventory register"
+          ]
+        },
+        {
+          "id": "CIS 6.7",
+          "name": "Centralise Access Control",
+          "desc": "[IG2] Centralise access control for all enterprise assets through a directory service or SSO provider.",
+          "achieved": [
+            "All applications are integrated with central identity provider.",
+            "Standalone credential stores outside the central provider are documented and approved."
+          ],
+          "evidence": [
+            "SSO/IdP integration evidence",
+            "Application authentication inventory"
+          ]
+        },
+        {
+          "id": "CIS 6.8",
+          "name": "Define and Maintain Role-Based Access Control",
+          "desc": "[IG3] Define and maintain role-based access control, through determining and documenting the access rights necessary for each role within the enterprise to successfully carry out its assigned duties. Perform access control reviews of enterprise assets to validate that all privileges are authorised, on a recurring schedule at a minimum once every six months.",
+          "achieved": [
+            "RBAC roles are documented with least-privilege principles applied.",
+            "Access reviews against roles are conducted at least every six months."
+          ],
+          "evidence": [
+            "RBAC role definition documentation",
+            "Semi-annual access review records"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 7",
+      "name": "Continuous Vulnerability Management",
+      "desc": "Develop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure in order to remediate and minimise the window of opportunity for attackers.",
+      "achieved": [
+        "Authenticated vulnerability scans run at least weekly for externally-facing assets and monthly for internal assets.",
+        "Vulnerabilities are prioritised using CVSS combined with asset criticality.",
+        "Remediation SLAs are defined and tracked (Critical: 48h, High: 7d, Medium: 30d).",
+        "Patch compliance metrics are reported to management monthly."
+      ],
+      "evidence": [
+        "Vulnerability scanner configuration showing scan frequency and scope",
+        "Vulnerability report with CVSS scores and remediation tracking",
+        "Patch compliance report",
+        "SLA breach escalation records"
+      ],
+      "items": [
+        {
+          "id": "CIS 7.1",
+          "name": "Establish and Maintain a Vulnerability Management Process",
+          "desc": "[IG1] Establish and maintain a documented vulnerability management process for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.",
+          "achieved": [
+            "Vulnerability management process is documented and reviewed annually.",
+            "Roles and responsibilities for scanning, triaging, and remediating are defined."
+          ],
+          "evidence": [
+            "Vulnerability management policy document"
+          ]
+        },
+        {
+          "id": "CIS 7.2",
+          "name": "Establish and Maintain a Remediation Process",
+          "desc": "[IG1] Establish and maintain a risk-based remediation strategy documented in a remediation process with monthly, or more frequent, reviews.",
+          "achieved": [
+            "Remediation SLAs are defined by severity.",
+            "Remediation progress is tracked and reported monthly."
+          ],
+          "evidence": [
+            "Remediation SLA policy",
+            "Monthly vulnerability remediation report"
+          ]
+        },
+        {
+          "id": "CIS 7.3",
+          "name": "Perform Automated Operating System Patch Management",
+          "desc": "[IG1] Perform operating system updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.",
+          "achieved": [
+            "Automated patching is configured for all managed OS instances.",
+            "Patch deployment success rate is monitored and exceptions managed."
+          ],
+          "evidence": [
+            "Patch management tool configuration",
+            "Monthly OS patch compliance report"
+          ]
+        },
+        {
+          "id": "CIS 7.4",
+          "name": "Perform Automated Application Patch Management",
+          "desc": "[IG1] Perform application updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.",
+          "achieved": [
+            "Third-party application patching is automated or systematically managed.",
+            "Application patch compliance is reported monthly."
+          ],
+          "evidence": [
+            "Application patch management configuration",
+            "Application patch compliance report"
+          ]
+        },
+        {
+          "id": "CIS 7.5",
+          "name": "Perform Automated Vulnerability Scans of Internal Enterprise Assets",
+          "desc": "[IG2] Perform automated vulnerability scans of internal enterprise assets on a quarterly, or more frequent, basis. Conduct both authenticated and unauthenticated scans, using a SCAP-compliant vulnerability scanning tool.",
+          "achieved": [
+            "Authenticated internal vulnerability scans run at least quarterly.",
+            "Scan results are reviewed and fed into the remediation process."
+          ],
+          "evidence": [
+            "Internal vulnerability scan configuration and output reports"
+          ]
+        },
+        {
+          "id": "CIS 7.6",
+          "name": "Perform Automated Vulnerability Scans of Externally-Exposed Enterprise Assets",
+          "desc": "[IG2] Perform automated vulnerability scans of externally-exposed enterprise assets using a SCAP-compliant vulnerability scanning tool. Perform scans on a monthly, or more frequent, basis.",
+          "achieved": [
+            "External attack surface is scanned at least monthly using authenticated methods.",
+            "Critical findings from external scans are escalated and remediated within 48 hours."
+          ],
+          "evidence": [
+            "External vulnerability scan configuration and reports",
+            "Critical finding remediation tickets"
+          ]
+        },
+        {
+          "id": "CIS 7.7",
+          "name": "Remediate Detected Vulnerabilities",
+          "desc": "[IG2] Remediate detected vulnerabilities in software through processes and tooling on a monthly, or more frequent, basis, based on the remediation process.",
+          "achieved": [
+            "Vulnerabilities are remediated within defined SLAs based on severity.",
+            "Unmitigated vulnerabilities are formally risk-accepted with owner sign-off."
+          ],
+          "evidence": [
+            "Remediation tracking report",
+            "Risk acceptance records for unmitigated findings"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 8",
+      "name": "Audit Log Management",
+      "desc": "Collect, alert, review, and retain audit logs of events that could help detect, understand, or recover from an attack.",
+      "achieved": [
+        "Centralised log management (SIEM) ingests logs from all critical sources.",
+        "Log retention meets compliance minimums (e.g. 12 months).",
+        "Log integrity is protected — logs cannot be modified or deleted by users.",
+        "Alerting rules are configured for key security events."
+      ],
+      "evidence": [
+        "SIEM architecture and data source coverage documentation",
+        "Log retention policy and configuration",
+        "Alert rule inventory and recent alert samples",
+        "Log integrity controls (write-once storage or hash chaining)"
+      ],
+      "items": [
+        {
+          "id": "CIS 8.1",
+          "name": "Establish and Maintain an Audit Log Management Process",
+          "desc": "[IG1] Establish and maintain an audit log management process that defines the enterprise's logging requirements. At a minimum, address the collection, review, and retention of audit logs for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Audit log management process is documented and reviewed annually.",
+            "Logging requirements are defined per asset type."
+          ],
+          "evidence": [
+            "Log management policy document"
+          ]
+        },
+        {
+          "id": "CIS 8.2",
+          "name": "Collect Audit Logs",
+          "desc": "[IG1] Collect audit logs. Ensure that logging is enabled across enterprise assets.",
+          "achieved": [
+            "Logging is enabled on all in-scope assets.",
+            "Log sources are inventoried and coverage gaps are tracked."
+          ],
+          "evidence": [
+            "Log source inventory with enabled/disabled status",
+            "SIEM coverage report"
+          ]
+        },
+        {
+          "id": "CIS 8.3",
+          "name": "Ensure Adequate Audit Log Storage",
+          "desc": "[IG1] Ensure that logging destinations maintain adequate storage to comply with the enterprise's audit log management process.",
+          "achieved": [
+            "Log storage capacity is monitored with alerts at defined thresholds.",
+            "Storage is sized to retain logs for the required retention period."
+          ],
+          "evidence": [
+            "SIEM storage capacity report",
+            "Log storage alert configuration"
+          ]
+        },
+        {
+          "id": "CIS 8.4",
+          "name": "Standardise Time Synchronisation",
+          "desc": "[IG2] Standardise time synchronisation. Configure at least two synchronised time sources across enterprise assets, where supported.",
+          "achieved": [
+            "All assets synchronise to enterprise NTP servers.",
+            "Time synchronisation failures generate alerts."
+          ],
+          "evidence": [
+            "NTP configuration documentation",
+            "Time synchronisation monitoring alerts"
+          ]
+        },
+        {
+          "id": "CIS 8.5",
+          "name": "Collect Detailed Audit Logs",
+          "desc": "[IG2] Configure detailed audit logging for enterprise assets containing sensitive data. Include event source, date, username, timestamp, source addresses, destination addresses, and other useful elements that could assist in a forensic investigation.",
+          "achieved": [
+            "Detailed logging is configured for assets hosting sensitive data.",
+            "Log format includes all required fields for forensic investigation."
+          ],
+          "evidence": [
+            "Detailed logging configuration for sensitive data systems",
+            "Sample log entries showing required fields"
+          ]
+        },
+        {
+          "id": "CIS 8.6",
+          "name": "Collect DNS Query Audit Logs",
+          "desc": "[IG2] Collect DNS query audit logs to detect queries for known malicious domains.",
+          "achieved": [
+            "DNS query logs are collected and forwarded to SIEM.",
+            "DNS-based detection rules are configured for known-bad domains."
+          ],
+          "evidence": [
+            "DNS logging configuration",
+            "SIEM DNS detection rules"
+          ]
+        },
+        {
+          "id": "CIS 8.7",
+          "name": "Collect URL Request Audit Logs",
+          "desc": "[IG2] Collect URL request audit logs for enterprise assets. The log collection should capture the full URL and the initiating source, where supported.",
+          "achieved": [
+            "Web proxy or firewall logs capture full URL requests.",
+            "Logs are forwarded to SIEM for analysis."
+          ],
+          "evidence": [
+            "Web proxy/firewall URL logging configuration"
+          ]
+        },
+        {
+          "id": "CIS 8.8",
+          "name": "Collect Command-Line Audit Logs",
+          "desc": "[IG2] Collect command-line audit logs. Example implementations include collecting audit logs from PowerShell, BASH, and remote administrative tools such as SSH.",
+          "achieved": [
+            "Command-line logging is enabled for privileged systems and endpoints.",
+            "Shell command logs are centralised and reviewed for anomalous activity."
+          ],
+          "evidence": [
+            "PowerShell/BASH audit logging configuration",
+            "SIEM command-line monitoring rules"
+          ]
+        },
+        {
+          "id": "CIS 8.9",
+          "name": "Centralise Audit Logs",
+          "desc": "[IG2] Centralise, to the extent possible, audit log collection and retention across enterprise assets.",
+          "achieved": [
+            "All log sources forward to centralised SIEM.",
+            "No critical log sources are excluded without documented justification."
+          ],
+          "evidence": [
+            "SIEM data source coverage matrix"
+          ]
+        },
+        {
+          "id": "CIS 8.10",
+          "name": "Retain Audit Logs",
+          "desc": "[IG2] Retain audit logs across enterprise assets for a minimum of 90 days.",
+          "achieved": [
+            "Log retention is configured for at least 90 days online storage.",
+            "Longer retention is applied for compliance requirements (e.g. PCI: 12 months)."
+          ],
+          "evidence": [
+            "Log retention policy",
+            "SIEM retention configuration"
+          ]
+        },
+        {
+          "id": "CIS 8.11",
+          "name": "Conduct Audit Log Reviews",
+          "desc": "[IG2] Conduct reviews of audit logs to detect anomalies or abnormal events that could indicate a potential threat. Conduct reviews on a weekly, or more frequent, basis.",
+          "achieved": [
+            "SIEM alerts or automated review processes identify anomalies daily/weekly.",
+            "Analysts review and triage alerts within defined SLAs."
+          ],
+          "evidence": [
+            "Weekly/daily SIEM review records or automated alert triage evidence"
+          ]
+        },
+        {
+          "id": "CIS 8.12",
+          "name": "Collect Service Provider Logs",
+          "desc": "[IG3] Collect service provider logs, where supported. Example implementations include collecting authentication and authorisation events, data creation and disposal events, and user management events.",
+          "achieved": [
+            "Logs from key cloud and managed service providers are ingested into SIEM.",
+            "Cloud provider audit trails (e.g. AWS CloudTrail, Azure Monitor) are centralised."
+          ],
+          "evidence": [
+            "Cloud audit log integration configuration",
+            "Service provider log coverage report"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 9",
+      "name": "Email and Web Browser Protections",
+      "desc": "Improve protections and detections of threats from email and web vectors, as these are primary entry points for attackers.",
+      "achieved": [
+        "Anti-phishing, anti-spam, and attachment sandboxing are enabled on email gateways.",
+        "Web filtering blocks known malicious and high-risk categories.",
+        "DMARC, DKIM, and SPF are configured for all sending domains.",
+        "Browser security settings are enforced via policy."
+      ],
+      "evidence": [
+        "Email gateway configuration showing anti-phishing and sandboxing settings",
+        "DMARC/DKIM/SPF DNS record verification",
+        "Web filtering policy and block log samples",
+        "Browser security baseline configuration"
+      ],
+      "items": [
+        {
+          "id": "CIS 9.1",
+          "name": "Ensure Use of Only Fully Supported Browsers and Email Clients",
+          "desc": "[IG1] Ensure only fully supported browsers and email clients are allowed to execute in the enterprise, only using the latest version of browsers and email clients provided through the vendor.",
+          "achieved": [
+            "Browser and email client inventory shows only supported versions in use.",
+            "Unsupported versions are detected and flagged for upgrade."
+          ],
+          "evidence": [
+            "Software inventory report filtered for browsers and email clients"
+          ]
+        },
+        {
+          "id": "CIS 9.2",
+          "name": "Use DNS Filtering Services",
+          "desc": "[IG1] Use DNS filtering services on all enterprise assets to block access to known malicious domains.",
+          "achieved": [
+            "DNS filtering is deployed and covers all enterprise assets including remote workers.",
+            "Block lists are updated regularly."
+          ],
+          "evidence": [
+            "DNS filtering service configuration and coverage report"
+          ]
+        },
+        {
+          "id": "CIS 9.3",
+          "name": "Maintain and Enforce Network-Based URL Filters",
+          "desc": "[IG2] Enforce and update network-based URL filters to limit an enterprise asset's ability to connect to potentially malicious or unapproved websites. Example implementations include a category-based filtering proxy service.",
+          "achieved": [
+            "URL filtering is enforced for all users including remote workers.",
+            "Category blocks and exception process are documented."
+          ],
+          "evidence": [
+            "Web proxy/URL filter configuration",
+            "Block policy documentation"
+          ]
+        },
+        {
+          "id": "CIS 9.4",
+          "name": "Restrict Unnecessary or Unauthorised Browser and Email Client Extensions",
+          "desc": "[IG2] Restrict, either through uninstalling or disabling, any unauthorised or unnecessary browser plugins, extensions, and add-on applications.",
+          "achieved": [
+            "Browser extension policy restricts installation to approved extensions.",
+            "Unauthorised extensions are blocked or removed via policy."
+          ],
+          "evidence": [
+            "Browser extension policy configuration",
+            "Extension inventory and whitelist"
+          ]
+        },
+        {
+          "id": "CIS 9.5",
+          "name": "Implement DMARC",
+          "desc": "[IG1] To lower the chance of spoofed or modified emails from valid domains, implement DMARC policy and verification, starting with implementing the Sender Policy Framework (SPF) and the DomainKeys Identified Mail (DKIM) standards.",
+          "achieved": [
+            "SPF, DKIM, and DMARC records are configured for all owned domains.",
+            "DMARC policy is at least p=quarantine or p=reject.",
+            "DMARC aggregate reports are monitored."
+          ],
+          "evidence": [
+            "DNS record verification for SPF, DKIM, DMARC",
+            "DMARC report review evidence"
+          ]
+        },
+        {
+          "id": "CIS 9.6",
+          "name": "Block Unnecessary File Types",
+          "desc": "[IG2] Block unnecessary file types attempting to enter the enterprise's email gateway.",
+          "achieved": [
+            "Email gateway blocks high-risk attachment types (e.g. .exe, .js, .vbs, macros).",
+            "Block list is reviewed and updated regularly."
+          ],
+          "evidence": [
+            "Email gateway attachment blocking policy configuration"
+          ]
+        },
+        {
+          "id": "CIS 9.7",
+          "name": "Deploy and Maintain Email Server Anti-Malware Protections",
+          "desc": "[IG2] Deploy and maintain email server anti-malware protections, such as attachment scanning and/or sandboxing.",
+          "achieved": [
+            "Email anti-malware scanning including attachment sandboxing is active.",
+            "Detection and block statistics are reviewed regularly."
+          ],
+          "evidence": [
+            "Email security platform configuration showing anti-malware and sandboxing settings",
+            "Monthly detection statistics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 10",
+      "name": "Malware Defences",
+      "desc": "Prevent or control the installation, spread, and execution of malicious applications, code, or scripts on enterprise assets.",
+      "achieved": [
+        "EDR/anti-malware is deployed on all endpoints and servers.",
+        "Signatures and engines update automatically within a defined timeframe.",
+        "Macros and scripts are disabled by default with whitelisting by exception.",
+        "Malware detections are triaged and remediated within defined SLAs."
+      ],
+      "evidence": [
+        "EDR/anti-malware deployment coverage report",
+        "Signature update compliance report",
+        "Macro/script execution policy configuration",
+        "Malware incident response records"
+      ],
+      "items": [
+        {
+          "id": "CIS 10.1",
+          "name": "Deploy and Maintain Anti-Malware Software",
+          "desc": "[IG1] Deploy and maintain anti-malware software on all enterprise assets.",
+          "achieved": [
+            "Anti-malware is deployed on 100% of managed endpoints and servers.",
+            "Coverage gaps are identified and remediated within defined SLA."
+          ],
+          "evidence": [
+            "Anti-malware coverage report from endpoint management tool"
+          ]
+        },
+        {
+          "id": "CIS 10.2",
+          "name": "Configure Automatic Anti-Malware Signature Updates",
+          "desc": "[IG1] Configure automatic updates for anti-malware signature files on all enterprise assets.",
+          "achieved": [
+            "Signature updates are configured to run at least daily.",
+            "Stale signature alerts are generated and acted upon."
+          ],
+          "evidence": [
+            "Anti-malware update policy configuration",
+            "Signature age report"
+          ]
+        },
+        {
+          "id": "CIS 10.3",
+          "name": "Disable Autorun and Autoplay for Removable Media",
+          "desc": "[IG1] Disable autorun and autoplay auto-execute functionality for removable media.",
+          "achieved": [
+            "Autorun/Autoplay is disabled via GPO or MDM on all managed devices."
+          ],
+          "evidence": [
+            "GPO/MDM policy configuration showing Autorun disabled"
+          ]
+        },
+        {
+          "id": "CIS 10.4",
+          "name": "Configure Automatic Anti-Malware Scanning of Removable Media",
+          "desc": "[IG1] Configure anti-malware software to automatically scan removable media.",
+          "achieved": [
+            "On-access scanning triggers when removable media is connected.",
+            "Scan results are logged."
+          ],
+          "evidence": [
+            "Anti-malware on-access scan configuration for removable media"
+          ]
+        },
+        {
+          "id": "CIS 10.5",
+          "name": "Enable Anti-Exploitation Features",
+          "desc": "[IG2] Enable anti-exploitation features on enterprise assets and software, where possible, such as Microsoft's Enhanced Mitigation Experience Toolkit (EMET) or Windows Defender Exploit Guard.",
+          "achieved": [
+            "Exploit protection features (e.g. Windows Defender Exploit Guard, DEP, ASLR) are enabled.",
+            "Configuration is enforced via GPO or MDM."
+          ],
+          "evidence": [
+            "Exploit protection configuration report"
+          ]
+        },
+        {
+          "id": "CIS 10.6",
+          "name": "Centrally Manage Anti-Malware Software",
+          "desc": "[IG2] Centrally manage anti-malware software.",
+          "achieved": [
+            "Anti-malware is managed from a central console with visibility across all assets.",
+            "Management console alerts on disconnected or out-of-date agents."
+          ],
+          "evidence": [
+            "Central anti-malware management console configuration"
+          ]
+        },
+        {
+          "id": "CIS 10.7",
+          "name": "Use Behaviour-Based Anti-Malware Software",
+          "desc": "[IG2] Use behaviour-based anti-malware software.",
+          "achieved": [
+            "EDR or behaviour-based detection is deployed as part of the malware defence stack.",
+            "Behavioural detections are reviewed and tuned regularly."
+          ],
+          "evidence": [
+            "EDR deployment and coverage report",
+            "Behavioural detection tuning records"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 11",
+      "name": "Data Recovery",
+      "desc": "Establish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+      "achieved": [
+        "Backup schedules are defined and meet RPO requirements for all critical data.",
+        "Backups are tested through restoration at least annually.",
+        "At least one immutable or offline copy exists for ransomware protection.",
+        "Recovery procedures are documented and staff are trained to execute them."
+      ],
+      "evidence": [
+        "Backup policy and schedule documentation",
+        "Backup success/failure monitoring reports",
+        "Annual restore test results",
+        "Immutable/offline backup configuration evidence"
+      ],
+      "items": [
+        {
+          "id": "CIS 11.1",
+          "name": "Establish and Maintain a Data Recovery Process",
+          "desc": "[IG1] Establish and maintain a data recovery process. In the process, address the scope of data recovery activities, recovery prioritisation, and the security of backup data.",
+          "achieved": [
+            "Data recovery process is documented covering scope, prioritisation, and security.",
+            "Process is reviewed annually."
+          ],
+          "evidence": [
+            "Data recovery process document"
+          ]
+        },
+        {
+          "id": "CIS 11.2",
+          "name": "Perform Automated Backups",
+          "desc": "[IG1] Perform automated backups of in-scope enterprise assets. Run backups weekly, or more frequently, based on the sensitivity of the data.",
+          "achieved": [
+            "Automated backups run on defined schedules meeting RPO requirements.",
+            "Backup completion is monitored and failures are alerted."
+          ],
+          "evidence": [
+            "Backup tool configuration showing schedules",
+            "Backup completion monitoring report"
+          ]
+        },
+        {
+          "id": "CIS 11.3",
+          "name": "Protect Recovery Data",
+          "desc": "[IG1] Protect recovery data with equivalent controls as the original data. Reference encryption or data separation, based on requirements.",
+          "achieved": [
+            "Backup data is encrypted with equivalent or stronger controls as the source.",
+            "Access to backups is restricted to authorised personnel."
+          ],
+          "evidence": [
+            "Backup encryption configuration",
+            "Backup access control evidence"
+          ]
+        },
+        {
+          "id": "CIS 11.4",
+          "name": "Establish and Maintain an Isolated Instance of Recovery Data",
+          "desc": "[IG2] Establish and maintain an isolated instance of recovery data. Example implementations include version controlling backup destinations through offline, cloud, or off-site systems or services.",
+          "achieved": [
+            "At least one backup copy is stored offline or in an immutable location.",
+            "Ransomware cannot access or modify the isolated backup copy."
+          ],
+          "evidence": [
+            "Immutable/air-gapped backup configuration",
+            "Off-site or cloud backup location evidence"
+          ]
+        },
+        {
+          "id": "CIS 11.5",
+          "name": "Test Data Recovery",
+          "desc": "[IG1] Test backup recovery quarterly, or more frequently, for a sampling of in-scope enterprise assets.",
+          "achieved": [
+            "Recovery tests are conducted at least quarterly for a sample of critical systems.",
+            "Full DR exercises are conducted at least annually.",
+            "Test results are documented and any failures remediated."
+          ],
+          "evidence": [
+            "Quarterly restore test records",
+            "Annual DR exercise report with findings and remediation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 12",
+      "name": "Network Infrastructure Management",
+      "desc": "Establish, implement, and actively manage network devices in order to prevent attackers from exploiting vulnerable network services and access points.",
+      "achieved": [
+        "Network device inventory is maintained and all devices run current firmware.",
+        "Secure configuration baselines are applied to all network devices.",
+        "Network architecture diagrams are maintained and current.",
+        "Out-of-band management networks are used for network device administration."
+      ],
+      "evidence": [
+        "Network device inventory with firmware versions",
+        "Network device hardening baseline and compliance evidence",
+        "Network architecture diagrams",
+        "Out-of-band management network configuration"
+      ],
+      "items": [
+        {
+          "id": "CIS 12.1",
+          "name": "Ensure Network Infrastructure is Up-to-Date",
+          "desc": "[IG2] Ensure network infrastructure is kept up-to-date. Example implementations include running the latest stable release of software and/or using currently supported network-as-a-service offerings.",
+          "achieved": [
+            "Network device firmware/OS is at a supported version.",
+            "Patch process for network devices is defined and followed."
+          ],
+          "evidence": [
+            "Network device firmware version report",
+            "Network patch management procedure"
+          ]
+        },
+        {
+          "id": "CIS 12.2",
+          "name": "Establish and Maintain a Secure Network Architecture",
+          "desc": "[IG2] Establish and maintain a secure network architecture. A secure network architecture must address segmentation, least privilege, and availability, at a minimum.",
+          "achieved": [
+            "Network architecture document is current and reflects actual configuration.",
+            "Segmentation, least-privilege flows, and availability requirements are addressed."
+          ],
+          "evidence": [
+            "Current network architecture diagram",
+            "Network segmentation policy"
+          ]
+        },
+        {
+          "id": "CIS 12.3",
+          "name": "Securely Manage Network Infrastructure",
+          "desc": "[IG2] Securely manage network infrastructure. Example implementations include version-controlled infrastructure-as-code, and the use of secure network protocols such as SSH and HTTPS.",
+          "achieved": [
+            "Network devices are managed over encrypted channels only.",
+            "Configuration changes are version-controlled."
+          ],
+          "evidence": [
+            "Network management access policy",
+            "Change management records for network configurations"
+          ]
+        },
+        {
+          "id": "CIS 12.4",
+          "name": "Establish and Maintain Architecture Diagram(s)",
+          "desc": "[IG2] Establish and maintain architecture diagram(s) and/or other network system documentation. Review and update documentation annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Architecture diagrams are updated at least annually and after significant changes.",
+            "Diagrams are approved and stored in a controlled repository."
+          ],
+          "evidence": [
+            "Versioned architecture diagram with last review date"
+          ]
+        },
+        {
+          "id": "CIS 12.5",
+          "name": "Centralise Network Authentication, Authorisation, and Auditing (AAA)",
+          "desc": "[IG2] Centralise network authentication, authorisation, and auditing (AAA).",
+          "achieved": [
+            "RADIUS/TACACS+ or equivalent AAA is in use for network device authentication.",
+            "All network device access is logged centrally."
+          ],
+          "evidence": [
+            "AAA server configuration",
+            "Network device authentication logs"
+          ]
+        },
+        {
+          "id": "CIS 12.6",
+          "name": "Use of Secure Network Management and Communication Protocols",
+          "desc": "[IG2] Use secure network management and communication protocols, such as 802.1X, Wi-Fi Protected Access 2 (WPA2) Enterprise or greater.",
+          "achieved": [
+            "802.1X is deployed for wired and wireless network access.",
+            "WPA3 or WPA2-Enterprise is enforced for wireless."
+          ],
+          "evidence": [
+            "802.1X NAC configuration",
+            "Wireless security configuration"
+          ]
+        },
+        {
+          "id": "CIS 12.7",
+          "name": "Ensure Remote Devices Utilise a VPN and Are Connecting to an Enterprise's AAA Infrastructure",
+          "desc": "[IG2] Require users to authenticate to enterprise-managed VPN and authentication infrastructure prior to accessing enterprise resources on end-user devices.",
+          "achieved": [
+            "VPN is mandatory for remote access to enterprise resources.",
+            "VPN authenticates via enterprise AAA."
+          ],
+          "evidence": [
+            "VPN configuration and authentication integration evidence"
+          ]
+        },
+        {
+          "id": "CIS 12.8",
+          "name": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+          "desc": "[IG3] Establish and maintain dedicated computing resources, either physically or logically separated, for all administrative tasks or tasks requiring administrative access. The computing resources should be segmented from the enterprise's primary network and not be allowed internet access.",
+          "achieved": [
+            "Privileged access workstations (PAWs) or jump hosts are used for administrative tasks.",
+            "Administrative access cannot be performed from standard user devices."
+          ],
+          "evidence": [
+            "PAW/jump host configuration and access policy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 13",
+      "name": "Network Monitoring and Defence",
+      "desc": "Operate processes and tooling to establish and maintain comprehensive network monitoring and defence against security threats across the enterprise's network infrastructure and user base.",
+      "achieved": [
+        "Centralised SIEM ingests and correlates logs from all network security controls.",
+        "IDS/IPS is deployed at key network boundaries.",
+        "24/7 security monitoring capability is operational.",
+        "Network traffic analysis detects east-west lateral movement."
+      ],
+      "evidence": [
+        "SIEM deployment and coverage documentation",
+        "IDS/IPS configuration and alert statistics",
+        "SOC/monitoring service operational evidence",
+        "NDR or traffic analysis tool deployment"
+      ],
+      "items": [
+        {
+          "id": "CIS 13.1",
+          "name": "Centralise Security Event Alerting",
+          "desc": "[IG2] Centralise security event alerting across enterprise assets for log correlation and analysis. Best practice implementation requires the use of a SIEM.",
+          "achieved": [
+            "SIEM is deployed with alerts feeding into a security operations function.",
+            "Alert triage SLAs are defined and monitored."
+          ],
+          "evidence": [
+            "SIEM deployment documentation",
+            "Alert triage SLA policy"
+          ]
+        },
+        {
+          "id": "CIS 13.2",
+          "name": "Deploy a Host-Based Intrusion Detection Solution",
+          "desc": "[IG2] Deploy a host-based intrusion detection solution on enterprise assets, where supported.",
+          "achieved": [
+            "HIDS or EDR-based behavioural detection is deployed on critical servers.",
+            "Detections trigger alerts routed to SOC."
+          ],
+          "evidence": [
+            "HIDS/EDR deployment coverage report",
+            "Detection alert routing configuration"
+          ]
+        },
+        {
+          "id": "CIS 13.3",
+          "name": "Deploy a Network Intrusion Detection Solution",
+          "desc": "[IG2] Deploy a network intrusion detection solution on enterprise assets, where supported. Example implementations include the use of a network intrusion detection system (NIDS) or equivalent cloud service provider capabilities.",
+          "achieved": [
+            "NIDS is deployed at internet boundary and key internal segment boundaries.",
+            "NIDS signatures/rules are updated regularly."
+          ],
+          "evidence": [
+            "NIDS deployment topology diagram",
+            "NIDS rule update evidence"
+          ]
+        },
+        {
+          "id": "CIS 13.4",
+          "name": "Perform Traffic Filtering Between Network Segments",
+          "desc": "[IG1] Perform traffic filtering between network segments, where such filtering is technically supported.",
+          "achieved": [
+            "Firewall or ACL rules enforce least-privilege traffic flows between all segments.",
+            "Default-deny is applied to inter-segment rules."
+          ],
+          "evidence": [
+            "Inter-segment firewall rule set",
+            "Network segmentation policy"
+          ]
+        },
+        {
+          "id": "CIS 13.5",
+          "name": "Manage Access Control for Remote Assets",
+          "desc": "[IG2] Manage access control for assets remotely connecting to enterprise resources. The authentication solution must incorporate MFA, where supported.",
+          "achieved": [
+            "Remote access requires MFA and device compliance validation.",
+            "Non-compliant devices cannot access enterprise resources."
+          ],
+          "evidence": [
+            "Remote access policy and MFA configuration",
+            "Device compliance report"
+          ]
+        },
+        {
+          "id": "CIS 13.6",
+          "name": "Collect Network Traffic Flow Logs",
+          "desc": "[IG2] Collect network traffic flow logs and/or network traffic to review and alert upon from network devices.",
+          "achieved": [
+            "NetFlow or equivalent traffic logs are collected from all network devices.",
+            "Traffic logs are forwarded to SIEM for analysis."
+          ],
+          "evidence": [
+            "NetFlow/traffic log collection configuration"
+          ]
+        },
+        {
+          "id": "CIS 13.7",
+          "name": "Deploy a Host-Based Intrusion Prevention Solution",
+          "desc": "[IG3] Deploy a host-based intrusion prevention solution on enterprise assets, where supported. Example implementations include the use of an Endpoint Detection and Response (EDR) client.",
+          "achieved": [
+            "EDR with active prevention capability is deployed on all managed hosts.",
+            "Blocked events are reviewed and tuned regularly."
+          ],
+          "evidence": [
+            "EDR deployment and prevention mode configuration"
+          ]
+        },
+        {
+          "id": "CIS 13.8",
+          "name": "Deploy a Network Intrusion Prevention Solution",
+          "desc": "[IG3] Deploy a network intrusion prevention solution, where appropriate. Example implementations include the use of a Network Intrusion Prevention System (NIPS) or equivalent cloud service provider capabilities.",
+          "achieved": [
+            "NIPS is deployed at critical boundary points in prevention mode.",
+            "False positives are managed through tuning process."
+          ],
+          "evidence": [
+            "NIPS deployment configuration and tuning records"
+          ]
+        },
+        {
+          "id": "CIS 13.9",
+          "name": "Deploy Port-Level Access Control",
+          "desc": "[IG3] Deploy port-level access control. 802.1X and/or MAC address-based controls may be used to ensure that only authorised systems can connect to a network.",
+          "achieved": [
+            "802.1X NAC is enforced on all wired access ports.",
+            "Devices failing NAC checks are quarantined or denied access."
+          ],
+          "evidence": [
+            "802.1X NAC configuration",
+            "NAC quarantine event logs"
+          ]
+        },
+        {
+          "id": "CIS 13.10",
+          "name": "Perform Application Layer Filtering",
+          "desc": "[IG3] Perform application layer filtering. Example implementations include a filtering proxy or a next-generation firewall.",
+          "achieved": [
+            "NGFW or application-aware proxy performs layer-7 inspection.",
+            "Application policies restrict non-business traffic."
+          ],
+          "evidence": [
+            "NGFW/proxy application layer policy configuration"
+          ]
+        },
+        {
+          "id": "CIS 13.11",
+          "name": "Tune Security Event Alerting Thresholds",
+          "desc": "[IG3] Tune security event alerting thresholds monthly, or more frequently.",
+          "achieved": [
+            "Alert tuning reviews are conducted at least monthly.",
+            "False positive rate is tracked and reduced over time."
+          ],
+          "evidence": [
+            "Monthly alert tuning review records",
+            "False positive rate trend report"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 14",
+      "name": "Security Awareness and Skills Training",
+      "desc": "Establish and maintain a security awareness programme to influence behaviour among the workforce to be security conscious and to equip them with the skills to reduce cybersecurity risks.",
+      "achieved": [
+        "All staff complete mandatory security awareness training at least annually.",
+        "Simulated phishing campaigns run at least quarterly.",
+        "Role-based training is delivered to privileged users and developers.",
+        "Training effectiveness is measured and results drive programme improvements."
+      ],
+      "evidence": [
+        "Security awareness training completion records",
+        "Simulated phishing campaign results and trends",
+        "Role-based training completion records for privileged users",
+        "Training effectiveness metrics and programme review records"
+      ],
+      "items": [
+        {
+          "id": "CIS 14.1",
+          "name": "Establish and Maintain a Security Awareness Programme",
+          "desc": "[IG1] Establish and maintain a security awareness programme. The purpose of a security awareness programme is to educate the enterprise's workforce on how to interact with enterprise assets and data in a secure manner. Review and update content annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Security awareness programme is documented with defined scope, objectives, and content.",
+            "Programme is reviewed and updated at least annually."
+          ],
+          "evidence": [
+            "Security awareness programme documentation and content review records"
+          ]
+        },
+        {
+          "id": "CIS 14.2",
+          "name": "Train Workforce Members to Recognise Social Engineering Attacks",
+          "desc": "[IG1] Train workforce members to recognise social engineering attacks, such as phishing, pre-texting, and tailgating.",
+          "achieved": [
+            "Social engineering awareness is included in all-staff training.",
+            "Phishing simulation results show improving click rates."
+          ],
+          "evidence": [
+            "Training content covering social engineering",
+            "Phishing simulation trend report"
+          ]
+        },
+        {
+          "id": "CIS 14.3",
+          "name": "Train Workforce Members on Authentication Best Practices",
+          "desc": "[IG1] Train workforce members on authentication best practices. Example topics include MFA, password composition, and credential management.",
+          "achieved": [
+            "Authentication best practices (MFA, strong passwords, no sharing) are covered in training.",
+            "Password manager adoption rate is measured."
+          ],
+          "evidence": [
+            "Training content covering authentication",
+            "Password manager deployment evidence"
+          ]
+        },
+        {
+          "id": "CIS 14.4",
+          "name": "Train Workforce on Data Handling Best Practices",
+          "desc": "[IG1] Train workforce members on how to identify and properly store, transfer, archive, and destroy sensitive data. This also includes training workforce members on clear screen and desk policies.",
+          "achieved": [
+            "Data handling training covers classification, storage, transfer, and disposal.",
+            "Clear desk/screen policy is included in training."
+          ],
+          "evidence": [
+            "Data handling training content",
+            "Clear desk policy documentation"
+          ]
+        },
+        {
+          "id": "CIS 14.5",
+          "name": "Train Workforce Members on Causes of Unintentional Data Exposure",
+          "desc": "[IG1] Train workforce members to be aware of causes for unintentional data exposure. Example topics include mis-delivery of sensitive data, losing a portable end-user device, or publishing data to unintended audiences.",
+          "achieved": [
+            "Training covers common data exposure scenarios with real-world examples."
+          ],
+          "evidence": [
+            "Training content covering unintentional exposure scenarios"
+          ]
+        },
+        {
+          "id": "CIS 14.6",
+          "name": "Train Workforce Members on Recognising and Reporting Security Incidents",
+          "desc": "[IG1] Train workforce members to be able to recognise a potential incident and be able to report such an incident.",
+          "achieved": [
+            "All staff know how to recognise and report a security incident.",
+            "Reporting channels are communicated and accessible."
+          ],
+          "evidence": [
+            "Incident reporting training content",
+            "Reporting channel communication evidence"
+          ]
+        },
+        {
+          "id": "CIS 14.7",
+          "name": "Train Workforce on How to Identify and Report if Their Enterprise Assets are Missing Security Updates",
+          "desc": "[IG2] Train workforce to understand how to verify and report out-of-date software patches or any failures in automated processes and tools. Part of this training should include notifying IT personnel of any failures in automated processes and tools.",
+          "achieved": [
+            "Staff can identify and report missing patches or update failures."
+          ],
+          "evidence": [
+            "Patch reporting training content"
+          ]
+        },
+        {
+          "id": "CIS 14.8",
+          "name": "Train Workforce on the Dangers Associated with Connecting to and Transmitting Data Over Insecure Networks",
+          "desc": "[IG2] Train workforce members on the dangers of connecting to and transmitting data over insecure networks for enterprise activities. If the enterprise has remote workers, training must include guidance to ensure all work-related activities including the use of enterprise assets and data, are done over enterprise-managed VPN.",
+          "achieved": [
+            "Remote working and insecure network risks are covered in training.",
+            "VPN usage requirement is communicated clearly."
+          ],
+          "evidence": [
+            "Remote working security training content"
+          ]
+        },
+        {
+          "id": "CIS 14.9",
+          "name": "Conduct Role-Specific Security Awareness and Skills Training",
+          "desc": "[IG2] Conduct role-specific security awareness and skills training. Example implementations include secure system administration courses for IT professionals, OWASP Top 10 vulnerability awareness and prevention training for web application developers, and phishing and other social engineering awareness training for end users.",
+          "achieved": [
+            "Privileged users receive enhanced security training appropriate to their roles.",
+            "Developers receive secure coding training at least annually."
+          ],
+          "evidence": [
+            "Role-based training completion records for admins and developers",
+            "Training content for each role-specific programme"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 15",
+      "name": "Service Provider Management",
+      "desc": "Develop a process to evaluate service providers who hold sensitive data or are responsible for an enterprise's critical IT platforms or processes, ensuring these providers are protecting those platforms and data appropriately.",
+      "achieved": [
+        "A service provider risk-tiering framework is in place.",
+        "Security requirements are included in all service provider contracts.",
+        "Annual reviews of critical service providers are conducted.",
+        "A service provider inventory is maintained and kept current."
+      ],
+      "evidence": [
+        "Service provider risk register with tier classifications",
+        "Contract clauses covering information security requirements",
+        "Annual service provider review records",
+        "Service provider inventory"
+      ],
+      "items": [
+        {
+          "id": "CIS 15.1",
+          "name": "Establish and Maintain an Inventory of Service Providers",
+          "desc": "[IG2] Establish and maintain an inventory of service providers. The inventory is to list all known service providers, include classification(s), and designate an enterprise contact for each service provider. Review and update the inventory annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Service provider inventory is maintained with classification and owner.",
+            "Inventory is reviewed at least annually."
+          ],
+          "evidence": [
+            "Service provider inventory register with review date"
+          ]
+        },
+        {
+          "id": "CIS 15.2",
+          "name": "Establish and Maintain a Service Provider Management Policy",
+          "desc": "[IG2] Establish and maintain a service provider management policy. Ensure the policy addresses the classification, inventory, assessment, monitoring, and decommissioning of service providers. Review and update the policy annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Service provider management policy is documented and reviewed annually."
+          ],
+          "evidence": [
+            "Service provider management policy document"
+          ]
+        },
+        {
+          "id": "CIS 15.3",
+          "name": "Classify Service Providers",
+          "desc": "[IG2] Classify service providers. Classification considerations may include one or more characteristics, such as data sensitivity, data volume, availability requirements, applicable regulations, inherent risk, and mitigated risk. Update and review classifications annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "All service providers are classified into risk tiers (e.g. Critical, High, Medium, Low).",
+            "Classifications are reviewed annually."
+          ],
+          "evidence": [
+            "Service provider classification scheme",
+            "Classified service provider register"
+          ]
+        },
+        {
+          "id": "CIS 15.4",
+          "name": "Ensure Service Provider Contracts Include Security Requirements",
+          "desc": "[IG2] Ensure service provider contracts include security requirements. Example requirements may include minimum security programme requirements, security incident and/or data breach notification and response requirements, data encryption requirements, and data disposal requirements.",
+          "achieved": [
+            "All service provider contracts include defined minimum security clauses.",
+            "Security requirements are tiered based on provider classification."
+          ],
+          "evidence": [
+            "Contract clause template for security requirements",
+            "Sample contracts showing security clauses"
+          ]
+        },
+        {
+          "id": "CIS 15.5",
+          "name": "Assess Service Providers",
+          "desc": "[IG2] Assess service providers consistent with the enterprise's service provider management policy. Assessment scope may vary based on classification(s), and may include review of standardised assessment reports, such as Service Organisation Control 2 (SOC 2) and Payment Card Industry (PCI) Attestation of Compliance (AoC) reports, customised questionnaires, or other appropriately structured assessments.",
+          "achieved": [
+            "Assessment process is defined and applied based on provider tier.",
+            "Assessments are completed before onboarding and periodically thereafter."
+          ],
+          "evidence": [
+            "Service provider assessment questionnaire",
+            "SOC 2 / ISO 27001 certificates from critical providers",
+            "Assessment completion records"
+          ]
+        },
+        {
+          "id": "CIS 15.6",
+          "name": "Monitor Service Providers",
+          "desc": "[IG2] Monitor service providers consistent with the enterprise's service provider management policy. Monitoring may include periodic reassessment of service provider classifications, reviewing service provider security programme effectiveness, and monitoring for breaches.",
+          "achieved": [
+            "Ongoing monitoring of critical service providers is in place.",
+            "Security news and breach intelligence about providers is monitored."
+          ],
+          "evidence": [
+            "Continuous monitoring tool outputs (e.g. SecurityScorecard)",
+            "Periodic reassessment records"
+          ]
+        },
+        {
+          "id": "CIS 15.7",
+          "name": "Securely Decommission Service Providers",
+          "desc": "[IG2] Securely decommission service providers. Example considerations include service transition or termination agreement(s), including ensuring the security of data.",
+          "achieved": [
+            "Data return/destruction is confirmed on service provider offboarding.",
+            "Access revocation and credential rotation is completed on decommissioning."
+          ],
+          "evidence": [
+            "Offboarding checklist for service providers",
+            "Data destruction confirmation from decommissioned providers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 16",
+      "name": "Application Software Security",
+      "desc": "Manage the security life cycle of in-house developed, hosted, or acquired software in order to prevent, detect, and remediate security weaknesses before they can impact the enterprise.",
+      "achieved": [
+        "Security requirements are defined and implemented for all applications.",
+        "SAST and DAST tools are integrated into CI/CD pipelines.",
+        "Penetration testing is conducted for all externally-facing applications at least annually.",
+        "Dependency scanning identifies vulnerable third-party libraries in all builds."
+      ],
+      "evidence": [
+        "Application security requirements documentation",
+        "SAST/DAST tool integration evidence in CI/CD pipelines",
+        "Annual penetration test reports for web applications",
+        "Dependency scanning reports with remediation tracking"
+      ],
+      "items": [
+        {
+          "id": "CIS 16.1",
+          "name": "Establish and Maintain a Secure Application Development Process",
+          "desc": "[IG2] Establish and maintain a secure application development process. In the process, address such items as: secure application design standards, secure coding practices, developer training, vulnerability management, security of third-party code, and security testing methodologies. Review and update documentation annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "SDL process is documented covering all phases from design through deployment.",
+            "Process is reviewed annually."
+          ],
+          "evidence": [
+            "SDL policy document"
+          ]
+        },
+        {
+          "id": "CIS 16.2",
+          "name": "Establish and Maintain a Process to Accept and Address Software Vulnerabilities",
+          "desc": "[IG2] Establish and maintain a process to accept and address reports of software vulnerabilities, including providing a means for external parties to report. The process is to include such items as: a vulnerability tracking system, a process for intake of vulnerability reports, acceptance of reports, validation, remediation, and end-user notification.",
+          "achieved": [
+            "Responsible disclosure or vulnerability reporting process is published.",
+            "Reported vulnerabilities are triaged and remediated within defined SLAs."
+          ],
+          "evidence": [
+            "Responsible disclosure policy or vulnerability reporting contact",
+            "Vulnerability tracking system records"
+          ]
+        },
+        {
+          "id": "CIS 16.3",
+          "name": "Perform Root Cause Analysis on Security Vulnerabilities",
+          "desc": "[IG2] Perform root cause analysis on security vulnerabilities. When reviewing vulnerabilities, root cause analysis should be used to identify and remediate the underlying cause.",
+          "achieved": [
+            "Root cause analysis is performed for High and Critical application vulnerabilities.",
+            "Findings are used to improve secure coding training and review processes."
+          ],
+          "evidence": [
+            "Root cause analysis records for critical vulnerabilities"
+          ]
+        },
+        {
+          "id": "CIS 16.4",
+          "name": "Establish and Manage an Inventory of Third-Party Software Components",
+          "desc": "[IG2] Establish and manage an updated inventory of third-party components used in development, often referred to as a Software Bill of Materials (SBOM), and components that are in Production. Monitor sources such as vendor advisories and the National Vulnerability Database to stay current on vulnerabilities and available updates for these components.",
+          "achieved": [
+            "SBOM is maintained for all in-scope applications.",
+            "Vulnerability advisories for tracked components are monitored."
+          ],
+          "evidence": [
+            "SBOM per application",
+            "Dependency scanning tool configuration and output"
+          ]
+        },
+        {
+          "id": "CIS 16.5",
+          "name": "Use Up-to-Date and Trusted Third-Party Software Components",
+          "desc": "[IG2] Use up-to-date and trusted third-party software components. When possible, choose established and maintained frameworks and libraries that provide adequate security. Acquire these components from trusted sources, validate their integrity, and keep them current.",
+          "achieved": [
+            "Third-party components are sourced from trusted repositories.",
+            "Components are verified via integrity checks (e.g. hash verification, signature)."
+          ],
+          "evidence": [
+            "Package management configuration (e.g. private registry or proxy)",
+            "Component integrity verification process"
+          ]
+        },
+        {
+          "id": "CIS 16.6",
+          "name": "Establish and Maintain a Severity Rating System and Process for Application Vulnerabilities",
+          "desc": "[IG2] Establish and maintain a severity rating system and process for application vulnerabilities that facilitates prioritising the order in which discovered vulnerabilities are patched. The process includes rating sensitivities of the affected data and a risk weighting of the vulnerability. Vulnerabilities should be rated on a scale of 1-10 with 10 being the most severe risk for the enterprise. The rating system must factor in the confidentiality, integrity, and availability (CIA) of the affected data.",
+          "achieved": [
+            "Vulnerability severity rating process is defined and applied consistently.",
+            "Ratings incorporate CVSS base score plus contextual risk factors."
+          ],
+          "evidence": [
+            "Vulnerability severity rating methodology document"
+          ]
+        },
+        {
+          "id": "CIS 16.7",
+          "name": "Use Standard Hardening Configuration Templates for Application Infrastructure",
+          "desc": "[IG2] Use standard, industry-recommended hardening configuration templates for application infrastructure components. This includes underlying servers, databases, and web servers, and applies to cloud containers, security groups, and other infrastructure components.",
+          "achieved": [
+            "CIS Benchmarks or equivalent hardening templates are applied to all application infrastructure.",
+            "Templates are version-controlled and applied during provisioning."
+          ],
+          "evidence": [
+            "Hardening template documentation",
+            "Infrastructure compliance scan report"
+          ]
+        },
+        {
+          "id": "CIS 16.8",
+          "name": "Separate Production and Non-Production Systems",
+          "desc": "[IG2] Do not run non-production systems on production infrastructure.",
+          "achieved": [
+            "Development, test, and production environments are strictly separated.",
+            "Production data is not used in non-production environments."
+          ],
+          "evidence": [
+            "Environment separation architecture documentation",
+            "Non-production environment access controls"
+          ]
+        },
+        {
+          "id": "CIS 16.9",
+          "name": "Train Developers in Application Security Concepts and Secure Coding",
+          "desc": "[IG2] Ensure that all software development personnel receive training in writing secure code for their specific development environment and responsibilities. Training can include general security principles and application security standard practices such as OWASP Top 10.",
+          "achieved": [
+            "All developers complete secure coding training at least annually.",
+            "Training is tailored to development languages and frameworks in use."
+          ],
+          "evidence": [
+            "Developer secure coding training completion records",
+            "Training content review evidence"
+          ]
+        },
+        {
+          "id": "CIS 16.10",
+          "name": "Apply Secure Design Principles in Application Architectures",
+          "desc": "[IG2] Apply secure design principles in application architectures. Example principles include the following: least privilege and separation of duties, fail securely, complete mediation, economy of mechanism (keep it simple), full documentation, minimising attack surface area, avoiding security through obscurity.",
+          "achieved": [
+            "Security architecture principles are documented and applied during design reviews.",
+            "Threat modelling is conducted for new and materially changed applications."
+          ],
+          "evidence": [
+            "Security architecture principles documentation",
+            "Threat modelling records"
+          ]
+        },
+        {
+          "id": "CIS 16.11",
+          "name": "Leverage Vetted Modules or Services for Application Security Components",
+          "desc": "[IG2] Leverage vetted modules or services for application security components, such as identity management, encryption, and auditing and logging. Using platform features in critical security functions will reduce developer workload and minimise the likelihood of design or implementation errors.",
+          "achieved": [
+            "Standard, vetted libraries are used for security functions (AuthN, crypto, logging).",
+            "Custom implementations of security primitives are not permitted without approval."
+          ],
+          "evidence": [
+            "Security library/module approved list",
+            "Code review evidence showing standard library usage"
+          ]
+        },
+        {
+          "id": "CIS 16.12",
+          "name": "Implement Code-Level Security Checks",
+          "desc": "[IG3] Apply static code analysis tools to verify that coding practices meet defined security standards.",
+          "achieved": [
+            "SAST tools run on every build in CI/CD pipeline.",
+            "Security gate thresholds block merges with critical findings."
+          ],
+          "evidence": [
+            "SAST tool integration in CI/CD pipeline",
+            "Security gate policy configuration"
+          ]
+        },
+        {
+          "id": "CIS 16.13",
+          "name": "Conduct Application Penetration Testing",
+          "desc": "[IG3] Conduct application penetration testing. For critical applications, authenticated penetration testing is preferred. Penetration testing must include, at a minimum, OWASP Top 10 issues.",
+          "achieved": [
+            "Penetration testing is conducted at least annually for all internet-facing applications.",
+            "Findings are tracked to remediation with severity-based SLAs."
+          ],
+          "evidence": [
+            "Annual penetration test reports",
+            "Penetration test finding remediation tracking records"
+          ]
+        },
+        {
+          "id": "CIS 16.14",
+          "name": "Conduct Threat Modelling",
+          "desc": "[IG2] Conduct threat modelling. For each of the enterprise's highest risk applications, conduct threat modelling to identify attacker goals, attack surfaces, attack techniques, mitigations, and residual risk.",
+          "achieved": [
+            "Threat modelling is conducted for all high-risk applications.",
+            "Threat model outputs feed into security controls and test plans."
+          ],
+          "evidence": [
+            "Threat model artefacts for high-risk applications",
+            "Evidence of threat model findings being addressed in design"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 17",
+      "name": "Incident Response Management",
+      "desc": "Establish a programme to develop and maintain an incident response capability in order to prepare, detect, contain, and recover from attacks.",
+      "achieved": [
+        "An incident response plan is documented and approved.",
+        "Incident response team roles and responsibilities are defined.",
+        "Tabletop or simulation exercises are conducted at least annually.",
+        "Post-incident reviews are completed for all significant incidents."
+      ],
+      "evidence": [
+        "Incident response plan document",
+        "Incident response team contact list and RACI",
+        "Tabletop exercise reports",
+        "Post-incident review records"
+      ],
+      "items": [
+        {
+          "id": "CIS 17.1",
+          "name": "Designate Personnel to Manage Incident Handling",
+          "desc": "[IG1] Designate one key person, and at least one backup, who will manage the enterprise's incident handling process. Management personnel are responsible for the coordination and documentation of incident response and recovery efforts and can consist of one or more individuals from the enterprise.",
+          "achieved": [
+            "Named incident manager and backup are designated.",
+            "Contact details are documented and accessible."
+          ],
+          "evidence": [
+            "Incident response team roster with named roles"
+          ]
+        },
+        {
+          "id": "CIS 17.2",
+          "name": "Establish and Maintain Contact Information for Reporting Security Incidents",
+          "desc": "[IG1] Establish and maintain contact information for parties that need to be informed of security incidents. Contacts to consider may include internal (e.g. the executive team, HR, communications and accounting departments) and external contacts (e.g. law enforcement, cyber insurance provider, relevant government agencies, vendors, public relations firms).",
+          "achieved": [
+            "Internal and external escalation contacts are documented and current.",
+            "Contact list is reviewed at least annually."
+          ],
+          "evidence": [
+            "Incident escalation contact list with last review date"
+          ]
+        },
+        {
+          "id": "CIS 17.3",
+          "name": "Establish and Maintain an Enterprise Process for Reporting Incidents",
+          "desc": "[IG1] Establish and maintain an enterprise process for the workforce to report security incidents. The process includes reporting timeframe, personnel to report to, mechanism for reporting, and the minimum information to be reported. Ensure the process is publicly available to all of the workforce.",
+          "achieved": [
+            "Reporting process is communicated to all staff.",
+            "Reporting channels are accessible and functional."
+          ],
+          "evidence": [
+            "Incident reporting process document",
+            "Communication evidence (intranet page, training content)"
+          ]
+        },
+        {
+          "id": "CIS 17.4",
+          "name": "Establish and Maintain an Incident Response Process",
+          "desc": "[IG2] Establish and maintain an incident response process that addresses roles and responsibilities, compliance requirements, and a communication plan.",
+          "achieved": [
+            "IRP document covers preparation, identification, containment, eradication, recovery, and lessons learned.",
+            "Roles, responsibilities, and decision authorities are defined."
+          ],
+          "evidence": [
+            "Incident response plan document"
+          ]
+        },
+        {
+          "id": "CIS 17.5",
+          "name": "Assign Key Roles and Responsibilities",
+          "desc": "[IG2] Assign key roles and responsibilities for incident response, including staff from legal, IT, information security, facilities, public relations, HR, incident responders, and analysts, as applicable. Review annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "RACI for incident response is documented and current.",
+            "All named roles have acknowledged their responsibilities."
+          ],
+          "evidence": [
+            "Incident response RACI matrix with acknowledgement evidence"
+          ]
+        },
+        {
+          "id": "CIS 17.6",
+          "name": "Define Mechanisms for Communicating During Incident Response",
+          "desc": "[IG2] Determine which primary and secondary mechanisms will be used to communicate and report during a security incident. This includes what data can be shared and with whom, mechanisms for sharing data, and any legal or regulatory reporting requirements.",
+          "achieved": [
+            "Communication plan covers internal and external communications.",
+            "Out-of-band communication channels are available if primary channels are compromised."
+          ],
+          "evidence": [
+            "Incident communication plan",
+            "Out-of-band communication method documentation"
+          ]
+        },
+        {
+          "id": "CIS 17.7",
+          "name": "Conduct Routine Incident Response Exercises",
+          "desc": "[IG2] Plan and conduct routine incident response exercises and scenarios for the workforce involved in the incident response to maintain awareness and comfort in responding to real-world threats. Exercises need to include both simulated and real-world scenarios.",
+          "achieved": [
+            "Tabletop exercises are conducted at least annually.",
+            "Exercises cover realistic scenarios relevant to the threat landscape.",
+            "Findings from exercises drive plan improvements."
+          ],
+          "evidence": [
+            "Tabletop exercise schedule and reports",
+            "Exercise improvement action tracking records"
+          ]
+        },
+        {
+          "id": "CIS 17.8",
+          "name": "Conduct Post-Incident Reviews",
+          "desc": "[IG2] Conduct post-incident reviews. Post-incident reviews help prevent incident recurrence through identifying lessons learned and follow-up action.",
+          "achieved": [
+            "Post-incident reviews are completed within two weeks of incident closure.",
+            "Action items are tracked to completion."
+          ],
+          "evidence": [
+            "Post-incident review reports",
+            "Action item tracking records"
+          ]
+        },
+        {
+          "id": "CIS 17.9",
+          "name": "Establish and Maintain Security Incident Thresholds",
+          "desc": "[IG2] Establish and maintain security incident thresholds, including, at a minimum, differentiating between an incident and an event, and definition of severity levels for incidents.",
+          "achieved": [
+            "Incident severity levels are defined with clear criteria.",
+            "Thresholds for notification, escalation, and external reporting are documented."
+          ],
+          "evidence": [
+            "Incident severity classification scheme",
+            "Escalation matrix"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CIS 18",
+      "name": "Penetration Testing",
+      "desc": "Test the effectiveness and resiliency of enterprise assets through identifying and exploiting weaknesses in controls (people, processes, and technology), and simulating the objectives and actions of an attacker.",
+      "achieved": [
+        "Penetration testing is conducted at least annually covering infrastructure and applications.",
+        "Testing scope and rules of engagement are formally agreed before each engagement.",
+        "Findings are tracked to remediation with severity-based deadlines.",
+        "Red team or adversary simulation exercises are conducted for mature programmes."
+      ],
+      "evidence": [
+        "Annual penetration test reports with scope, findings, and severity ratings",
+        "Rules of engagement and scoping documentation",
+        "Remediation tracking records with closure evidence",
+        "Red team exercise reports (where applicable)"
+      ],
+      "items": [
+        {
+          "id": "CIS 18.1",
+          "name": "Establish and Maintain a Penetration Testing Programme",
+          "desc": "[IG2] Establish and maintain a penetration testing programme appropriate to the size, complexity, and maturity of the enterprise. A penetration testing programme includes such components as clear goals, defined scope, limitations, testing methodology, remediation, and exception processes. Review and update documentation annually, or when significant enterprise changes occur.",
+          "achieved": [
+            "Penetration testing programme is documented with objectives, scope, methodology, and remediation process.",
+            "Programme is reviewed annually."
+          ],
+          "evidence": [
+            "Penetration testing programme policy document"
+          ]
+        },
+        {
+          "id": "CIS 18.2",
+          "name": "Perform Periodic External Penetration Tests",
+          "desc": "[IG2] Perform periodic external penetration tests based on programme requirements, no less than annually. External penetration testing must include enterprise and environmental reconnaissance to detect exploitable information. Penetration testing requires specialised skills and experience and must be conducted through a qualified party.",
+          "achieved": [
+            "External penetration test is conducted at least annually by a qualified provider.",
+            "Test covers internet-facing assets including web applications, VPN, and cloud perimeter."
+          ],
+          "evidence": [
+            "Annual external penetration test report",
+            "Penetration tester qualifications/CREST accreditation evidence"
+          ]
+        },
+        {
+          "id": "CIS 18.3",
+          "name": "Remediate Penetration Test Findings",
+          "desc": "[IG2] Remediate penetration test findings based on the enterprise's policy for remediation scope and prioritisation.",
+          "achieved": [
+            "All Critical and High findings are remediated within defined SLAs.",
+            "Remediation is verified through re-testing."
+          ],
+          "evidence": [
+            "Remediation tracking spreadsheet or ticket records",
+            "Re-test confirmation evidence"
+          ]
+        },
+        {
+          "id": "CIS 18.4",
+          "name": "Validate Security Measures",
+          "desc": "[IG3] Validate security measures after each penetration test. If deemed necessary, modify rulesets and capabilities to detect the techniques used during testing.",
+          "achieved": [
+            "Detection and response capabilities are assessed as part of penetration tests.",
+            "SIEM and EDR rules are updated based on techniques used during testing."
+          ],
+          "evidence": [
+            "Post-test detection capability assessment",
+            "SIEM/EDR rule update records driven by test findings"
+          ]
+        },
+        {
+          "id": "CIS 18.5",
+          "name": "Perform Periodic Internal Penetration Tests",
+          "desc": "[IG3] Perform periodic internal penetration tests based on programme requirements, no less than annually. The scope of internal penetration testing includes, at a minimum, the enterprise's intranet and internal systems.",
+          "achieved": [
+            "Internal penetration testing is conducted at least annually.",
+            "Test scope covers internal network, Active Directory, and lateral movement paths."
+          ],
+          "evidence": [
+            "Annual internal penetration test report",
+            "Internal test scoping documentation"
+          ]
+        }
+      ]
+    }
+  ]
+}
