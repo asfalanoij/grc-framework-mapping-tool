@@ -59,7 +59,7 @@ grc-framework-mapping-tool/
 │   ├── ci.yml                 # typecheck, lint, vitest, playwright
 │   └── deploy-pages.yml       # build + deploy to gh-pages on main
 ├── docs/
-│   ├── superpowers/specs/     # design docs (this file)
+│   ├── ecc/specs/             # design docs (this file)
 │   └── adr/                   # per-milestone ADRs (M1–M8)
 ├── public/                    # favicons, og image, robots.txt
 ├── src/
@@ -278,41 +278,45 @@ src/features/export/* fixture-driven:
 
 ## 12. ECC ownership map
 
+**Invocation conventions** (used in this section and §13):
+- `/skills-ecc:<name>` — slash skills invoked in the active session
+- `Agent(ecc-<name>)` — subagents delegated to via the `Agent` tool
+
 | Surface | Primary owner | Secondary |
 |---|---|---|
-| `src/data/*` extraction from legacy | Agent `ecc:planner` (plan); manual scripted extract; `ecc:typescript-reviewer` (output) | `ecc:database-reviewer` (schema shape) |
-| `src/data/schemas.ts` (zod) | `ecc:typescript-reviewer` | `ecc:tdd-guide` (boot-validation tests) |
-| `src/domain/mapping-engine.ts` | `ecc:tdd-guide` | `ecc:typescript-reviewer` |
-| `src/domain/scoring|filters|search.ts` | `ecc:tdd-guide` | `ecc:typescript-reviewer` |
-| `src/services/persistence.ts` (Dexie) | `ecc:database-migrations` | `ecc:tdd-guide` |
-| `src/services/migration.ts` | `ecc:tdd-guide` | `ecc:typescript-reviewer` |
-| `src/store/*.store.ts` (Zustand) | `ecc:frontend-patterns` | `ecc:typescript-reviewer` |
-| `src/styles/` + Tailwind tokens | `ecc:design-system` | `ecc:make-interfaces-feel-better` |
-| `src/components/` | `ecc:frontend-patterns` | `ecc:accessibility`, `ecc:typescript-reviewer` |
-| `src/features/*/` views | `ecc:frontend-patterns` | `ecc:click-path-audit` at M8 |
-| `src/features/export/*` | `ecc:tdd-guide` (fixtures) | `ecc:typescript-reviewer` |
-| `tests/e2e/smoke.spec.ts` | Agent `ecc:e2e-runner` | — |
-| Vite/Tailwind/TS configs | `ecc:vite-patterns` | Agent `ecc:build-error-resolver` |
-| `.github/workflows/*` | `ecc:git-workflow` rule + Agent `ecc:planner` | — |
-| `docs/` (spec, PRD, ADRs) | Agent `ecc:doc-updater` | `ecc:update-docs` |
+| `src/data/*` extraction from legacy | `Agent(ecc-planner)` (plan); scripted extract; `Agent(ecc-typescript-reviewer)` (output review) | `Agent(ecc-database-reviewer)` (schema shape) |
+| `src/data/schemas.ts` (zod) | `Agent(ecc-typescript-reviewer)` | `Agent(ecc-tdd-guide)` (boot-validation tests) |
+| `src/domain/mapping-engine.ts` | `Agent(ecc-tdd-guide)` | `Agent(ecc-typescript-reviewer)` |
+| `src/domain/{scoring,filters,search}.ts` | `Agent(ecc-tdd-guide)` | `Agent(ecc-typescript-reviewer)` |
+| `src/services/persistence.ts` (Dexie) | `/skills-ecc:database-migrations` | `Agent(ecc-tdd-guide)` |
+| `src/services/migration.ts` | `Agent(ecc-tdd-guide)` | `Agent(ecc-typescript-reviewer)` |
+| `src/store/*.store.ts` (Zustand) | `/skills-ecc:frontend-patterns` | `Agent(ecc-typescript-reviewer)` |
+| `src/styles/` + Tailwind tokens | `/skills-ecc:design-system` | `/skills-ecc:make-interfaces-feel-better` |
+| `src/components/` | `/skills-ecc:frontend-patterns` | `/skills-ecc:accessibility`, `Agent(ecc-typescript-reviewer)` |
+| `src/features/*/` views | `/skills-ecc:frontend-patterns` | `/skills-ecc:click-path-audit` at M8 |
+| `src/features/export/*` | `Agent(ecc-tdd-guide)` (fixtures) | `Agent(ecc-typescript-reviewer)` |
+| `tests/e2e/smoke.spec.ts` | `Agent(ecc-e2e-runner)` | — |
+| Vite/Tailwind/TS configs | `/skills-ecc:vite-patterns` | `Agent(ecc-build-error-resolver)` |
+| `.github/workflows/*` | `/skills-ecc:git-workflow` rule + `Agent(ecc-planner)` | — |
+| `docs/` (spec, PRD, ADRs) | `Agent(ecc-doc-updater)` | `/skills-ecc:update-docs` |
 
 **Per-milestone ECC invocation:**
 
 ```
-M1 Scaffold      → ecc:plan + Agent:ecc:planner → Agent:ecc:build-error-resolver if Vite/Tailwind hiccup
-M2 Data extract  → ecc:tdd-guide (golden-file tests first) → Agent:ecc:typescript-reviewer on PR
-M3 Domain        → ecc:tdd-workflow (test-first every function) → ecc:test-coverage (100% gate)
-M4 Persistence   → ecc:database-migrations + ecc:tdd-guide → Agent:ecc:typescript-reviewer
-M5 ISO view      → ecc:frontend-patterns + ecc:design-system → ecc:accessibility on ControlCard
-M6 Filters/etc.  → ecc:frontend-patterns → ecc:click-path-audit
-M7 Other views   → loop M5 pattern per framework
-M8 Cutover       → Agent:ecc:e2e-runner + ecc:verification-loop + ecc:refactor-cleaner
+M1 Scaffold      → /skills-ecc:plan + Agent(ecc-planner) → Agent(ecc-build-error-resolver) if Vite/Tailwind hiccup
+M2 Data extract  → Agent(ecc-tdd-guide) (golden-file tests first) → Agent(ecc-typescript-reviewer) on PR
+M3 Domain        → /skills-ecc:tdd-workflow (test-first every function) → /skills-ecc:test-coverage (100% gate)
+M4 Persistence   → /skills-ecc:database-migrations + Agent(ecc-tdd-guide) → Agent(ecc-typescript-reviewer)
+M5 ISO view      → /skills-ecc:frontend-patterns + /skills-ecc:design-system → /skills-ecc:accessibility on ControlCard
+M6 Filters/etc.  → /skills-ecc:frontend-patterns → /skills-ecc:click-path-audit
+M7 Other views   → per framework: /skills-ecc:frontend-patterns implementation → Agent(ecc-typescript-reviewer) PR review → /skills-ecc:click-path-audit feature-parity check before merge
+M8 Cutover       → Agent(ecc-e2e-runner) smoke E2E + /skills-ecc:verification-loop + Agent(ecc-refactor-cleaner) legacy purge
 ```
 
 ## 13. Success criteria (binary checks at M8 cutover)
 
 1. `/` on `prinnyo.github.io/grc-framework-mapping-tool/` serves the new Vite build, not the legacy HTML.
-2. Every feature in the current README works in v2 — verified by `ecc:click-path-audit` against a checklist generated at M8 by walking every feature paragraph in `README.md` (one row per documented capability).
+2. Every feature in the current README works in v2 — verified by `/skills-ecc:click-path-audit` against a checklist generated at M8 by walking every feature paragraph in `README.md` (one row per documented capability).
 3. A user with existing localStorage data sees their scores/evidence on first load of v2 (migration ran).
 4. CSV, XLSX, SoA exports produce byte-identical or semantically-identical output to legacy (golden-file diff).
 5. Coverage gates green in CI; Playwright smoke green; typecheck + lint green.
@@ -335,9 +339,20 @@ M8 Cutover       → Agent:ecc:e2e-runner + ecc:verification-loop + ecc:refactor
 
 None at spec time. All four pivotal choices (migration, stack, styling, state) decided during brainstorming.
 
-## 16. References
+## 16. References and out-of-scope methodologies
 
+**References:**
 - Source repo: `https://github.com/prinnyo/grc-framework-mapping-tool`
 - Legacy entry: `index.html` (791 KB, 8,608 lines, React 18 via CDN)
 - Current live URL: `https://prinnyo.github.io/grc-framework-mapping-tool`
-- ECC plugin: invoked via `/skills-ecc`; agents and skills mapped in §12
+
+**Invocation conventions** (canonical for this project):
+- `/skills-ecc:<name>` — slash skills (e.g. `/skills-ecc:plan`, `/skills-ecc:tdd-workflow`)
+- `Agent(ecc-<name>)` — subagents (e.g. `Agent(ecc-planner)`, `Agent(ecc-typescript-reviewer)`)
+- All ECC components for this project are catalogued in §12; new contributors should reuse those before adding new tooling.
+
+**Out of scope — methodologies deliberately not used here:**
+- `superpowers:*` workflow plugins (e.g. `superpowers:writing-plans`, `superpowers:brainstorming`, `superpowers:tdd`). The brainstorming session that produced this spec used `superpowers:brainstorming`, but planning and execution from this point onward run under ECC only.
+- `gsd:*` (Get Stuff Done) phase plugins (e.g. `gsd:plan-phase`, `gsd:execute-phase`).
+
+Contributors should not reintroduce `superpowers:*` or `gsd:*` invocations into plans, ADRs, PR bodies, or workflow files. If a capability is missing in ECC, prefer adding it to ECC (`/skills-ecc:skill-create`) over depending on the deprecated stacks.
