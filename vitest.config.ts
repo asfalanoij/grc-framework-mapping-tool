@@ -42,6 +42,18 @@ export default defineConfig({
           functions: 100,
           statements: 100,
         },
+        'src/services/**': {
+          lines: 80,
+          branches: 80,
+          functions: 80,
+          statements: 80,
+        },
+        'src/store/**': {
+          lines: 80,
+          branches: 80,
+          functions: 80,
+          statements: 80,
+        },
       },
     },
     exclude: ['node_modules', 'dist', 'tests/e2e/**', 'legacy/**'],
