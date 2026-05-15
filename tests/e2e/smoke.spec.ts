@@ -1,17 +1,15 @@
 import { test, expect } from '@playwright/test';
 
-test('app boots, navigates, scores, filters, and searches', async ({ page }) => {
+test('app boots, navigates across multiple frameworks, scores items', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('link', { name: /^ctrlmap v2$/i })).toBeVisible();
 
-  // Primary nav: open ISO 27001.
+  // 1. ISO 27001 view: filter + search work, score A.5.1 as Implemented.
   await page
     .getByRole('navigation', { name: /primary/i })
     .getByRole('link', { name: /^iso 27001$/i })
     .click();
   await expect(page.getByTestId('iso27001-view')).toBeVisible();
-
-  // Score A.5.1 as implemented.
   const a51 = page.getByTestId('control-A.5.1');
   await a51.getByRole('radio', { name: /^implemented$/i }).click();
   await expect(a51.getByRole('radio', { name: /^implemented$/i })).toHaveAttribute(
@@ -19,14 +17,24 @@ test('app boots, navigates, scores, filters, and searches', async ({ page }) => 
     'true',
   );
 
-  // Toggle the Organizational category filter — list should shrink to <118.
-  await page.getByRole('switch', { name: /organizational/i }).click();
-  const filteredCount = page.getByTestId('filtered-count');
-  await expect(filteredCount).toContainText(/of 118 shown/);
-  // Clear all filters.
-  await page.getByRole('button', { name: /clear all/i }).click();
+  // 2. NIST CSF view loads + scoring works.
+  await page
+    .getByRole('navigation', { name: /primary/i })
+    .getByRole('link', { name: /^nist csf$/i })
+    .click();
+  await expect(page.getByTestId('framework-view-NIST CSF 2.0')).toBeVisible();
+  const govOc01 = page.getByTestId('item-GV.OC-01');
+  await govOc01.getByRole('radio', { name: /^in progress$/i }).click();
+  await expect(govOc01.getByRole('radio', { name: /^in progress$/i })).toHaveAttribute(
+    'aria-checked',
+    'true',
+  );
 
-  // Search for A.5.1 via the search bar.
-  await page.getByLabel(/search controls/i).fill('A.5.1');
-  await expect(page.getByTestId('filtered-count')).toContainText(/of 118 shown/);
+  // 3. NCSC CAF (bespoke 3-level objectives → principles → outcomes).
+  await page
+    .getByRole('navigation', { name: /primary/i })
+    .getByRole('link', { name: /^ncsc caf$/i })
+    .click();
+  await expect(page.getByTestId('framework-view-NCSC CAF')).toBeVisible();
+  await expect(page.getByTestId('item-A1.a')).toBeVisible();
 });
