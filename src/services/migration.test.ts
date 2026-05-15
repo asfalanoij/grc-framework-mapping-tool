@@ -1,6 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { createPersistence, type Persistence } from './persistence';
-import { migrateLocalStorageToIdb, LEGACY_STATUS_MAP, MIGRATION_KEY, MIGRATION_VERSION } from './migration';
+import {
+  migrateLocalStorageToIdb,
+  LEGACY_STATUS_MAP,
+  MIGRATION_KEY,
+  MIGRATION_VERSION,
+} from './migration';
 
 // Tiny in-memory storage that satisfies Pick<Storage, 'getItem'>.
 function fakeStorage(data: Record<string, string>): Pick<Storage, 'getItem'> {
@@ -85,7 +90,11 @@ describe('migrateLocalStorageToIdb', () => {
     const storage = fakeStorage({
       'grc-evidence': JSON.stringify({
         'ISO 27001': {
-          'A.5.1': { collected: { 'Policy doc': true }, refs: { 'Policy doc': 'link' }, notes: 'n' },
+          'A.5.1': {
+            collected: { 'Policy doc': true },
+            refs: { 'Policy doc': 'link' },
+            notes: 'n',
+          },
         },
       }),
     });
