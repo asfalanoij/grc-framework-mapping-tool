@@ -5,6 +5,9 @@ import { usePersistence } from '../../app/use-persistence';
 import { useScoresStore } from '../../store/scores.store';
 import { useEvidenceStore, selectEvidenceFor } from '../../store/evidence.store';
 import { computeReadiness } from '../../domain/scoring';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildCafCsv } from '../export/frameworkExporter';
+import { buildCafXlsx } from '../export/xlsxExporter';
 
 const FRAMEWORK = 'NCSC CAF';
 const EMPTY: Readonly<Record<string, never>> = Object.freeze({});
@@ -45,6 +48,11 @@ export function NcscCafView() {
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
           {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {ncscCafOutcomes.length} outcomes
         </p>
+        <ExportMenu
+          framework={FRAMEWORK}
+          buildCsv={() => buildCafCsv(ncscCaf, { framework: FRAMEWORK, scores, evidenceByKey: evidenceState.byKey })}
+          buildXlsx={() => buildCafXlsx(ncscCaf, { framework: FRAMEWORK, scores, evidenceByKey: evidenceState.byKey })}
+        />
       </header>
 
       {ncscCaf.objectives.map((obj) => (

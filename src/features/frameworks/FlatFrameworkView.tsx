@@ -7,6 +7,9 @@ import { usePersistence } from '../../app/use-persistence';
 import { useScoresStore } from '../../store/scores.store';
 import { useEvidenceStore } from '../../store/evidence.store';
 import { computeReadiness, type Status } from '../../domain/scoring';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildFrameworkCsv } from '../export/frameworkExporter';
+import { buildFrameworkXlsx } from '../export/xlsxExporter';
 
 const EMPTY: Readonly<Record<string, never>> = Object.freeze({});
 
@@ -22,6 +25,7 @@ export function FlatFrameworkView({ framework, title, subtitle, hierarchy }: Fla
   const scoresByFw = useScoresStore((s) => s.byFramework);
   const setScore = useScoresStore((s) => s.setScore);
   const hydrateScores = useScoresStore((s) => s.hydrate);
+  const evidenceState = useEvidenceStore();
   const hydrateEvidence = useEvidenceStore((s) => s.hydrate);
 
   useEffect(() => {
@@ -44,6 +48,11 @@ export function FlatFrameworkView({ framework, title, subtitle, hierarchy }: Fla
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
           {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {hierarchy.groups.length} items
         </p>
+        <ExportMenu
+          framework={framework}
+          buildCsv={() => buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+          buildXlsx={() => buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+        />
       </header>
 
       <div className="space-y-2">

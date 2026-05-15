@@ -22,6 +22,9 @@ import {
 } from '../../domain/filters';
 import { buildIndex, search, type Searchable } from '../../domain/search';
 import { parseCrossRefs, frameworkPropKeys } from '../../domain/mapping-engine';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildIsoCsv, buildSoaCsv } from '../export/isoExporter';
+import { buildIsoXlsx } from '../export/xlsxExporter';
 
 const FRAMEWORK = 'ISO 27001';
 const EMPTY_SCORES: Readonly<Record<string, never>> = Object.freeze({});
@@ -115,6 +118,32 @@ export function Iso27001View() {
             </span>
           </p>
           <FilterChips />
+          <ExportMenu
+            framework="ISO 27001"
+            buildCsv={() =>
+              buildIsoCsv({
+                controls: filteredControls,
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+            buildXlsx={() =>
+              buildIsoXlsx({
+                controls: filteredControls,
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+            buildSoaCsv={() =>
+              buildSoaCsv({
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+          />
         </header>
 
         {filteredControls.length === 0 ? (

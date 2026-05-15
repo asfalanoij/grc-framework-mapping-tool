@@ -1,193 +1,110 @@
-# CtrlMap — GRC Framework Cross-Reference Atlas
+# CtrlMap v2 — GRC Framework Cross-Reference Atlas
 
-A free, single-file tool that maps **118 ISO 27001:2022 controls** (93 Annex A + 25 Management System clauses) to **10 major cybersecurity frameworks** simultaneously. Built for GRC professionals who are tired of tab-switching between framework PDFs.
+A free, open-source tool that maps **118 ISO 27001:2022 controls** to **10 other GRC frameworks** simultaneously. Score, evidence-track, and export Statements of Applicability — all client-side in your browser.
 
-## Live Demo
+> **CtrlMap v2** is a modular rebuild of the original [`prinnyo/grc-framework-mapping-tool`](https://github.com/prinnyo/grc-framework-mapping-tool). v1 was a single 791 KB HTML file; v2 is a typed Vite + React + TypeScript project with the same data, full test coverage on the domain logic, and a clean module boundary for the AI/team features planned in later phases.
 
-👉 [View the tool](https://prinnyo.github.io/grc-framework-mapping-tool)
+## Live demo
 
----
-
-## What's Inside
-
-### 118 ISO 27001:2022 Controls
-- **93 Annex A controls** across Organizational, People, Physical, and Technological categories — each with its full **ISO 27002:2022 control statement**, **ISO 27002 Control Type** (Preventive / Detective / Corrective), and **Security Domain** (Governance and Ecosystem / Protection / Defence / Resilience)
-- **25 Management System clauses** (Clauses 4–10) covering context, leadership, planning, support, operation, performance evaluation, and improvement
-
-### 10 Mapped Frameworks
-
-| Framework | Scope |
-|-----------|-------|
-| **NIST CSF 2.0** | 106 subcategories across 6 Functions and 22 Categories |
-| **SOC 2 TSC** | 61 Trust Services Criteria (CC1–CC9, A1, PI1) |
-| **CIS Controls v8** | 18 Controls and 153 Safeguards with IG1/IG2/IG3 tiers |
-| **PCI DSS 4.0.1** | 12 Requirements with sub-requirement detail |
-| **Cyber Essentials v3.1** | 5 technical control themes |
-| **NIST SP 800-53 Rev 5** | 20 control families |
-| **NIS 2 Directive** | 10 Article 21 security measures |
-| **ISO 22301:2019** | 12 business continuity clause sections |
-| **ISO 27017:2015** | 21 cloud security control sections |
-| **NCSC CAF** | 4 Objectives / 14 Principles / 41 Contributing Outcomes with official IGP criteria |
-
-Every framework reference shows the **full control statement** — not just an ID.
-
----
+👉 **https://asfalanoij.github.io/grc-framework-mapping-tool/**
 
 ## Features
 
-### Home Page — Readiness at a Glance
-An overview page shows all 11 frameworks as donut charts, each reflecting your current audit readiness in real time (green = Implemented, amber = In Progress). Click any framework card to dive straight into its control list.
+- **11 framework views** — ISO 27001:2022, NIST CSF 2.0, SOC 2, CIS Controls v8, PCI DSS 4.0.1, Cyber Essentials, NIST SP 800-53 Rev 5, NIS 2, ISO 22301, ISO 27017, NCSC CAF
+- **Transitive cross-mapping** — open any framework as the primary lens; the tool computes mappings to every other framework via the shared ISO 27001 spine
+- **4-state scoring** — Not started / In progress / Implemented / N/A, persisted per-framework
+- **Evidence tracking** — pre-populated checklists with doc references and notes
+- **Statement of Applicability export** — formal SoA CSV covering all 93 Annex A controls with Applicable / Justification / Control Type / Security Domain / Status
+- **Filters + search** — stackable category / control-type / security-domain / status / NIST function pills; in-framework search with autocomplete
+- **Home readiness donuts** — live percent-implemented chart per framework
+- **Offline-first** — IndexedDB persistence via Dexie; migrates legacy localStorage data on first load
 
-### Transitive Reverse Mapping
-Switch the primary lens to **any** framework using the navigation tabs at the top. Select NIST CSF 2.0 as your primary view, and the tool automatically calculates transitive cross-mappings to SOC 2, CIS v8, PCI DSS, NIS 2, NCSC CAF, and every other framework — through the shared ISO 27001 controls underneath. No separate lookup table required; the mappings are computed on the fly.
+## Exports
 
-### Full Hierarchy Views
-Every framework is rendered in its native hierarchy structure:
-- **NCSC CAF** — Objective → Principle → Contributing Outcome, with official Indicators of Good Practice (IGP) criteria per outcome
-- **NIST CSF 2.0** — Function → Category → Subcategory
-- **SOC 2** — Trust Services Category → Criteria Group → Criterion
-- **CIS v8** — Control Group → Safeguard (with IG1/2/3 breakdown)
-- **PCI DSS** — Goal → Requirement → Sub-requirement
-- **Cyber Essentials** — Theme → Requirement
+| Format | Action |
+|---|---|
+| **CSV** | Per-framework table with id, name, status, mappings, evidence, notes |
+| **XLSX** | Same data as a spreadsheet (lazy-loaded — only fetched on click) |
+| **SoA CSV** | ISO 27001 Annex A only (93 rows always) — Applicable Y/N + Justification + ISO 27002 statement + Control Type + Security Domain + Status |
 
-Framework items with no current ISO mapping are still shown so you can score and track them.
+## Stack
 
-### Compliance Scoring
-Track implementation status for each control with a four-state selector:
-- **Not started** (red) — work has not begun
-- **In progress** (amber) — partially implemented
-- **Implemented** (green) — fully in place
-- **Not Applicable** (grey) — excluded from your ISMS scope (Annex A only)
+- Vite 5 + React 18 + TypeScript (strict)
+- Tailwind CSS (theme tokens ported from the v1 CSS custom properties)
+- Zustand (4 store slices: scores · evidence · justifications · UI prefs)
+- Dexie 4 (IndexedDB)
+- Zod (runtime data-shape validation at module load)
+- SheetJS (lazy-loaded XLSX export)
+- React Router 6 (lazy-loaded framework views)
+- Vitest + @testing-library/react + Playwright
 
-Scores persist in your browser between sessions. Each framework tracks its own scores independently.
+## Development
 
-### Statement of Applicability (SoA)
-For ISO 27001 Annex A controls, selecting **Not Applicable** reveals a justification text field to record the exclusion reason. The **SoA export button** in the toolbar generates a formal Statement of Applicability CSV covering all 93 Annex A controls — regardless of any active filters — including:
-- Applicable (Yes / No)
-- Justification text
-- ISO 27002:2022 control statement
-- Control Type and Security Domain
-- Implementation status
+```bash
+git clone https://github.com/asfalanoij/grc-framework-mapping-tool.git
+cd grc-framework-mapping-tool
+npm install
+npm run dev        # http://localhost:5173
+npm run typecheck
+npm run lint
+npm run test       # Vitest unit + integration
+npm run test:e2e   # Playwright smoke
+npm run build      # static build into dist/
+```
 
-### Evidence Tracking
-Each expanded control includes a pre-populated **Typical Evidence to Collect** checklist. For every evidence type:
-- Tick items as you gather them
-- Add a document reference (name, SharePoint link, Jira ticket, etc.)
-- Leave free-text notes in an Additional Notes field
+## Project structure
 
-All evidence data is saved locally and included in Excel exports.
+```
+src/
+├── app/                     # AppShell, router, persistence provider
+├── components/              # (currently unused — leaf components live under features/)
+├── data/
+│   ├── schemas.ts           # Zod schemas (validated at module load)
+│   ├── frameworks/          # one typed TS module per framework (11 files)
+│   ├── _raw/                # extracted JSON (input to the framework modules)
+│   ├── evidence-templates.ts
+│   └── framework-registry.ts
+├── domain/                  # pure logic; 100% line/function coverage gated in CI
+│   ├── mapping-engine.ts    # transitive reverse-mapping math
+│   ├── scoring.ts           # SoA-correct readiness %
+│   ├── filters.ts           # predicate composition
+│   └── search.ts            # substring index + autocomplete ranking
+├── services/                # persistence (Dexie) + localStorage migration
+├── store/                   # Zustand slices: scores / evidence / justifications / ui / filters
+├── features/
+│   ├── frameworks/          # one view per framework + 3 generic shells
+│   ├── controls/            # ControlCard, HierarchyControlCard, ScoreSelector, …
+│   ├── filters/             # FilterPanel, FilterChips, FilterPill
+│   ├── search/              # SearchBar
+│   ├── home/                # ReadinessDonut, Home
+│   └── export/              # CSV / XLSX / SoA builders + ExportMenu
+└── styles/                  # Tailwind tokens
+```
 
-### Sidebar Filters
-Stackable filter pills across all frameworks. ISO 27001–specific filters include:
-- **ISO Category** — Management System, Organizational, People, Physical, Technological
-- **NIST CSF Function** — Govern, Identify, Protect, Detect, Respond, Recover
-- **SOC 2** — CC1–CC9, A1, P1
-- **CIS Controls v8** — Controls 1–18
-- **PCI DSS** — Requirements 1–12
-- **Cyber Essentials** — Access Control, Secure Config, Firewalls, Malware Protection, Security Updates
-- **NIST 800-53** — All 20 families
-- **NIS 2** — Article 21 measures (a)–(j)
-- **ISO 22301** — Clause sections
-- **ISO 27017** — Section references
-- **NCSC CAF** — Objectives A–D
-- **Status** — Not started / In progress / Implemented / Not Applicable
-- **ISO 27002 Control Type** — Preventive / Detective / Corrective *(ISO 27001 view only)*
-- **ISO 27002 Security Domain** — Governance and Ecosystem / Protection / Defence / Resilience *(ISO 27001 view only)*
+## Tests + coverage
 
-All filters stack for precise cross-framework queries. One-click "Clear all" resets everything.
+CI enforces per-path coverage thresholds:
 
-### Smart Search
-- **In-framework search** — filters controls within the active framework view
-- **Global search mode** — toggle the "All frameworks" button to search across every framework simultaneously; results show coloured framework badges; click any badge to jump to that framework view
-- Autocomplete suggestions as you type
-- Search by control ID (A.5.17), framework reference (CC6.1, CIS 5), or keyword (MFA, encryption, access control)
+| Path | Lines | Branches | Functions | Statements |
+|---|---|---|---|---|
+| `src/domain/**` | **100%** | 95% | **100%** | **100%** |
+| `src/services/**` | 80% | 80% | 80% | 80% |
+| `src/store/**` | 80% | 80% | 80% | 80% |
+| Global floor | 70% | 70% | 70% | 70% |
 
-### Hierarchy-Aware Exports
-**CSV export** and **Excel (XLSX) export** include hierarchical parent columns matched to each framework (Objective + Principle for NCSC CAF; Function + Category for NIST CSF 2.0; etc.). The export never includes a column mapping the framework back to itself.
+## Roadmap
 
-Excel exports additionally include:
-- Colour-coded rows by implementation status
-- Control Type and Security Domain columns for ISO 27001
-- SoA Justification column
-- All evidence, assessor notes, and implementation guidance
-- A **Charts Guide** sheet with ready-made COUNTIF formulas for readiness pie and bar charts
+- **Phase 1 — Architecture modernisation** ✅ shipped (v2.0.0-alpha)
+- **Phase 2 — Framework coverage expansion** (ISMAP, APPI, ISO 27701, ISO 42001 (AI), DORA, HIPAA, FedRAMP, CCM)
+- **Phase 3 — Team collaboration + backend** (Supabase or FastAPI; multi-user; audit trail)
+- **Phase 4 — AI copilot** (chat-with-controls, policy-to-control extraction, gap-analysis narratives)
 
----
+See [`docs/ecc/pm/ROADMAP.md`](docs/ecc/pm/ROADMAP.md) and [`docs/ecc/pm/PROGRESS.md`](docs/ecc/pm/PROGRESS.md) for details.
 
-## Who Is This For
+## Credits
 
-- GRC Managers and Analysts preparing for audits or gap assessments
-- Information Security teams managing multi-framework compliance
-- ISO 27001 lead implementers building a Statement of Applicability
-- Consultants mapping controls across client environments
-- Security architects aligning controls to implementation standards
-- Anyone building, maintaining, or certifying an ISMS
-
----
-
-## Quick Start
-
-1. Open the tool in any browser — the **home page** shows your current readiness across all 11 frameworks
-2. First visit shows an interactive Quick Tour (10 items)
-3. Click any **framework card** on the home page, or use the **framework tabs** to switch perspective
-4. Search or filter to find relevant controls
-5. Expand any card for full cross-references, ISO 27002 descriptions, achieved-criteria guidance, and evidence checklists
-6. Score each control (Not started / In progress / Implemented / Not Applicable)
-7. Use the **SoA** button to export your Statement of Applicability, or **CSV/XLSX** for the full control set
-
-### Example Queries
-- `MFA` → all multi-factor authentication controls across every framework
-- `A.5.17` → jump to a specific Annex A control
-- `CC6.1` → everything mapped to SOC 2 logical access
-- `CIS 5` → filter by CIS Account Management control
-- Switch to **NCSC CAF** → see all 41 Contributing Outcomes with IGP criteria and evidence checklists
-- Filter **Detective** + **Defence** → ISO 27002 attribute filters surface all detective controls in the Defence security domain
-- Filter **Status: Not Applicable** → review all controls excluded from your ISMS scope
-
----
-
-## Deployment
-
-Single self-contained `grc_framework_mapping.html` file. No build step, no dependencies, no backend.
-
-**GitHub Pages:** Upload to a public repo → Settings → Pages → Deploy from main branch
-
-**Any web host:** Upload the single HTML file — works anywhere, even opened directly in a browser
-
----
-
-## Built With
-
-- React 18 (CDN, no build step)
-- Vanilla CSS with CSS custom properties (dark/light theme)
-- DM Sans + JetBrains Mono typography
-- localStorage for score, evidence, and justification persistence
-- All data embedded — no external API calls, no backend
-
----
-
-## Data Sources and Accuracy
-
-Control mappings, ISO 27002 descriptions, and implementation guidance are based on publicly available framework documentation and reflect commonly accepted alignments and best practices. Always verify mappings against the latest official framework publications for your specific compliance context. This tool does not constitute professional advice.
-
----
+CtrlMap v2 is a fork-and-rebuild of [`prinnyo/grc-framework-mapping-tool`](https://github.com/prinnyo/grc-framework-mapping-tool) by Princess David Okoro. The data — control statements, cross-framework mappings, evidence templates, IGP criteria — comes from the original tool. The v2 maintainer ([@asfalanoij](https://github.com/asfalanoij)) is responsible for the new architecture, but credit for the substance goes to the v1 author.
 
 ## License
 
-MIT — free to use, modify, and share.
-
----
-
-## Why This Tool?
-
-**The Problem:** GRC professionals waste hours jumping between framework PDFs to find equivalent controls. Mapping across frameworks manually is tedious, error-prone, and has to be done differently depending on which framework you start from.
-
-**The Solution:** 118 ISO 27001:2022 controls mapped to 10 frameworks in one searchable, filterable interface — with transitive reverse mapping from any framework's perspective, full control hierarchies, compliance tracking, evidence checklists, and a formal SoA export.
-
-**The Impact:** What used to take hours now takes seconds. One tool for audit prep, gap assessments, implementation planning, Statement of Applicability generation, and multi-framework compliance.
-
----
-
-Built by a GRC professional who got tired of tab-switching between framework PDFs.
-
-💼 [Connect on LinkedIn](https://www.linkedin.com/in/princessdavidokoro/)
+MIT.

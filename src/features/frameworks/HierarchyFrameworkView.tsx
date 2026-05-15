@@ -5,6 +5,9 @@ import { usePersistence } from '../../app/use-persistence';
 import { useScoresStore } from '../../store/scores.store';
 import { useEvidenceStore, selectEvidenceFor } from '../../store/evidence.store';
 import { computeReadiness } from '../../domain/scoring';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildFrameworkCsv } from '../export/frameworkExporter';
+import { buildFrameworkXlsx } from '../export/xlsxExporter';
 
 const EMPTY: Readonly<Record<string, never>> = Object.freeze({});
 
@@ -55,6 +58,11 @@ export function HierarchyFrameworkView({
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
           {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {flatItems.length} items
         </p>
+        <ExportMenu
+          framework={framework}
+          buildCsv={() => buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+          buildXlsx={() => buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+        />
       </header>
 
       {hierarchy.groups.map((group) => (
