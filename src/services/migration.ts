@@ -118,9 +118,16 @@ export async function migrateLocalStorageToIdb(
 
   // grc-evidence: { framework: { itemId: { collected, refs, notes } } }
   const evidenceRaw = storage.getItem('grc-evidence');
-  const evidenceObj = safeParseObject<
-    Record<string, Record<string, { collected?: Record<string, true>; refs?: Record<string, string>; notes?: string }>>
-  >(evidenceRaw);
+  const evidenceObj =
+    safeParseObject<
+      Record<
+        string,
+        Record<
+          string,
+          { collected?: Record<string, true>; refs?: Record<string, string>; notes?: string }
+        >
+      >
+    >(evidenceRaw);
   if (evidenceObj) {
     for (const [framework, byItem] of Object.entries(evidenceObj)) {
       if (!byItem || typeof byItem !== 'object') continue;
