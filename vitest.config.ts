@@ -26,11 +26,22 @@ export default defineConfig({
         '**/*.d.ts',
         'src/main.tsx',
       ],
+      // Coverage gates per spec §10. Global floor is 70% (hard).
+      // src/domain/** is the correctness core (mapping math, scoring,
+      // filters, search) — gated at 100% on lines/functions/statements
+      // and 95% on branches (v8 occasionally undercounts branches on
+      // empty-array .map() callbacks, hence the small allowance).
       thresholds: {
         lines: 70,
         branches: 70,
         functions: 70,
         statements: 70,
+        'src/domain/**': {
+          lines: 100,
+          branches: 95,
+          functions: 100,
+          statements: 100,
+        },
       },
     },
     exclude: ['node_modules', 'dist', 'tests/e2e/**', 'legacy/**'],
