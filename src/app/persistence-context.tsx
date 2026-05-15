@@ -10,7 +10,11 @@ export interface PersistenceProviderProps {
   readonly skipMigration?: boolean;
 }
 
-export function PersistenceProvider({ children, persistence, skipMigration }: PersistenceProviderProps) {
+export function PersistenceProvider({
+  children,
+  persistence,
+  skipMigration,
+}: PersistenceProviderProps) {
   const [instance] = useState<Persistence>(() => persistence ?? createPersistence('ctrlmap'));
   const [migrated, setMigrated] = useState(skipMigration ?? false);
   const [migrationError, setMigrationError] = useState<string | null>(null);
