@@ -20,7 +20,12 @@ export interface FlatFrameworkViewProps {
   readonly hierarchy: FrameworkHierarchy;
 }
 
-export function FlatFrameworkView({ framework, title, subtitle, hierarchy }: FlatFrameworkViewProps) {
+export function FlatFrameworkView({
+  framework,
+  title,
+  subtitle,
+  hierarchy,
+}: FlatFrameworkViewProps) {
   const persistence = usePersistence();
   const scoresByFw = useScoresStore((s) => s.byFramework);
   const setScore = useScoresStore((s) => s.setScore);
@@ -46,12 +51,17 @@ export function FlatFrameworkView({ framework, title, subtitle, hierarchy }: Fla
         <p className="text-sm text-ink-3">{subtitle}</p>
         <p className="text-sm text-ink-2" data-testid="framework-readiness">
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
-          {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {hierarchy.groups.length} items
+          {readiness.applicable} applicable · {readiness.notApplicable} N/A) ·{' '}
+          {hierarchy.groups.length} items
         </p>
         <ExportMenu
           framework={framework}
-          buildCsv={() => buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
-          buildXlsx={() => buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+          buildCsv={() =>
+            buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })
+          }
+          buildXlsx={() =>
+            buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })
+          }
         />
       </header>
 
@@ -100,7 +110,12 @@ function FlatRow({ framework, id, name, desc, achieved, status, onStatusChange }
             </h3>
             <p className="text-sm font-medium text-ink">{name}</p>
           </div>
-          <ScoreSelector status={status} onChange={onStatusChange} applicable idPrefix={`status-${framework}-${id}`} />
+          <ScoreSelector
+            status={status}
+            onChange={onStatusChange}
+            applicable
+            idPrefix={`status-${framework}-${id}`}
+          />
         </div>
         <button
           type="button"
@@ -123,7 +138,9 @@ function FlatRow({ framework, id, name, desc, achieved, status, onStatusChange }
           {desc ? <p className="text-sm text-ink-2">{desc}</p> : null}
           {achieved && achieved.length > 0 ? (
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">Achieved criteria</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">
+                Achieved criteria
+              </h4>
               <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-ink-2">
                 {achieved.map((line, i) => (
                   <li key={i}>{line}</li>

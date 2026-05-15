@@ -45,7 +45,11 @@ export function HierarchyFrameworkView({
 
   const flatItems = useMemo(() => flattenItems(hierarchy), [hierarchy]);
   const readiness = useMemo(
-    () => computeReadiness(flatItems.map((i) => i.id), scores),
+    () =>
+      computeReadiness(
+        flatItems.map((i) => i.id),
+        scores,
+      ),
     [flatItems, scores],
   );
 
@@ -56,12 +60,17 @@ export function HierarchyFrameworkView({
         <p className="text-sm text-ink-3">{subtitle}</p>
         <p className="text-sm text-ink-2" data-testid="framework-readiness">
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
-          {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {flatItems.length} items
+          {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {flatItems.length}{' '}
+          items
         </p>
         <ExportMenu
           framework={framework}
-          buildCsv={() => buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
-          buildXlsx={() => buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })}
+          buildCsv={() =>
+            buildFrameworkCsv(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })
+          }
+          buildXlsx={() =>
+            buildFrameworkXlsx(hierarchy, { framework, scores, evidenceByKey: evidenceState.byKey })
+          }
         />
       </header>
 
@@ -77,7 +86,8 @@ export function HierarchyFrameworkView({
           {group.sections?.map((section) => (
             <div key={section.id} className="space-y-2 border-l border-border pl-4">
               <h4 className="text-sm font-semibold text-ink-2">
-                <span className="font-mono text-xs text-brand-text">{section.id}</span> {section.name}
+                <span className="font-mono text-xs text-brand-text">{section.id}</span>{' '}
+                {section.name}
               </h4>
               {section.desc ? <p className="text-xs text-ink-3">{section.desc}</p> : null}
               <div className="space-y-2">
@@ -89,8 +99,12 @@ export function HierarchyFrameworkView({
                     status={scores[item.id] ?? 'not-started'}
                     evidence={selectEvidenceFor(evidenceState, framework, item.id)}
                     onStatusChange={(next) => void setScore(persistence, framework, item.id, next)}
-                    onEvidenceToggle={(t, c) => void toggleCheck(persistence, framework, item.id, t, c)}
-                    onEvidenceRefChange={(t, r) => void setRef(persistence, framework, item.id, t, r)}
+                    onEvidenceToggle={(t, c) =>
+                      void toggleCheck(persistence, framework, item.id, t, c)
+                    }
+                    onEvidenceRefChange={(t, r) =>
+                      void setRef(persistence, framework, item.id, t, r)
+                    }
                     onEvidenceNotesChange={(n) => void setNotes(persistence, framework, item.id, n)}
                   />
                 ))}
@@ -109,7 +123,9 @@ export function HierarchyFrameworkView({
                   status={scores[item.id] ?? 'not-started'}
                   evidence={selectEvidenceFor(evidenceState, framework, item.id)}
                   onStatusChange={(next) => void setScore(persistence, framework, item.id, next)}
-                  onEvidenceToggle={(t, c) => void toggleCheck(persistence, framework, item.id, t, c)}
+                  onEvidenceToggle={(t, c) =>
+                    void toggleCheck(persistence, framework, item.id, t, c)
+                  }
                   onEvidenceRefChange={(t, r) => void setRef(persistence, framework, item.id, t, r)}
                   onEvidenceNotesChange={(n) => void setNotes(persistence, framework, item.id, n)}
                 />

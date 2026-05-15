@@ -62,7 +62,11 @@ export function ExportMenu({ framework, buildCsv, buildXlsx, buildSoaCsv }: Expo
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2" data-testid="export-menu" aria-label="Export">
+    <div
+      className="flex flex-wrap items-center gap-2"
+      data-testid="export-menu"
+      aria-label="Export"
+    >
       <button
         type="button"
         onClick={onCsv}

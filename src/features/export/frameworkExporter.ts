@@ -71,9 +71,11 @@ function toLeaf(item: FrameworkItem): Leaf {
 
 function flattenCaf(h: CafHierarchy): Leaf[] {
   const out: Leaf[] = [];
-  for (const o of h.objectives) for (const p of o.principles) for (const c of p.outcomes) {
-    out.push(toCafLeaf(c));
-  }
+  for (const o of h.objectives)
+    for (const p of o.principles)
+      for (const c of p.outcomes) {
+        out.push(toCafLeaf(c));
+      }
   return out;
 }
 
@@ -88,10 +90,7 @@ export function buildFrameworkCsv(
   return buildLeafCsv(flattenHierarchy(hierarchy), inputs);
 }
 
-export function buildCafCsv(
-  hierarchy: CafHierarchy,
-  inputs: FrameworkExportInputs,
-): string {
+export function buildCafCsv(hierarchy: CafHierarchy, inputs: FrameworkExportInputs): string {
   return buildLeafCsv(flattenCaf(hierarchy), inputs);
 }
 
