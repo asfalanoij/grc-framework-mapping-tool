@@ -3,7 +3,12 @@ import { buildIndex, search, autocompleteSuggestions, type Searchable } from './
 
 const items: Searchable[] = [
   { id: 'A.5.1', name: 'Information security policies', desc: 'Policy framework', refs: ['CC1.1'] },
-  { id: 'A.5.17', name: 'Authentication information', desc: 'MFA, password policy', refs: ['CC6.1'] },
+  {
+    id: 'A.5.17',
+    name: 'Authentication information',
+    desc: 'MFA, password policy',
+    refs: ['CC6.1'],
+  },
   { id: 'A.8.5', name: 'Secure authentication', desc: 'MFA enforcement', refs: ['CC6.1', 'CIS 6'] },
   { id: 'A.9.4.3', name: 'Password management system', desc: 'Strong passwords', refs: [] },
 ];
@@ -25,7 +30,11 @@ describe('search', () => {
   });
 
   it('matches in name (case-insensitive)', () => {
-    expect(search(idx, 'PASSWORD').map((i) => i.id).sort()).toEqual(['A.5.17', 'A.9.4.3']);
+    expect(
+      search(idx, 'PASSWORD')
+        .map((i) => i.id)
+        .sort(),
+    ).toEqual(['A.5.17', 'A.9.4.3']);
   });
 
   it('matches in id', () => {
@@ -33,11 +42,19 @@ describe('search', () => {
   });
 
   it('matches in desc', () => {
-    expect(search(idx, 'MFA').map((i) => i.id).sort()).toEqual(['A.5.17', 'A.8.5']);
+    expect(
+      search(idx, 'MFA')
+        .map((i) => i.id)
+        .sort(),
+    ).toEqual(['A.5.17', 'A.8.5']);
   });
 
   it('matches in refs', () => {
-    expect(search(idx, 'CC6.1').map((i) => i.id).sort()).toEqual(['A.5.17', 'A.8.5']);
+    expect(
+      search(idx, 'CC6.1')
+        .map((i) => i.id)
+        .sort(),
+    ).toEqual(['A.5.17', 'A.8.5']);
   });
 
   it('returns empty when nothing matches', () => {
