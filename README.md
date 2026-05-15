@@ -1,8 +1,8 @@
-# CtrlMap v2 — GRC Framework Cross-Reference Atlas
+# GRC Suite.v01 — GRC Framework Cross-Reference Atlas
 
 A free, open-source tool that maps **118 ISO 27001:2022 controls** to **10 other GRC frameworks** simultaneously. Score, evidence-track, and export Statements of Applicability — all client-side in your browser.
 
-> **CtrlMap v2** is a modular rebuild of the original [`prinnyo/grc-framework-mapping-tool`](https://github.com/prinnyo/grc-framework-mapping-tool). v1 was a single 791 KB HTML file; v2 is a typed Vite + React + TypeScript project with the same data, full test coverage on the domain logic, and a clean module boundary for the AI/team features planned in later phases.
+> **GRC Suite.v01** is a modular rebuild of the original [`prinnyo/grc-framework-mapping-tool`](https://github.com/prinnyo/grc-framework-mapping-tool) (CtrlMap by Princess David Okoro). v1 was a single 791 KB HTML file; this rebuild is a typed Vite + React + TypeScript project with the same data, full test coverage on the domain logic, and a clean module boundary for the AI/team features planned in later phases.
 
 ## Live demo
 

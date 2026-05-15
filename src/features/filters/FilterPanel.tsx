@@ -23,7 +23,14 @@ const STATUSES: readonly { value: Status; label: string }[] = [
   { value: 'implemented', label: 'Implemented' },
   { value: 'na', label: 'N/A' },
 ];
-const NIST_FUNCTIONS: readonly string[] = ['GOVERN', 'IDENTIFY', 'PROTECT', 'DETECT', 'RESPOND', 'RECOVER'];
+const NIST_FUNCTIONS: readonly string[] = [
+  'GOVERN',
+  'IDENTIFY',
+  'PROTECT',
+  'DETECT',
+  'RESPOND',
+  'RECOVER',
+];
 
 export function IsoFilterPanel() {
   const iso = useFiltersStore((s) => s.iso);
@@ -112,7 +119,13 @@ export function IsoFilterPanel() {
   );
 }
 
-function Section({ title, children }: { readonly title: string; readonly children: React.ReactNode }) {
+function Section({
+  title,
+  children,
+}: {
+  readonly title: string;
+  readonly children: React.ReactNode;
+}) {
   return (
     <section>
       <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-3">{title}</h3>

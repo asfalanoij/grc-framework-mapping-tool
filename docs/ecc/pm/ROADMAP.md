@@ -1,4 +1,4 @@
-# CtrlMap — Roadmap
+# GRC Suite.v01 — Roadmap
 
 Four-phase plan. Each phase ships independently and unlocks the next.
 

@@ -4,6 +4,7 @@ import { PersistenceProvider } from './persistence-context';
 import { Home } from '../features/home/Home';
 import { Iso27001View } from '../features/frameworks/Iso27001View';
 import { SearchBar } from '../features/search/SearchBar';
+import { BentoProfileCard } from '../features/profile/BentoProfileCard';
 
 const NistCsfView = lazy(() => import('../features/frameworks/NistCsfView'));
 const Soc2View = lazy(() => import('../features/frameworks/Soc2View'));
@@ -51,7 +52,7 @@ export function App() {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <nav className="flex flex-wrap items-center gap-x-4 gap-y-1" aria-label="Primary">
                 <NavLink to="/" className="text-lg font-semibold text-brand-text">
-                  CtrlMap v2
+                  GRC Suite.v01
                 </NavLink>
                 <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-ink-2">
                   {NAV.map((n) => (
@@ -90,6 +91,9 @@ export function App() {
               </Routes>
             </Suspense>
           </main>
+          <footer className="bg-bg py-10">
+            <BentoProfileCard />
+          </footer>
         </div>
       </BrowserRouter>
     </PersistenceProvider>

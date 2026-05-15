@@ -6,7 +6,7 @@ let p: Persistence;
 let i = 0;
 beforeEach(() => {
   i += 1;
-  p = createPersistence(`ctrlmap-just-store-${i}`);
+  p = createPersistence(`grc-suite-just-store-${i}`);
   useJustificationsStore.getState().reset();
 });
 

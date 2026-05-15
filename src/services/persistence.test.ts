@@ -6,7 +6,7 @@ let dbCounter = 0;
 beforeEach(async () => {
   // Fresh DB per test, otherwise fake-indexeddb persists between cases.
   dbCounter += 1;
-  p = createPersistence(`ctrlmap-test-${dbCounter}`);
+  p = createPersistence(`grc-suite-test-${dbCounter}`);
 });
 
 describe('ScoresRepo', () => {

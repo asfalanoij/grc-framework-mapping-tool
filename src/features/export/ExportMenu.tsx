@@ -23,7 +23,7 @@ export function ExportMenu({ framework, buildCsv, buildXlsx, buildSoaCsv }: Expo
   async function onCsv() {
     setWorking('csv');
     try {
-      triggerDownload(`ctrlmap-${slug}-${ts()}.csv`, buildCsv(), 'text/csv;charset=utf-8');
+      triggerDownload(`grc-suite-v01-${slug}-${ts()}.csv`, buildCsv(), 'text/csv;charset=utf-8');
     } finally {
       setWorking(null);
     }
@@ -33,7 +33,7 @@ export function ExportMenu({ framework, buildCsv, buildXlsx, buildSoaCsv }: Expo
     if (!buildSoaCsv) return;
     setWorking('soa');
     try {
-      triggerDownload(`ctrlmap-soa-${ts()}.csv`, buildSoaCsv(), 'text/csv;charset=utf-8');
+      triggerDownload(`grc-suite-v01-soa-${ts()}.csv`, buildSoaCsv(), 'text/csv;charset=utf-8');
     } finally {
       setWorking(null);
     }
@@ -51,7 +51,7 @@ export function ExportMenu({ framework, buildCsv, buildXlsx, buildSoaCsv }: Expo
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `ctrlmap-${slug}-${ts()}.xlsx`;
+      a.download = `grc-suite-v01-${slug}-${ts()}.xlsx`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

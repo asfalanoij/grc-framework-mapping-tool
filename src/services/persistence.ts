@@ -39,14 +39,14 @@ export interface MetaRow {
   readonly value: unknown;
 }
 
-export class CtrlMapDb extends Dexie {
+export class GrcSuiteDb extends Dexie {
   scores!: Table<ScoreRow, string>;
   evidence!: Table<EvidenceRow, string>;
   justifications!: Table<JustificationRow, string>;
   uiPrefs!: Table<UiPrefRow, string>;
   migrationMeta!: Table<MetaRow, string>;
 
-  constructor(name = 'ctrlmap') {
+  constructor(name = 'grc-suite-v01') {
     super(name);
     this.version(1).stores({
       scores: '&id, framework, itemId',
@@ -67,7 +67,7 @@ export function scoreRowId(framework: string, itemId: string): string {
 // ───────────────────────────────────────────────────────────────
 
 export class ScoresRepo {
-  constructor(private readonly db: CtrlMapDb) {}
+  constructor(private readonly db: GrcSuiteDb) {}
 
   async getAll(framework: string): Promise<Result<Readonly<Record<string, Status>>, RepoError>> {
     try {
@@ -80,7 +80,11 @@ export class ScoresRepo {
     }
   }
 
-  async setScore(framework: string, itemId: string, status: Status): Promise<Result<void, RepoError>> {
+  async setScore(
+    framework: string,
+    itemId: string,
+    status: Status,
+  ): Promise<Result<void, RepoError>> {
     try {
       await this.db.scores.put({ id: scoreRowId(framework, itemId), framework, itemId, status });
       return ok(undefined);
@@ -109,7 +113,7 @@ export class ScoresRepo {
 }
 
 export class EvidenceRepo {
-  constructor(private readonly db: CtrlMapDb) {}
+  constructor(private readonly db: GrcSuiteDb) {}
 
   async getForFramework(framework: string): Promise<Result<readonly EvidenceRow[], RepoError>> {
     try {
@@ -131,7 +135,7 @@ export class EvidenceRepo {
 }
 
 export class JustificationsRepo {
-  constructor(private readonly db: CtrlMapDb) {}
+  constructor(private readonly db: GrcSuiteDb) {}
 
   async getAll(): Promise<Result<Readonly<Record<string, string>>, RepoError>> {
     try {
@@ -159,7 +163,7 @@ export class JustificationsRepo {
 }
 
 export class UiPrefsRepo {
-  constructor(private readonly db: CtrlMapDb) {}
+  constructor(private readonly db: GrcSuiteDb) {}
 
   async get<T>(key: string): Promise<Result<T | undefined, RepoError>> {
     try {
@@ -181,7 +185,7 @@ export class UiPrefsRepo {
 }
 
 export class MigrationMetaRepo {
-  constructor(private readonly db: CtrlMapDb) {}
+  constructor(private readonly db: GrcSuiteDb) {}
 
   async get<T>(key: string): Promise<Result<T | undefined, RepoError>> {
     try {
@@ -207,7 +211,7 @@ export class MigrationMetaRepo {
 // ───────────────────────────────────────────────────────────────
 
 export interface Persistence {
-  readonly db: CtrlMapDb;
+  readonly db: GrcSuiteDb;
   readonly scores: ScoresRepo;
   readonly evidence: EvidenceRepo;
   readonly justifications: JustificationsRepo;
@@ -215,8 +219,8 @@ export interface Persistence {
   readonly migrationMeta: MigrationMetaRepo;
 }
 
-export function createPersistence(dbName = 'ctrlmap'): Persistence {
-  const db = new CtrlMapDb(dbName);
+export function createPersistence(dbName = 'grc-suite-v01'): Persistence {
+  const db = new GrcSuiteDb(dbName);
   return {
     db,
     scores: new ScoresRepo(db),

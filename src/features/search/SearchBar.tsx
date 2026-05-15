@@ -32,11 +32,11 @@ export function SearchBar() {
 
   return (
     <div ref={containerRef} className="relative w-64" data-testid="search-bar">
-      <label htmlFor="ctrlmap-search" className="sr-only">
+      <label htmlFor="grc-suite-search" className="sr-only">
         Search controls
       </label>
       <input
-        id="ctrlmap-search"
+        id="grc-suite-search"
         type="search"
         autoComplete="off"
         placeholder="Search controls (id, name, framework ref)…"

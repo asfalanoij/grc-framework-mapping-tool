@@ -16,7 +16,7 @@ let p: Persistence;
 let dbCounter = 0;
 beforeEach(async () => {
   dbCounter += 1;
-  p = createPersistence(`ctrlmap-migration-${dbCounter}`);
+  p = createPersistence(`grc-suite-migration-${dbCounter}`);
 });
 
 describe('LEGACY_STATUS_MAP', () => {

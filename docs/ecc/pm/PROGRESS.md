@@ -1,4 +1,4 @@
-# CtrlMap v2 — Phase 1 Progress
+# GRC Suite.v01 — Phase 1 Progress
 
 > Snapshot for stakeholders. Mirrors the spec at
 > [`docs/ecc/specs/2026-05-14-phase1-architecture-modernisation-design.md`](../specs/2026-05-14-phase1-architecture-modernisation-design.md).

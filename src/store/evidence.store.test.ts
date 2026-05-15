@@ -6,7 +6,7 @@ let p: Persistence;
 let i = 0;
 beforeEach(() => {
   i += 1;
-  p = createPersistence(`ctrlmap-evidence-store-${i}`);
+  p = createPersistence(`grc-suite-evidence-store-${i}`);
   useEvidenceStore.getState().reset();
 });
 
@@ -27,29 +27,43 @@ describe('useEvidenceStore', () => {
 
   it('toggleCheck adds and removes evidence flags', async () => {
     await useEvidenceStore.getState().toggleCheck(p, 'ISO 27001', 'A.5.1', 'Policy doc', true);
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc']).toBe(true);
+    expect(
+      selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc'],
+    ).toBe(true);
     await useEvidenceStore.getState().toggleCheck(p, 'ISO 27001', 'A.5.1', 'Policy doc', false);
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc']).toBeUndefined();
+    expect(
+      selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc'],
+    ).toBeUndefined();
   });
 
   it('setRef stores and clears doc references', async () => {
-    await useEvidenceStore.getState().setRef(p, 'ISO 27001', 'A.5.1', 'Policy doc', 'sharepoint://policies/info-sec');
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').refs['Policy doc']).toBe(
-      'sharepoint://policies/info-sec',
-    );
+    await useEvidenceStore
+      .getState()
+      .setRef(p, 'ISO 27001', 'A.5.1', 'Policy doc', 'sharepoint://policies/info-sec');
+    expect(
+      selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').refs['Policy doc'],
+    ).toBe('sharepoint://policies/info-sec');
     await useEvidenceStore.getState().setRef(p, 'ISO 27001', 'A.5.1', 'Policy doc', '');
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').refs['Policy doc']).toBeUndefined();
+    expect(
+      selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').refs['Policy doc'],
+    ).toBeUndefined();
   });
 
   it('setNotes persists free-form notes', async () => {
-    await useEvidenceStore.getState().setNotes(p, 'ISO 27001', 'A.5.1', 'Reviewed at quarterly audit');
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').notes).toBe('Reviewed at quarterly audit');
+    await useEvidenceStore
+      .getState()
+      .setNotes(p, 'ISO 27001', 'A.5.1', 'Reviewed at quarterly audit');
+    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').notes).toBe(
+      'Reviewed at quarterly audit',
+    );
   });
 
   it('rolls back on persistence failure', async () => {
     p.db.close();
     await useEvidenceStore.getState().toggleCheck(p, 'ISO 27001', 'A.5.1', 'Policy doc', true);
-    expect(selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc']).toBeUndefined();
+    expect(
+      selectEvidenceFor(useEvidenceStore.getState(), 'ISO 27001', 'A.5.1').collected['Policy doc'],
+    ).toBeUndefined();
     expect(useEvidenceStore.getState().lastError).not.toBeNull();
   });
 

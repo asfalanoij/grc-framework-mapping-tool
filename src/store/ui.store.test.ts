@@ -6,7 +6,7 @@ let p: Persistence;
 let i = 0;
 beforeEach(() => {
   i += 1;
-  p = createPersistence(`ctrlmap-ui-store-${i}`);
+  p = createPersistence(`grc-suite-ui-store-${i}`);
   // Reset to defaults between tests.
   useUiStore.setState({
     theme: 'dark',

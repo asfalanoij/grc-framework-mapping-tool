@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('app boots, navigates across multiple frameworks, scores items', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('link', { name: /^ctrlmap v2$/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /^grc suite\.v01$/i })).toBeVisible();
 
   // 1. ISO 27001 view: filter + search work, score A.5.1 as Implemented.
   await page

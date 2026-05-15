@@ -6,7 +6,7 @@ let p: Persistence;
 let i = 0;
 beforeEach(() => {
   i += 1;
-  p = createPersistence(`ctrlmap-scores-store-${i}`);
+  p = createPersistence(`grc-suite-scores-store-${i}`);
   useScoresStore.getState().reset();
 });
 

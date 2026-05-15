@@ -15,7 +15,7 @@ export function PersistenceProvider({
   persistence,
   skipMigration,
 }: PersistenceProviderProps) {
-  const [instance] = useState<Persistence>(() => persistence ?? createPersistence('ctrlmap'));
+  const [instance] = useState<Persistence>(() => persistence ?? createPersistence('grc-suite-v01'));
   const [migrated, setMigrated] = useState(skipMigration ?? false);
   const [migrationError, setMigrationError] = useState<string | null>(null);
 
