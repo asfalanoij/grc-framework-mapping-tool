@@ -9,3 +9,6 @@ export type { UiState, UiActions, UiStore, Theme } from './ui.store';
 
 export { useEvidenceStore, selectEvidenceFor } from './evidence.store';
 export type { EvidenceState, EvidenceActions, EvidenceStore } from './evidence.store';
+
+export { useFiltersStore } from './filters.store';
+export type { FiltersState, FiltersActions, FiltersStore, IsoFilterSet } from './filters.store';
