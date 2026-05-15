@@ -15,7 +15,9 @@ export const isoCategorySchema = z.enum([
 ]);
 export type IsoCategory = z.infer<typeof isoCategorySchema>;
 
-export const controlTypeSchema = z.string().regex(/^(Preventive|Detective|Corrective)(,\s*(Preventive|Detective|Corrective))*$/);
+export const controlTypeSchema = z
+  .string()
+  .regex(/^(Preventive|Detective|Corrective)(,\s*(Preventive|Detective|Corrective))*$/);
 export type ControlType = z.infer<typeof controlTypeSchema>;
 
 export const securityDomainSchema = z.enum([
@@ -126,3 +128,39 @@ export const frameworkRegistryEntrySchema = z.object({
   desc: z.union([z.string(), z.record(z.string(), z.unknown())]).optional(),
 });
 export type FrameworkRegistryEntry = z.infer<typeof frameworkRegistryEntrySchema>;
+
+// ───────────────────────────────────────────────────────────────
+// NCSC CAF — bespoke shape: objectives → principles → outcomes
+// 4 objectives / 14 principles / 41 contributing outcomes
+// ───────────────────────────────────────────────────────────────
+export const cafOutcomeSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  desc: z.string(),
+  achieved: z.array(z.string()).optional().default([]),
+  evidence: z.array(z.string()).optional().default([]),
+});
+export type CafOutcome = z.infer<typeof cafOutcomeSchema>;
+
+export const cafPrincipleSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  desc: z.string(),
+  outcomes: z.array(cafOutcomeSchema),
+});
+export type CafPrinciple = z.infer<typeof cafPrincipleSchema>;
+
+export const cafObjectiveSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  desc: z.string(),
+  principles: z.array(cafPrincipleSchema),
+});
+export type CafObjective = z.infer<typeof cafObjectiveSchema>;
+
+export const cafHierarchySchema = z.object({
+  meta: frameworkMetaSchema,
+  about: z.union([z.string(), frameworkAboutSchema]).optional(),
+  objectives: z.array(cafObjectiveSchema),
+});
+export type CafHierarchy = z.infer<typeof cafHierarchySchema>;
