@@ -6,3 +6,6 @@ export type { JustificationsState, JustificationsActions, JustificationsStore } 
 
 export { useUiStore } from './ui.store';
 export type { UiState, UiActions, UiStore, Theme } from './ui.store';
+
+export { useEvidenceStore, selectEvidenceFor } from './evidence.store';
+export type { EvidenceState, EvidenceActions, EvidenceStore } from './evidence.store';

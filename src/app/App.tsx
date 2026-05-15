@@ -1,22 +1,45 @@
-// Phase 1 / M1 scaffold shell.
-// Real routing, framework views, and features land in M5–M7.
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { PersistenceProvider } from './persistence-context';
+import { Home } from '../features/home/Home';
+import { Iso27001View } from '../features/frameworks/Iso27001View';
+
+// In production the app is served from /grc-framework-mapping-tool/ on
+// GitHub Pages; locally it's at /. Pick the basename to match.
+const basename = import.meta.env.PROD ? '/grc-framework-mapping-tool' : '/';
+
 export function App() {
   return (
-    <main
-      data-testid="app-shell"
-      className="flex min-h-full flex-col items-center justify-center gap-4 p-8 text-center"
-    >
-      <h1 className="text-3xl font-semibold text-brand-text sm:text-4xl">CtrlMap v2</h1>
-      <p className="max-w-prose text-ink-2">
-        Phase 1 scaffold — Vite + React 18 + TypeScript + Tailwind. Strangler-fig migration in
-        progress. The current production tool is preserved at <code className="font-mono">legacy/index.html</code>.
-      </p>
-      <p className="text-sm text-ink-3">
-        Spec:{' '}
-        <code className="font-mono">
-          docs/ecc/specs/2026-05-14-phase1-architecture-modernisation-design.md
-        </code>
-      </p>
-    </main>
+    <PersistenceProvider>
+      <BrowserRouter basename={basename}>
+        <div className="flex min-h-full flex-col">
+          <header className="border-b border-border bg-surface px-6 py-3">
+            <nav className="flex items-center gap-6" aria-label="Primary">
+              <NavLink to="/" className="text-lg font-semibold text-brand-text">
+                CtrlMap v2
+              </NavLink>
+              <ul className="flex gap-3 text-sm text-ink-2">
+                <li>
+                  <NavLink
+                    to="/iso27001"
+                    className={({ isActive }) =>
+                      isActive ? 'text-brand-text underline' : 'hover:text-brand-text'
+                    }
+                  >
+                    ISO 27001
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main className="flex-1 bg-bg" data-testid="app-shell">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/iso27001" element={<Iso27001View />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
+    </PersistenceProvider>
   );
 }
