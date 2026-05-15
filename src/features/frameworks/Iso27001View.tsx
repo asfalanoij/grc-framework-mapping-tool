@@ -22,6 +22,9 @@ import {
 } from '../../domain/filters';
 import { buildIndex, search, type Searchable } from '../../domain/search';
 import { parseCrossRefs, frameworkPropKeys } from '../../domain/mapping-engine';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildIsoCsv, buildSoaCsv } from '../export/isoExporter';
+import { buildIsoXlsx } from '../export/xlsxExporter';
 
 const FRAMEWORK = 'ISO 27001';
 const EMPTY_SCORES: Readonly<Record<string, never>> = Object.freeze({});
@@ -105,7 +108,8 @@ export function Iso27001View() {
         <header className="space-y-2">
           <h2 className="text-2xl font-semibold text-ink">ISO 27001:2022</h2>
           <p className="text-sm text-ink-3">
-            25 Management System clauses + 93 Annex A controls. Scores persist in your browser via IndexedDB.
+            25 Management System clauses + 93 Annex A controls. Scores persist in your browser via
+            IndexedDB.
           </p>
           <p className="text-sm text-ink-2" data-testid="iso27001-readiness">
             Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
@@ -115,6 +119,32 @@ export function Iso27001View() {
             </span>
           </p>
           <FilterChips />
+          <ExportMenu
+            framework="ISO 27001"
+            buildCsv={() =>
+              buildIsoCsv({
+                controls: filteredControls,
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+            buildXlsx={() =>
+              buildIsoXlsx({
+                controls: filteredControls,
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+            buildSoaCsv={() =>
+              buildSoaCsv({
+                scores,
+                evidenceByKey: evidenceState.byKey,
+                justifications,
+              })
+            }
+          />
         </header>
 
         {filteredControls.length === 0 ? (

@@ -5,6 +5,9 @@ import { usePersistence } from '../../app/use-persistence';
 import { useScoresStore } from '../../store/scores.store';
 import { useEvidenceStore, selectEvidenceFor } from '../../store/evidence.store';
 import { computeReadiness } from '../../domain/scoring';
+import { ExportMenu } from '../export/ExportMenu';
+import { buildCafCsv } from '../export/frameworkExporter';
+import { buildCafXlsx } from '../export/xlsxExporter';
 
 const FRAMEWORK = 'NCSC CAF';
 const EMPTY: Readonly<Record<string, never>> = Object.freeze({});
@@ -29,7 +32,11 @@ export function NcscCafView() {
   const scoresForFw = scoresByFw[FRAMEWORK];
   const scores = scoresForFw ?? EMPTY;
   const readiness = useMemo(
-    () => computeReadiness(ncscCafOutcomes.map((o) => o.id), scores),
+    () =>
+      computeReadiness(
+        ncscCafOutcomes.map((o) => o.id),
+        scores,
+      ),
     [scores],
   );
 
@@ -38,13 +45,31 @@ export function NcscCafView() {
       <header className="space-y-1">
         <h2 className="text-2xl font-semibold text-ink">NCSC Cyber Assessment Framework 4.0</h2>
         <p className="text-sm text-ink-3">
-          4 Objectives / 14 Principles / 41 Contributing Outcomes, each with official Indicators of Good Practice
-          (IGP).
+          4 Objectives / 14 Principles / 41 Contributing Outcomes, each with official Indicators of
+          Good Practice (IGP).
         </p>
         <p className="text-sm text-ink-2" data-testid="framework-readiness">
           Readiness: <strong>{readiness.percentImplemented}%</strong> ({readiness.implemented} of{' '}
-          {readiness.applicable} applicable · {readiness.notApplicable} N/A) · {ncscCafOutcomes.length} outcomes
+          {readiness.applicable} applicable · {readiness.notApplicable} N/A) ·{' '}
+          {ncscCafOutcomes.length} outcomes
         </p>
+        <ExportMenu
+          framework={FRAMEWORK}
+          buildCsv={() =>
+            buildCafCsv(ncscCaf, {
+              framework: FRAMEWORK,
+              scores,
+              evidenceByKey: evidenceState.byKey,
+            })
+          }
+          buildXlsx={() =>
+            buildCafXlsx(ncscCaf, {
+              framework: FRAMEWORK,
+              scores,
+              evidenceByKey: evidenceState.byKey,
+            })
+          }
+        />
       </header>
 
       {ncscCaf.objectives.map((obj) => (
@@ -73,7 +98,9 @@ export function NcscCafView() {
                     }}
                     status={scores[outcome.id] ?? 'not-started'}
                     evidence={selectEvidenceFor(evidenceState, FRAMEWORK, outcome.id)}
-                    onStatusChange={(next) => void setScore(persistence, FRAMEWORK, outcome.id, next)}
+                    onStatusChange={(next) =>
+                      void setScore(persistence, FRAMEWORK, outcome.id, next)
+                    }
                     onEvidenceToggle={(t, c) =>
                       void toggleCheck(persistence, FRAMEWORK, outcome.id, t, c)
                     }
