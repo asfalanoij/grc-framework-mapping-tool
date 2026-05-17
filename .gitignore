@@ -36,3 +36,7 @@ lerna-debug.log*
 .env
 .env.local
 .env.*.local
+
+# Rebuild artifacts (M9-M11 mapping integrity rebuild)
+tmp/
+*.pre-rebuild.bak
