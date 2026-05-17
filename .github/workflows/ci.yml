@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate mapping integrity
+        run: npm run validate:mappings
+
       - name: Typecheck
         run: npm run typecheck
 

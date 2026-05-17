@@ -17,7 +17,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "test:e2e:install": "playwright install --with-deps chromium"
+    "test:e2e:install": "playwright install --with-deps chromium",
+    "validate:mappings": "vitest run src/domain/mapping-integrity.test.ts",
+    "extract:upstream": "node scripts/extract-upstream-controls.mjs"
   },
   "dependencies": {
     "dexie": "^4.4.2",
