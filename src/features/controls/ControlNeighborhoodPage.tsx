@@ -23,10 +23,7 @@ export function ControlNeighborhoodPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const control = useMemo(
-    () => iso27001Controls.find((c) => c.id === id),
-    [id],
-  );
+  const control = useMemo(() => iso27001Controls.find((c) => c.id === id), [id]);
 
   if (!control) {
     return (
@@ -34,14 +31,12 @@ export function ControlNeighborhoodPage() {
         aria-labelledby="neighborhood-notfound-heading"
         className="rounded-lg border border-border bg-surface p-6 shadow-sm"
       >
-        <h2
-          id="neighborhood-notfound-heading"
-          className="text-base font-semibold text-ink"
-        >
+        <h2 id="neighborhood-notfound-heading" className="text-base font-semibold text-ink">
           Control not found
         </h2>
         <p className="mt-2 text-sm text-ink-2">
-          No ISO 27001 control with id <code className="font-mono">{id ?? '(missing)'}</code> exists in the local data.
+          No ISO 27001 control with id <code className="font-mono">{id ?? '(missing)'}</code> exists
+          in the local data.
         </p>
         <Link
           to="/iso27001"

@@ -128,7 +128,10 @@ describe('mapping integrity', () => {
       }
       const lines: string[] = [];
       for (const [fw, list] of byFw) {
-        const sample = list.slice(0, 3).map((o) => `${o.isoId}->'${o.refId}'`).join(', ');
+        const sample = list
+          .slice(0, 3)
+          .map((o) => `${o.isoId}->'${o.refId}'`)
+          .join(', ');
         lines.push(`  ${fw}: ${list.length} orphan(s)  e.g. ${sample}`);
       }
       console.error(

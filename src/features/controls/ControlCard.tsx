@@ -60,7 +60,9 @@ export function ControlCard({
           <div className="flex flex-wrap gap-1.5 text-xs">
             <span className="rounded bg-surface-2 px-2 py-0.5 text-ink-3">{control.cat}</span>
             {control.ct ? (
-              <span className={`rounded px-2 py-0.5 font-medium ${CT_BADGE_CLASSES[control.ct.split(',')[0]?.trim() ?? ''] ?? 'bg-surface-2 text-ink-3'}`}>
+              <span
+                className={`rounded px-2 py-0.5 font-medium ${CT_BADGE_CLASSES[control.ct.split(',')[0]?.trim() ?? ''] ?? 'bg-surface-2 text-ink-3'}`}
+              >
                 {control.ct}
               </span>
             ) : null}
@@ -68,7 +70,12 @@ export function ControlCard({
               <span className="rounded bg-brand-50 px-2 py-0.5 text-brand-text">{control.sd}</span>
             ) : null}
           </div>
-          <ScoreSelector status={status} onChange={onStatusChange} applicable={isAnnexA} idPrefix={`status-${control.id}`} />
+          <ScoreSelector
+            status={status}
+            onChange={onStatusChange}
+            applicable={isAnnexA}
+            idPrefix={`status-${control.id}`}
+          />
         </div>
         <button
           type="button"
@@ -89,18 +96,24 @@ export function ControlCard({
           className="space-y-4 border-t border-border bg-surface-2 p-4"
         >
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">ISO 27002 description</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">
+              ISO 27002 description
+            </h4>
             <p className="mt-1 text-sm text-ink-2">{control.isoDesc}</p>
           </div>
           {control.notes ? (
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">Implementation guidance</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">
+                Implementation guidance
+              </h4>
               <p className="mt-1 text-sm text-ink-2">{control.notes}</p>
             </div>
           ) : null}
           <div>
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">Cross-framework mappings</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">
+                Cross-framework mappings
+              </h4>
               <Link
                 to={`/neighborhood/iso/${encodeURIComponent(control.id)}`}
                 className="text-xs font-medium text-brand hover:underline focus:outline-none focus:ring-2 focus:ring-brand"
