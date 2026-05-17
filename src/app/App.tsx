@@ -18,6 +18,11 @@ const Iso27017View = lazy(() => import('../features/frameworks/Iso27017View'));
 const NcscCafView = lazy(() =>
   import('../features/frameworks/NcscCafView').then((m) => ({ default: m.NcscCafView })),
 );
+const ControlNeighborhoodPage = lazy(() =>
+  import('../features/controls/ControlNeighborhoodPage').then((m) => ({
+    default: m.ControlNeighborhoodPage,
+  })),
+);
 
 const basename = import.meta.env.PROD ? '/grc-framework-mapping-tool' : '/';
 
@@ -87,6 +92,7 @@ export function App() {
                 <Route path="/iso22301" element={<Iso22301View />} />
                 <Route path="/iso27017" element={<Iso27017View />} />
                 <Route path="/ncsc-caf" element={<NcscCafView />} />
+                <Route path="/neighborhood/iso/:id" element={<ControlNeighborhoodPage />} />
                 <Route path="*" element={<Home />} />
               </Routes>
             </Suspense>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { IsoControl } from '../../data/schemas';
 import type { Status } from '../../domain/scoring';
 import type { EvidenceRow } from '../../services/persistence';
@@ -98,7 +99,16 @@ export function ControlCard({
             </div>
           ) : null}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">Cross-framework mappings</h4>
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-3">Cross-framework mappings</h4>
+              <Link
+                to={`/neighborhood/iso/${encodeURIComponent(control.id)}`}
+                className="text-xs font-medium text-brand hover:underline focus:outline-none focus:ring-2 focus:ring-brand"
+                data-testid={`neighborhood-link-${control.id}`}
+              >
+                View full neighborhood &rarr;
+              </Link>
+            </div>
             <div className="mt-2">
               <MappingBadges control={control} />
             </div>
