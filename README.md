@@ -92,6 +92,49 @@ CI enforces per-path coverage thresholds:
 | `src/store/**` | 80% | 80% | 80% | 80% |
 | Global floor | 70% | 70% | 70% | 70% |
 
+## Cross-framework integrity
+
+The cross-framework mapping graph is the core asset of this tool. Each ISO 27001 control declares its equivalents in the other 10 frameworks via comma-separated string fields (`nistSub`, `soc2`, `cis`, `pci`, `ce`, `n80053`, `nis2`, `iso22301`, `iso27017`, `caf`). The integrity of those references is enforced in CI, surfaced in the UI, and documented forensically.
+
+### CI gate
+
+```bash
+npm run validate:mappings   # zero orphans required for green CI
+```
+
+The command runs `src/domain/mapping-integrity.test.ts` (three vitest cases):
+
+1. Every cross-reference resolves to a real target-framework leaf id.
+2. Every non-ISO framework receives at least one inbound ISO reference.
+3. `getIsoControlsForRef` round-trips with declared forward refs.
+
+A non-zero orphan count writes a forensic report to `tmp/mapping-orphans.json` listing each `(isoId, field, refId)`, and the CI step fails before typecheck.
+
+**Rule:** any change to `src/data/_raw/CONTROLS.json` must keep `npm run validate:mappings` green. PRs that touch CONTROLS.json without a passing validate run will be rejected.
+
+### Upstream truth
+
+Local `CONTROLS.json` is reconciled against `prinnyo/grc-framework-mapping-tool` (the original tool by Princess David Okoro). To re-run the diff:
+
+```bash
+git fetch upstream
+git show upstream/main:grc_framework_mapping.html > tmp/upstream/grc_framework_mapping.html
+npm run extract:upstream    # writes tmp/upstream/controls.json
+node -e "const u=require('./tmp/upstream/controls.json'); const l=require('./src/data/_raw/CONTROLS.json'); let d=0; const m=new Map(u.map(c=>[c.id,c])); for(const lc of l){const uc=m.get(lc.id)||{}; for(const k of new Set([...Object.keys(uc),...Object.keys(lc)])) if(uc[k]!==lc[k]) d++;} console.log('diffs:',d);"
+```
+
+A 2026-05-17 forensic run (documented in [`docs/UPSTREAM_DIFF.md`](docs/UPSTREAM_DIFF.md)) confirmed local is byte-equivalent to upstream across all 118 controls x 14 fields.
+
+### UI visibility
+
+`ControlNeighborhoodView` (`/neighborhood/iso/:id`) renders any ISO control's cross-framework neighborhood as a 10-row grid. **Empty cells render as an em-dash with the accessible label "No <framework> mapping declared"** — so future drift surfaces as a visible empty cell rather than a silently absent row. Reachable via the "View full neighborhood &rarr;" link in any expanded ControlCard, and via direct URL for bookmarking.
+
+### Reference docs
+
+- [`docs/UPSTREAM_DIFF.md`](docs/UPSTREAM_DIFF.md) — schema reconciliation + 2026-05-17 audit
+- [`docs/MAPPING_DATAFLOW.md`](docs/MAPPING_DATAFLOW.md) — diagram: upstream &rarr; diff &rarr; repair &rarr; engine &rarr; UI
+- [`docs/M11_RETRO.md`](docs/M11_RETRO.md) — retro from the M9-M11 integrity rebuild
+
 ## Roadmap
 
 - **Phase 1 — Architecture modernisation** ✅ shipped (v2.0.0-alpha)
