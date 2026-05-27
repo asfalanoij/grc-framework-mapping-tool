@@ -1,0 +1,358 @@
+# Instincts generated from https://github.com/asfalanoij/grc-framework-mapping-tool
+# Generated: 2026-05-14T16:28:00.063Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: grc-framework-mapping-tool-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat
+
+## Evidence
+
+- 1 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(scaffold): M1 — Vite + React 18 + TypeScript + Tailwind project scaffold
+
+---
+id: grc-framework-mapping-tool-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Commit Length
+
+## Action
+
+Write moderate-length commit messages (~77 characters)
+
+## Evidence
+
+- Average commit message length: 77 chars
+- Based on 1 commits
+
+---
+id: grc-framework-mapping-tool-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: grc-framework-mapping-tool-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: grc-framework-mapping-tool-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.tsx
+
+---
+id: grc-framework-mapping-tool-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.tsx
+
+## Evidence
+
+- File pattern: *.test.tsx
+- Consistent across test files
+
+---
+id: grc-framework-mapping-tool-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Test Types
+
+## Action
+
+Write unit, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, e2e
+- Coverage config: yes
+
+---
+id: grc-framework-mapping-tool-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct File Naming
+
+## Action
+
+Name the file using camelCase format
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: grc-framework-mapping-tool-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Function Naming
+
+## Action
+
+Name the function using camelCase format
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: grc-framework-mapping-tool-instinct-class-naming
+trigger: "When declaring a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase format
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: grc-framework-mapping-tool-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE format
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: grc-framework-mapping-tool-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Import Style
+
+## Action
+
+Use a mixed import style as appropriate (named and default imports)
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: grc-framework-mapping-tool-instinct-export-style
+trigger: "When exporting modules or components"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Export Style
+
+## Action
+
+Use default exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: grc-framework-mapping-tool-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.tsx
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: grc-framework-mapping-tool-instinct-test-framework
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Test Framework
+
+## Action
+
+Use the Vitest framework
+
+## Evidence
+
+- Pattern in testing.framework
+- Presence of vitest.config.ts
+
+---
+id: grc-framework-mapping-tool-instinct-test-types
+trigger: "When designing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Test Types
+
+## Action
+
+Include both unit and e2e test types
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: grc-framework-mapping-tool-instinct-test-coverage
+trigger: "When configuring tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Test Coverage
+
+## Action
+
+Enable and configure test coverage reporting
+
+## Evidence
+
+- Pattern in testing.coverageConfig
+
+---
+id: grc-framework-mapping-tool-instinct-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: asfalanoij/grc-framework-mapping-tool
+---
+
+# Grc Framework Mapping Tool Instinct Commit Format
+
+## Action
+
+Use the conventional commit format with 'feat' prefix for new features
+
+## Evidence
+
+- Pattern in commits.type
+- Example: 'feat(scaffold): M1 — Vite + React 18 + TypeScript + Tailwind project scaffold'
+
